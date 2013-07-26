@@ -5,7 +5,7 @@
 
 Name:           beaker-system-scan
 Version:        1.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -47,5 +47,8 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Fri Jul 26 2013 Dan Callaghan <dcallagh@redhat.com> 1.2-2
+- %%{python_sitelib} is not defined on RHEL5 (dcallagh@redhat.com)
+
 * Fri Jul 26 2013 Dan Callaghan <dcallagh@redhat.com> 1.2-1
 - initial version, based on /distribution/inventory task from Beaker
