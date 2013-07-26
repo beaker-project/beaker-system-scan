@@ -1,19 +1,19 @@
-#!/usr/bin/python
-# Copyright (c) 2006 Red Hat, Inc. All rights reserved. This copyrighted material
-# is made available to anyone wishing to use, modify, copy, or
-# redistribute it subject to the terms and conditions of the GNU General
-# Public License v.2.
+
+# Copyright 2008-2012 Red Hat, Inc.
 #
-# This program is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-#
-# Author: Bill Peck
-#
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import sys, getopt
 import xmlrpclib
@@ -28,14 +28,13 @@ import glob
 import tempfile
 from subprocess import Popen, PIPE
 
-sys.path.append('.')
 sys.path.append("/usr/share/smolt/client")
 import smolt
-from disks import Disks
-import procfs
+from systemscan.disks import Disks
+from procfs import procfs
 
 USAGE_TEXT = """
-Usage:  pushInventory.py [-d] [[-h <HOSTNAME>] [-S server]]
+Usage:  beaker-system-scan [-d] [[-h <HOSTNAME>] [-S server]]
 """
 
 def push_inventory(method, hostname, inventory):
@@ -246,7 +245,7 @@ def legacy_inventory(inv):
             bootdisk = bootregex.search(disk).group(1).replace('/','!')
 
     if bootdisk:
-        drivers = commands.getstatusoutput('./getdriver.sh %s' % bootdisk)[1].split('\n')[1:]
+        drivers = commands.getstatusoutput('/usr/libexec/beaker-system-scan/getdriver.sh %s' % bootdisk)[1].split('\n')[1:]
         for driver in drivers:
             data['BOOTDISK'].append(driver)
 
@@ -256,7 +255,7 @@ def legacy_inventory(inv):
         if line.find('0.0.0.0') == 0:
             iface = line.split()[-1:][0] #eth0, eth1, etc..
     if iface:
-        drivers = commands.getstatusoutput('./getdriver.sh %s' % iface)[1].split('\n')
+        drivers = commands.getstatusoutput('/usr/libexec/beaker-system-scan/getdriver.sh %s' % iface)[1].split('\n')
         if len(drivers) == 1:
             data['NETWORK'] = drivers[0]
         else:
@@ -386,8 +385,8 @@ def read_inventory():
             'nodes': len(glob.glob('/sys/devices/system/node/node*')), #: number of NUMA nodes in the system, or 0 if not supported
         }
 
-    if os.path.exists('./hvm_detect'):
-        hypervisor = Popen(['./hvm_detect'], stdout=PIPE).communicate()[0]
+    if os.path.exists('/usr/libexec/beaker-system-scan/hvm_detect'):
+        hypervisor = Popen(['/usr/libexec/beaker-system-scan/hvm_detect'], stdout=PIPE).communicate()[0]
         hvm_map = {"No KVM or Xen HVM\n"    : None,
                    "KVM guest.\n"           : u'KVM',
                    "Xen HVM guest.\n"       : u'Xen',

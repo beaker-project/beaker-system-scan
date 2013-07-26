@@ -2,6 +2,9 @@
 #
 # Find all modules and drivers for a given class device.
 #
+# Derived from an example script in "Linux Kernel in a Nutshell", chapter 8, which is
+# copyright Greg Kroah-Hartman and released under the
+# Creative Commons "Attribution-ShareAlike" license, Version 2.5.
 
 if [ $# != "1" ] ; then
 	echo
