@@ -5,7 +5,7 @@
 
 Name:           beaker-system-scan
 Version:        1.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -49,6 +49,9 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Tue Jul 30 2013 Dan Callaghan <dcallagh@redhat.com> 1.2-3
+- kmod-kvm is for x86_64 only (dcallagh@redhat.com)
+
 * Fri Jul 26 2013 Dan Callaghan <dcallagh@redhat.com> 1.2-2
 - %%{python_sitelib} is not defined on RHEL5 (dcallagh@redhat.com)
 
