@@ -22,7 +22,9 @@ Requires:       smolt
 Requires:       kmod-kvm
 %endif
 %endif
+%ifarch x86_64
 Requires:       iasl
+%endif
 Requires:       device-mapper-multipath
 Requires:       python-ctypes
 Requires:       python-linux-procfs
