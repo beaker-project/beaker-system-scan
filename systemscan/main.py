@@ -322,7 +322,8 @@ def read_inventory():
                   )
     elif arch in ["ppc", "ppc64"]:
         cpu = dict(vendor     = "IBM",
-                   model      = 0,
+                   model      = int(''.join(re.split('^.*([0-9a-f]{4})\s([0-9a-f]{4}).*$',
+                                                     procCpu.tags['revision'])), 16),
                    modelName  = str(procCpu.tags['cpu']),
                    speed      = float(re.findall('\d+.+\d+', procCpu.tags['clock'])[0]),
                    processors = int(procCpu.nr_cpus),
@@ -337,7 +338,7 @@ def read_inventory():
             flags.append(cpuflag)
         proc = dict([tuple(s.strip() for s in kv.split('=')) for kv in procCpu.tags['processor 0'].split(',')])
         cpu = dict(vendor     = str(procCpu.tags['vendor_id']),
-                   model      = 0,
+                   model      = proc['identification'],
                    modelName  = str(proc['machine']),
                    processors = int(procCpu.tags['# processors']),
                    cores      = 0,
