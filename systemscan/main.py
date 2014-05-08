@@ -338,7 +338,7 @@ def read_inventory():
             flags.append(cpuflag)
         proc = dict([tuple(s.strip() for s in kv.split('=')) for kv in procCpu.tags['processor 0'].split(',')])
         cpu = dict(vendor     = str(procCpu.tags['vendor_id']),
-                   model      = proc['identification'],
+                   model      = int(proc['identification'], 16),
                    modelName  = str(proc['machine']),
                    processors = int(procCpu.tags['# processors']),
                    cores      = 0,
