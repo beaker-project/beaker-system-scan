@@ -4,8 +4,8 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        1.2
-Release:        3%{?dist}
+Version:        1.3
+Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -51,6 +51,11 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Thu May 08 2014 Amit Saha <asaha@redhat.com> 1.3-1
+- s390x 'identification' should be converted to an integer (asaha@redhat.com)
+- s390x and ppc: Fill in CPU model field (asaha@redhat.com)
+- Make iasl a conditional dependency for x86_64 (asaha@redhat.com)
+
 * Tue Jul 30 2013 Dan Callaghan <dcallagh@redhat.com> 1.2-3
 - kmod-kvm is for x86_64 only (dcallagh@redhat.com)
 
