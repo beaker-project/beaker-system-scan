@@ -22,6 +22,7 @@ import os
 import commands
 import pprint
 import math
+import json
 import re
 import shutil
 import glob
@@ -34,7 +35,7 @@ from systemscan.disks import Disks
 from procfs import procfs
 
 USAGE_TEXT = """
-Usage:  beaker-system-scan [-d] [[-h <HOSTNAME>] [-S server]]
+Usage:  beaker-system-scan [-d] [-j] [[-h <HOSTNAME>] [-S server]]
 """
 
 def push_inventory(method, hostname, inventory):
@@ -80,17 +81,17 @@ def check_for_virt_iommu():
                     hwu = True
                 if ba_pat.search(line):
                     if ba_inv_pat.search(line):
-                        print "VIRT_IOMMU: Invalid Base address: 0's or F's"
+                        print >> sys.stderr, "VIRT_IOMMU: Invalid Base address: 0's or F's"
                     else:
                         ba = True
             if not hwu:
-                print "VIRT_IOMMU: No Hardware Unit"
+                print >> sys.stderr, "VIRT_IOMMU: No Hardware Unit"
             elif not ba:
-                print "VIRT_IOMMU: No Base Address"
+                print >> sys.stderr, "VIRT_IOMMU: No Base Address"
             else:
                 virt_iommu = 1
         else:
-            print "VIRT_IOMMU: Failed to create DMAR.dsl"
+            print >> sys.stderr, "VIRT_IOMMU: Failed to create DMAR.dsl"
 
     elif os.path.exists("/sys/firmware/acpi/tables/IVRS"):
         # alright we are on an AMD iommu box
@@ -137,7 +138,7 @@ def kernel_inventory():
         cmd = 'hal-find-by-property --key linux.sysfs_path --string %s' % sysfs_path
         status,udi =  commands.getstatusoutput(cmd)
         if status:
-            print "DISK_CONTROLLER: hal-find-by-property failed: %d" % status
+            print >> sys.stderr, "DISK_CONTROLLER: hal-find-by-property failed: %d" % status
             continue
 
         while udi:
@@ -152,11 +153,11 @@ def kernel_inventory():
             cmd = 'hal-get-property --udi %s  --key info.parent' % udi
             status,udi =  commands.getstatusoutput(cmd)
             if status:
-                print "DISK_CONTROLLER: hal-get-property failed: %d" % status
+                print >> sys.stderr, "DISK_CONTROLLER: hal-get-property failed: %d" % status
                 break
 
         if not udi:
-            print "DISK_CONTROLLER: can not determine driver for %s" %block
+            print >> sys.stderr, "DISK_CONTROLLER: can not determine driver for %s" %block
 
     ##########################################
     # determine if machine is using multipath or not
@@ -177,7 +178,7 @@ def kernel_inventory():
     status, mpaths = commands.getstatusoutput("multipath -ll")
     mp = False
     if status:
-        print "MULTIPATH: multipath -ll failed with %d" % status
+        print >> sys.stderr, "MULTIPATH: multipath -ll failed with %d" % status
     else:
         count = 0
         mpath_pat = re.compile(" dm-[0-9]* ")
@@ -419,6 +420,7 @@ def main():
     lab_server = None
     hostname = None
     debug = 0
+    json_output = 0
 
     if ('LAB_SERVER' in os.environ.keys()):
         lab_server = os.environ['LAB_SERVER']
@@ -427,12 +429,14 @@ def main():
 
     args = sys.argv[1:]
     try:
-        opts, args = getopt.getopt(args, 'dh:S', ['server='])
+        opts, args = getopt.getopt(args, 'dh:S:j', ['server='])
     except:
         usage()
     for opt, val in opts:
         if opt in ('-d', '--debug'):
             debug = 1
+        if opt in ('-j', '--json') and debug:
+            json_output = 1
         if opt in ('-h', '--hostname'):
             hostname = val
         if opt in ('-S', '--server'):
@@ -443,8 +447,12 @@ def main():
     legacy_inv.update(kernel_inventory())
     del inventory['formfactor']
     if debug:
-        print "Legacy inventory:\n%s\nData:\n%s" % (
-                pprint.pformat(legacy_inv), pprint.pformat(inventory))
+       if json_output:
+          print json.dumps({'legacy':legacy_inv,
+                            'Data':inventory})
+       else:
+          print "Legacy inventory:\n%s\nData:\n%s" % (
+             pprint.pformat(legacy_inv), pprint.pformat(inventory))
     else:
         if not hostname:
             print "You must specify a hostname with the -h switch"
