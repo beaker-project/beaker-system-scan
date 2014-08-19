@@ -17,7 +17,6 @@
 
 import sys, getopt
 import xmlrpclib
-import string
 import os
 import commands
 import pprint
@@ -31,12 +30,9 @@ except ImportError:
 import re
 import shutil
 import glob
-import tempfile
 from subprocess import Popen, PIPE
-
-sys.path.append("/usr/share/smolt/client")
-import smolt
-from systemscan.disks import Disks
+from lxml import etree
+from disks import Disks
 from procfs import procfs
 
 USAGE_TEXT = """
@@ -65,11 +61,10 @@ def push_inventory(method, hostname, inventory):
 
 def check_for_virt_iommu():
 
+    arch = read_inventory()['Arch'][0]
     virt_iommu = 0
-    cpu_info = smolt.read_cpuinfo()
-    cpu_info_pat = re.compile("x86")
 
-    if not cpu_info_pat.search(cpu_info['platform']):
+    if re.search('x86', arch) is not None:
         #only x86 boxes support virt iommu
         return 0
 
@@ -314,83 +309,127 @@ def legacy_inventory(inv):
         data['NETBOOT_METHOD'] = open('/root/NETBOOT_METHOD.TXT', 'r').readline()[:-1]
     return data
 
-def read_inventory():
-    # get the data from SMOLT but modify it for how RHTS expects to see it
-    # Eventually we'll switch over to SMOLT properly.
+def read_inventory(input_xml=None):
+
     data = {}
     flags = []
     data['Devices'] = []
+    arch = None
+    cpu = None
 
+    if input_xml is not None:
+       inventory = etree.XML(input_xml)
+    else:
+       inventory = Popen(['lshw', '-xml', '-numeric'], stdout=PIPE).communicate()[0]
+       inventory = etree.XML(inventory)
+
+    #Break the xml into the relevant sets of data
+    cpuinfo = inventory.xpath(".//node[@class='processor']")[0]
+    memory_elems = inventory.xpath(".//node[@class='memory']")
+    memoryinfo = None
+    for m in memory_elems:
+       desc = m.find('description')
+       if desc is not None and desc.text.lower() == 'system memory':
+          memoryinfo = m
+
+    devices = inventory.xpath(".//node[@id!='subsystem']")
     procCpu  = procfs.cpuinfo()
-    smoltCpu = smolt.read_cpuinfo()
-    memory   = smolt.read_memory()
-    profile  = smolt.Hardware()
 
-    arch = smoltCpu['platform']
+    capabilities = cpuinfo.find('capabilities')
+    if capabilities is not None:
+       for capability in capabilities.getchildren():
+          flags.append(capability.get('id'))
+          if capability.get('id') in ['i386', 'x86-64', 'ppc', 'ppc64', 's390', 's390x', 'ia64']:
+             arch = capability.get('id')
 
-    if arch in ["i386", "x86_64"]:
-        for cpuflag in procCpu.tags['flags'].split(" "):
-            flags.append(cpuflag)
-        cpu = dict(vendor     = smoltCpu['type'],
-                   model      = int(procCpu.tags['model']),
-                   modelName  = smoltCpu['model'],
-                   speed      = float(procCpu.tags['cpu mhz']),
-                   processors = int(procCpu.nr_cpus),
-                   cores      = int(procCpu.nr_cores),
-                   sockets    = int(procCpu.nr_sockets),
-                   CpuFlags   = flags,
-                   family     = int(smoltCpu['model_number']),
-                   stepping   = int(procCpu.tags['stepping']),
-                  )
+    # if we still don't have the arch
+    # read it from uname (via os.uname())
+    if not arch:
+       arch = os.uname()[4]
+
+    if arch in ["i386", "x86-64","x86_64"]:
+       vendor = cpuinfo.find('vendor')
+       if vendor is not None:
+          vendor = vendor.text
+       modelName = cpuinfo.find('product')
+       if modelName is not None:
+          modelName = modelName.text
+
+       cpu = dict(vendor     = vendor,
+                  model      = int(procCpu.tags['model']),
+                  modelName  = modelName,
+                  speed      = float(procCpu.tags['cpu mhz']),
+                  processors = int(procCpu.nr_cpus),
+                  cores      = int(procCpu.nr_cores),
+                  sockets    = int(procCpu.nr_sockets),
+                  CpuFlags   = flags,
+                  family     = int(procCpu.tags['cpu family']),
+                  stepping   = int(procCpu.tags['stepping']),
+       )
     elif arch in ["ppc", "ppc64"]:
-        cpu = dict(vendor     = "IBM",
-                   model      = int(''.join(re.split('^.*([0-9a-f]{4})\s([0-9a-f]{4}).*$',
-                                                     procCpu.tags['revision'])), 16),
-                   modelName  = str(procCpu.tags['cpu']),
-                   speed      = float(re.findall('\d+.+\d+', procCpu.tags['clock'])[0]),
-                   processors = int(procCpu.nr_cpus),
-                   cores      = 0,
-                   sockets    = 0,
-                   CpuFlags   = flags,
-                   family     = 0,
-                   stepping   = 0,
-                 )
+       cpu = dict(vendor     = "IBM",
+                  model      = int(''.join(re.split('^.*([0-9a-f]{4})\s([0-9a-f]{4}).*$',
+                                                    procCpu.tags['revision'])), 16),
+                  modelName  = str(procCpu.tags['cpu']),
+                  speed      = float(re.findall('\d+.+\d+', procCpu.tags['clock'])[0]),
+                  processors = int(procCpu.nr_cpus),
+                  cores      = 0,
+                  sockets    = 0,
+                  CpuFlags   = flags,
+                  family     = 0,
+                  stepping   = 0,
+               )
     elif arch in ["s390", "s390x"]:
-        for cpuflag in procCpu.tags['features'].split(" "):
-            flags.append(cpuflag)
-        proc = dict([tuple(s.strip() for s in kv.split('=')) for kv in procCpu.tags['processor 0'].split(',')])
-        cpu = dict(vendor     = str(procCpu.tags['vendor_id']),
-                   model      = int(proc['identification'], 16),
-                   modelName  = str(proc['machine']),
-                   processors = int(procCpu.tags['# processors']),
-                   cores      = 0,
-                   sockets    = 0,
-                   CpuFlags   = flags,
-                   family     = 0,
-                   speed      = 0,
-                   stepping   = 0,
-                  )
+       for cpuflag in procCpu.tags['features'].split(" "):
+          flags.append(cpuflag)
+       proc = dict([tuple(s.strip() for s in kv.split('=')) for kv in procCpu.tags['processor 0'].split(',')])
+       cpu = dict(vendor     = str(procCpu.tags['vendor_id']),
+                  model      = int(proc['identification'], 16),
+                  modelName  = str(proc['machine']),
+                  processors = int(procCpu.tags['# processors']),
+                  cores      = 0,
+                  sockets    = 0,
+                  CpuFlags   = flags,
+                  family     = 0,
+                  speed      = 0,
+                  stepping   = 0,
+       )
     elif arch == "ia64":
-        for cpuflag in procCpu.tags['features'].split(","):
-            flags.append(cpuflag.strip())
-        cpu = dict(vendor     = smoltCpu['type'],
-                   model      = int(procCpu.tags['model']),
-                   modelName  = smoltCpu['model'],
-                   speed      = float(procCpu.tags['cpu mhz']),
-                   processors = int(procCpu.nr_cpus),
-                   cores      = int(procCpu.nr_cores),
-                   sockets    = int(procCpu.nr_sockets),
+       vendor = cpuinfo.find('vendor')
+       if vendor:
+          vendor = vendor.text
+          product = cpuinfo.find('product')
+       if product:
+          product = product.text
+       cpu = dict(vendor     = vendor,
+                  model      = int(procCpu.tags['model']),
+                  modelName  = product,
+                  speed      = float(procCpu.tags['cpu mhz']),
+                  processors = int(procCpu.nr_cpus),
+                  cores      = int(procCpu.nr_cores),
+                  sockets    = int(procCpu.nr_sockets),
                    CpuFlags   = flags,
-                   family     = int(smoltCpu['model_rev']),
-                   stepping   = 0,
-                  )
+                  family     = int(procCpu.tags['cpu_family']),
+                  stepping   = None,
+               )
+
+    vendor = inventory.get('vendor')
+    product = inventory.get('product')
+    memsize = memoryinfo.find('size')
+    if vendor is not None:
+       vendor = vendor.text
+    if product is not None:
+       product = product.text
+    if memsize is not None:
+       memsize = int(memsize.text) / 1024**2
+
 
     data['Cpu'] = cpu
     data['Arch'] = [arch]
-    data['vendor'] = "%s" % profile.host.systemVendor
-    data['model'] = "%s" % profile.host.systemModel
-    data['formfactor'] = "%s" % profile.host.formfactor
-    data['memory'] = int(memory['ram'])
+    data['vendor'] = vendor
+    data['model'] = product
+    data['memory'] = memsize
+
 
     disklist = []
     diskdata = {}
@@ -398,15 +437,13 @@ def read_inventory():
     for disk in Disks():
         disklist.append(disk.to_dict())
     diskdata['Disks'] = disklist
-
     data['Disk'] = diskdata
+    # TODO: Patch form factor support into lshw. 
+    data['formfactor'] = 'Unknown'
+    data['Numa'] = {
+        'nodes': len(glob.glob('/sys/devices/system/node/node*')), #: number of NUMA nodes in the system, or 0 if not supported
+    }
 
-    if hasattr(profile.host, 'numaNodes'):
-        data['Numa'] = {'nodes': profile.host.numaNodes}
-    else:
-        data['Numa'] = {
-            'nodes': len(glob.glob('/sys/devices/system/node/node*')), #: number of NUMA nodes in the system, or 0 if not supported
-        }
     try:
         hypervisor = get_helper_program_output('hvm_detect')
     except OSError, e:
@@ -423,17 +460,54 @@ def read_inventory():
                 }
         data['Hypervisor'] = hvm_map[hypervisor]
 
-    for VendorID, DeviceID, SubsysVendorID, SubsysDeviceID, Bus, Driver, Type, Description in profile.deviceIter():
-        device = dict ( vendorID = "%04x" % (VendorID and VendorID or 0),
-                        deviceID = "%04x" % (DeviceID and DeviceID or 0),
-                        subsysVendorID = "%04x" % (SubsysVendorID and SubsysVendorID or 0),
-                        subsysDeviceID = "%04x" % (SubsysDeviceID and SubsysDeviceID or 0),
-                        bus = str(Bus),
-                        driver = str(Driver),
-                        type = str(Type),
-                        description = str(Description))
-        data['Devices'].append(device)
+    for device in devices:
+        # Defaults for nonexistent values
+        driver = bus = type = id = "Unknown"
+        vendorID = deviceID = subsysVendorID = subsysDeviceID = "0000"
 
+        # Navigate the maze of XML and string parsing
+        product = device.find('product')
+        description = device.find('description')
+        if product is not None:
+            product = device.find('product').text
+            match = re.search(r'(.*?)(?: \[(\w+):(\w+)\])?$', product)
+            if match is not None:
+               matched_items = match.groups()
+               product = matched_items[0]
+               if matched_items[1]:
+                  vendorID = matched_items[1]
+               if matched_items[2]:
+                  deviceID = matched_items[2]
+
+            description = product
+        elif description is not None:
+            description = description.text
+        else:
+            description = "Unknown"
+
+        if device.find('businfo') is not None:
+            bus = device.find('businfo').text.split('@')[0]
+        if device.get('id') is not None:
+            id = device.get('id')
+
+        subsys = device.find('subsysproduct')
+        if subsys is not None:
+            subsys = subsys.text
+            match = re.search("\[[0-9a-fA-F:]*]$", subsys)
+            if match is not None:
+                subsysVendorID, subsysDeviceID = match.group().strip("[]").split(':')
+
+        if len(device.xpath(".//setting[@id='driver']")) > 0:
+            driver = device.xpath(".//setting[@id='driver']")[0].text
+
+        data['Devices'].append(dict( vendorID = vendorID,
+                                     deviceID = deviceID,
+                                     subsysVendorID = subsysVendorID,
+                                     subsysDeviceID = subsysDeviceID,
+                                     bus = bus,
+                                     driver = driver,
+                                     type = id,
+                                     description = description))
     return data
 
 def usage():

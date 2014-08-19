@@ -16,7 +16,7 @@ BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 
-Requires:       smolt
+Requires:       lshw
 %if 0%{?rhel} < 6  && !(0%{?fedora} > 0)
 Requires:       python-simplejson
 %ifarch x86_64
@@ -31,7 +31,7 @@ Requires:       python-ctypes
 Requires:       python-linux-procfs
 Requires:       python-setuptools
 Requires:       parted
-
+Requires:       python-lxml
 
 %description
 beaker-system-scan is a small script to collect details about the hardware of 

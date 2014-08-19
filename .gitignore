@@ -1,2 +1,3 @@
 /build/
 /hvm_detect
+systemscan/*.pyc
