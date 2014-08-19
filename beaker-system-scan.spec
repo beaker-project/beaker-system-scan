@@ -17,7 +17,7 @@ BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 
 Requires:       smolt
-%if 0%{?rhel} < 6
+%if 0%{?rhel} < 6  && !(0%{?fedora} > 0)
 %ifarch x86_64
 Requires:       kmod-kvm
 %endif
