@@ -38,6 +38,17 @@ USAGE_TEXT = """
 Usage:  beaker-system-scan [-d] [-j] [[-h <HOSTNAME>] [-S server]]
 """
 
+def get_helper_program_output(program, *args):
+    """ Run an external program and return it's output"""
+    env = dict(os.environ)
+    env['PATH'] = '/usr/libexec/beaker-system-scan:..:.:' + env['PATH']
+    proc = Popen([program] + list(args), env=env,
+                stdout=PIPE, stderr=PIPE)
+    out, err = proc.communicate()
+    if proc.returncode:
+        raise RuntimeError('Error %s running %s: %s', proc.returncode, program, err)
+    return out
+
 def push_inventory(method, hostname, inventory):
    session = xmlrpclib.Server(lab_server, allow_none=True)
    try:
@@ -164,42 +175,41 @@ def kernel_inventory():
 
     #ok, I am really lazy
     #remove the default blacklist in /etc/multipath.conf
-    os.system("sed -i '/^blacklist/,/^}$/d' /etc/multipath.conf")
+    if os.path.exists('/etc/multipath.conf'):
+        os.system("sed -i '/^blacklist/,/^}$/d' /etc/multipath.conf")
+        #restart multipathd to see what it detects
+        #this spits out errors if the root device is on a
+        #multipath device, I guess ignore for now and hope the code
+        #correctly figures things out
+        os.system("service multipathd restart")
+        #the multipath commands will display the topology if it
+        #exists otherwise nothing
+        #filter out vbds and single device paths
+        status, mpaths = commands.getstatusoutput("multipath -ll")
+        mp = False
+        if status:
+            print >> sys.stderr, "MULTIPATH: multipath -ll failed with %d" % status
+        else:
+            count = 0
+            mpath_pat = re.compile(" dm-[0-9]* ")
+            sd_pat = re.compile(" sd[a-z]")
+            for line in mpaths.split('\n'):
+                #reset when a new section starts
+                if mpath_pat.search(line):
+                    # found at least one mp instance, declare success
+                    if count > 1:
+                        mp = True
+                        break
+                    count = 0
 
-    #restart multipathd to see what it detects
-    #this spits out errors if the root device is on a
-    #multipath device, I guess ignore for now and hope the code
-    #correctly figures things out
-    os.system("service multipathd restart")
+                #a hit! increment to indicate this
+                if sd_pat.search(line):
+                    count = count + 1
 
-    #the multipath commands will display the topology if it
-    #exists otherwise nothing
-    #filter out vbds and single device paths
-    status, mpaths = commands.getstatusoutput("multipath -ll")
-    mp = False
-    if status:
-        print >> sys.stderr, "MULTIPATH: multipath -ll failed with %d" % status
-    else:
-        count = 0
-        mpath_pat = re.compile(" dm-[0-9]* ")
-        sd_pat = re.compile(" sd[a-z]")
-        for line in mpaths.split('\n'):
-            #reset when a new section starts
-            if mpath_pat.search(line):
-                # found at least one mp instance, declare success
-                if count > 1:
-                    mp = True
-                    break
-                count = 0
-
-            #a hit! increment to indicate this
-            if sd_pat.search(line):
-                count = count + 1
-
-    if mp == True:
-        data['DISK_MULTIPATH'] = True
-    else:
-        data['DISK_MULTIPATH'] = False
+        if mp == True:
+            data['DISK_MULTIPATH'] = True
+        else:
+            data['DISK_MULTIPATH'] = False
 
     return data
 
@@ -246,7 +256,7 @@ def legacy_inventory(inv):
             bootdisk = bootregex.search(disk).group(1).replace('/','!')
 
     if bootdisk:
-        drivers = commands.getstatusoutput('/usr/libexec/beaker-system-scan/getdriver.sh %s' % bootdisk)[1].split('\n')[1:]
+        drivers = get_helper_program_output('getdriver.sh', bootdisk).split('\n')[1:]
         for driver in drivers:
             data['BOOTDISK'].append(driver)
 
@@ -256,7 +266,7 @@ def legacy_inventory(inv):
         if line.find('0.0.0.0') == 0:
             iface = line.split()[-1:][0] #eth0, eth1, etc..
     if iface:
-        drivers = commands.getstatusoutput('/usr/libexec/beaker-system-scan/getdriver.sh %s' % iface)[1].split('\n')
+        drivers = get_helper_program_output('getdriver.sh', iface).split('\n')
         if len(drivers) == 1:
             data['NETWORK'] = drivers[0]
         else:
@@ -386,15 +396,20 @@ def read_inventory():
         data['Numa'] = {
             'nodes': len(glob.glob('/sys/devices/system/node/node*')), #: number of NUMA nodes in the system, or 0 if not supported
         }
-
-    if os.path.exists('/usr/libexec/beaker-system-scan/hvm_detect'):
-        hypervisor = Popen(['/usr/libexec/beaker-system-scan/hvm_detect'], stdout=PIPE).communicate()[0]
+    try:
+        hypervisor = get_helper_program_output('hvm_detect')
+    except OSError as e:
+        if e.errno == os.errno.ENOENT and arch != 'x86_64':
+            pass
+        else:
+            raise
+    else:
         hvm_map = {"No KVM or Xen HVM\n"    : None,
                    "KVM guest.\n"           : u'KVM',
                    "Xen HVM guest.\n"       : u'Xen',
                    "Microsoft Hv guest.\n"  : u'HyperV',
                    "VMWare guest.\n"        : u'VMWare',
-                  }
+                }
         data['Hypervisor'] = hvm_map[hypervisor]
 
     for VendorID, DeviceID, SubsysVendorID, SubsysDeviceID, Bus, Driver, Type, Description in profile.deviceIter():
