@@ -44,7 +44,7 @@ static void cpuid(uint32_t idx,
         : "0" (idx), "1" (pv_context) );
 }
 
-static int check_for_hvm(void)
+static void check_for_hvm(void)
 {
     uint32_t eax, ebx, ecx, edx;
     char signature[13];
@@ -58,29 +58,20 @@ static int check_for_hvm(void)
     /* is this a kvm guest? */
     if ( !strcmp("KVMKVMKVM", signature) ) {
        printf("KVM guest.\n");
-       return 1;
     } else if ( !strcmp("XenVMMXenVMM", signature) ) {
        printf("Xen HVM guest.\n");
-       return 1;
     } else if ( !strcmp("Microsoft Hv", signature) ) {
        printf("Microsoft Hv guest.\n");
-       return 1;
     } else if ( !strcmp("VMwareVMware", signature) ) {
        printf("VMWare guest.\n");
-       return 1;
     } else { 
       printf("No KVM or Xen HVM\n");
-      return 0;
     }
-    return 0;
 }
 
 int main(void)
 {
     /* Check for execution in HVM context. */
-    if ( check_for_hvm() )
-        return 0;
-    else 
-        return 1;
-
+    check_for_hvm();
+    return 0;
 }
