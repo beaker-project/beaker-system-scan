@@ -413,6 +413,28 @@ def read_inventory(input_xml=None):
                   stepping   = None,
                )
 
+    elif arch == 'aarch64':
+        def get_processor_info():
+            n_procs = 0
+            with open('/proc/cpuinfo') as f:
+                for line in f:
+                    if line.startswith('processor'):
+                        n_procs += 1
+            return n_procs
+
+        cpu = dict(vendor     = 'ARM',
+                   model      = procCpu.tags['cpu revision'],
+                   modelName  = procCpu.tags['hardware'], # closest equivalent to model name
+                   speed      = 0,  # XXX: find a way to get this
+                   processors = get_processor_info(), #XXX: python-linux-procfs returns wrong value
+                   cores      = int(procCpu.nr_cores), #XXX: wrong value returned
+                   sockets    = int(procCpu.nr_sockets), #XXX: wrong value returned
+                   CpuFlags   = flags,
+                   family     = 0,
+                   stepping   = None,
+               )
+
+
     vendor = inventory.get('vendor')
     product = inventory.get('product')
     memsize = memoryinfo.find('size')
