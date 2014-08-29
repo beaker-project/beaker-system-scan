@@ -4,7 +4,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        1.3
+Version:        1.4
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -51,6 +51,15 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Fri Aug 29 2014 Amit Saha <asaha@redhat.com> 1.4-1
+- Try a more recent version of libparted for Fedora 20+ and RHEL 7+
+  (asaha@redhat.com)
+- Always return 0 from hvm_detect (asaha@redhat.com)
+- Couple of random changes: (asaha@redhat.com)
+- Add Fedora checking for kmod-kvm (asaha@redhat.com)
+- Add a new switch to output JSON data when run in debug mode
+  (asaha@redhat.com)
+
 * Thu May 08 2014 Amit Saha <asaha@redhat.com> 1.3-1
 - s390x 'identification' should be converted to an integer (asaha@redhat.com)
 - s390x and ppc: Fill in CPU model field (asaha@redhat.com)
