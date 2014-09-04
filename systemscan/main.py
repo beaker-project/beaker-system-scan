@@ -524,15 +524,28 @@ def read_inventory(input_xml=None):
         if len(device.xpath(".//setting[@id='driver']")) > 0:
             driver = device.xpath(".//setting[@id='driver']")[0].text
 
-        if device_class not in ['system', 'memory', 'volume', 'processor', 'disk']:
-            data['Devices'].append(dict( vendorID = vendorID,
-                                         deviceID = deviceID,
-                                         subsysVendorID = subsysVendorID,
-                                         subsysDeviceID = subsysDeviceID,
-                                         bus = bus,
-                                         driver = driver,
-                                         type = device_class,
-                                         description = description))
+        # We report these separately
+        if device_class in ['memory', 'processor', 'disk']:
+            continue
+        # The system itself is not a device
+        if device_class == 'system':
+            continue
+        # Volumes/partitions are transient
+        if device_class == 'volume':
+            continue
+        # If none of these have any useful information, skip it
+        if description == 'Unknown' and driver == 'Unknown' and vendorID == '0000' and \
+           deviceID == '0000' and subsysDeviceID == '0000' and subsysVendorID == '0000':
+            continue
+
+        data['Devices'].append(dict( vendorID = vendorID,
+                                     deviceID = deviceID,
+                                     subsysVendorID = subsysVendorID,
+                                     subsysDeviceID = subsysDeviceID,
+                                     bus = bus,
+                                     driver = driver,
+                                     type = device_class,
+                                     description = description))
 
     return data
 
