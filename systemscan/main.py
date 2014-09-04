@@ -497,9 +497,9 @@ def read_inventory(input_xml=None):
                matched_items = match.groups()
                product = matched_items[0]
                if matched_items[1]:
-                  vendorID = matched_items[1]
+                  vendorID = matched_items[1].zfill(4)
                if matched_items[2]:
-                  deviceID = matched_items[2]
+                  deviceID = matched_items[2].zfill(4)
 
             description = product
         elif description is not None:
@@ -518,6 +518,8 @@ def read_inventory(input_xml=None):
             match = re.search("\[[0-9a-fA-F:]*]$", subsys)
             if match is not None:
                 subsysVendorID, subsysDeviceID = match.group().strip("[]").split(':')
+                subsysVendorID = subsysVendorID.zfill(4)
+                subsysDeviceID = subsysDeviceID.zfill(4)
 
         if len(device.xpath(".//setting[@id='driver']")) > 0:
             driver = device.xpath(".//setting[@id='driver']")[0].text
