@@ -484,7 +484,7 @@ def read_inventory(input_xml=None):
 
     for device in devices:
         # Defaults for nonexistent values
-        driver = bus = type = id = "Unknown"
+        driver = bus = device_class = "Unknown"
         vendorID = deviceID = subsysVendorID = subsysDeviceID = "0000"
 
         # Navigate the maze of XML and string parsing
@@ -509,8 +509,8 @@ def read_inventory(input_xml=None):
 
         if device.find('businfo') is not None:
             bus = device.find('businfo').text.split('@')[0]
-        if device.get('id') is not None:
-            id = device.get('id')
+        if device.get('class') is not None:
+            device_class = device.get('class')
 
         subsys = device.find('subsysproduct')
         if subsys is not None:
@@ -522,14 +522,16 @@ def read_inventory(input_xml=None):
         if len(device.xpath(".//setting[@id='driver']")) > 0:
             driver = device.xpath(".//setting[@id='driver']")[0].text
 
-        data['Devices'].append(dict( vendorID = vendorID,
-                                     deviceID = deviceID,
-                                     subsysVendorID = subsysVendorID,
-                                     subsysDeviceID = subsysDeviceID,
-                                     bus = bus,
-                                     driver = driver,
-                                     type = id,
-                                     description = description))
+        if device_class not in ['system', 'memory', 'volume', 'processor', 'disk']:
+            data['Devices'].append(dict( vendorID = vendorID,
+                                         deviceID = deviceID,
+                                         subsysVendorID = subsysVendorID,
+                                         subsysDeviceID = subsysDeviceID,
+                                         bus = bus,
+                                         driver = driver,
+                                         type = device_class,
+                                         description = description))
+
     return data
 
 def usage():
