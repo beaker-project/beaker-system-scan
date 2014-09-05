@@ -309,7 +309,7 @@ def legacy_inventory(inv):
         data['NETBOOT_METHOD'] = open('/root/NETBOOT_METHOD.TXT', 'r').readline()[:-1]
     return data
 
-def read_inventory(input_xml=None):
+def read_inventory(input_xml=None, proc_cpuinfo='/proc/cpuinfo'):
 
     data = {}
     flags = []
@@ -323,6 +323,8 @@ def read_inventory(input_xml=None):
        inventory = Popen(['lshw', '-xml', '-numeric'], stdout=PIPE).communicate()[0]
        inventory = etree.XML(inventory)
 
+    procCpu  = procfs.cpuinfo(filename=proc_cpuinfo)
+
     #Break the xml into the relevant sets of data
     cpuinfo = inventory.xpath(".//node[@class='processor']")[0]
     memory_elems = inventory.xpath(".//node[@class='memory']")
@@ -333,8 +335,6 @@ def read_inventory(input_xml=None):
           memoryinfo = m
 
     devices = inventory.xpath(".//node[@id!='subsystem']")
-    procCpu  = procfs.cpuinfo()
-
     capabilities = cpuinfo.find('capabilities')
     if capabilities is not None:
        for capability in capabilities.getchildren():
