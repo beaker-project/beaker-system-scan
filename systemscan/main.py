@@ -46,7 +46,7 @@ def get_helper_program_output(program, *args):
                 stdout=PIPE, stderr=PIPE)
     out, err = proc.communicate()
     if proc.returncode:
-        raise RuntimeError('Error %s running %s: %s', proc.returncode, program, err)
+        raise RuntimeError('Error %s running %s: %s' % (proc.returncode, program, err))
     return out
 
 def push_inventory(method, hostname, inventory):
@@ -256,10 +256,16 @@ def legacy_inventory(inv):
             bootdisk = bootregex.search(disk).group(1).replace('/','!')
 
     if bootdisk:
-        drivers = get_helper_program_output('getdriver.sh', bootdisk).split('\n')[1:]
-        for driver in drivers:
-            data['BOOTDISK'].append(driver)
-
+        try:
+            drivers = get_helper_program_output('getdriver.sh', bootdisk).split('\n')[1:]
+        except RuntimeError:
+            # /boot might be on a device-mapper device, but getdriver.sh
+            # doesn't handle those properly. We don't care much about
+            # BOOTDISK though so just ignore failures.
+            pass
+        else:
+            for driver in drivers:
+                data['BOOTDISK'].append(driver)
     # Find Active Network interface
     iface = None
     for line in  commands.getstatusoutput('route -n')[1].split('\n'):
