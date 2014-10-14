@@ -181,7 +181,7 @@ def kernel_inventory():
         #this spits out errors if the root device is on a
         #multipath device, I guess ignore for now and hope the code
         #correctly figures things out
-        os.system("service multipathd restart")
+        os.system("service multipathd restart > /dev/null")
         #the multipath commands will display the topology if it
         #exists otherwise nothing
         #filter out vbds and single device paths
