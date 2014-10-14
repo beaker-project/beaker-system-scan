@@ -32,7 +32,7 @@ import shutil
 import glob
 from subprocess import Popen, PIPE
 from lxml import etree
-from disks import Disks
+from systemscan.disks import Disks
 from procfs import procfs
 
 USAGE_TEXT = """
