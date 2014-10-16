@@ -28,6 +28,9 @@ Requires:       iasl
 Requires:       device-mapper-multipath
 Requires:       python-ctypes
 Requires:       python-linux-procfs
+Requires:       python-setuptools
+Requires:       parted
+
 
 %description
 beaker-system-scan is a small script to collect details about the hardware of 
