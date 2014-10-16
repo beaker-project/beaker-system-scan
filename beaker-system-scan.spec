@@ -4,7 +4,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        1.4
+Version:        1.5
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -51,6 +51,12 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Thu Oct 16 2014 Amit Saha <asaha@redhat.com> 1.5-1
+- Redirect stdout of "service multipathd restart" to /dev/null
+  (asaha@redhat.com)
+- Ignore failures from getdriver.sh when finding the bootdisk
+  (asaha@redhat.com)
+
 * Fri Aug 29 2014 Amit Saha <asaha@redhat.com> 1.4-1
 - Try a more recent version of libparted for Fedora 20+ and RHEL 7+
   (asaha@redhat.com)
