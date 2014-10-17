@@ -23,7 +23,7 @@ Requires:       kmod-kvm
 %endif
 %endif
 %ifarch x86_64
-Requires:       iasl
+Requires:       /usr/bin/iasl
 %endif
 Requires:       device-mapper-multipath
 Requires:       python-ctypes
