@@ -18,6 +18,7 @@ BuildRequires:  python-setuptools
 
 Requires:       smolt
 %if 0%{?rhel} < 6  && !(0%{?fedora} > 0)
+Requires:       python-simplejson
 %ifarch x86_64
 Requires:       kmod-kvm
 %endif

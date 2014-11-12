@@ -22,7 +22,12 @@ import os
 import commands
 import pprint
 import math
-import json
+import errno
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
 import re
 import shutil
 import glob
@@ -404,8 +409,8 @@ def read_inventory():
         }
     try:
         hypervisor = get_helper_program_output('hvm_detect')
-    except OSError as e:
-        if e.errno == os.errno.ENOENT and arch != 'x86_64':
+    except OSError, e:
+        if e.errno == errno.ENOENT and arch != 'x86_64':
             pass
         else:
             raise
