@@ -1,6 +1,10 @@
 #!/usr/bin/python
 import unittest
-import json
+
+try:
+    import json
+except ImportError:
+    import simplejson as json
 
 import sys
 sys.path.append('../')
@@ -15,11 +19,12 @@ class SystemScanTest(unittest.TestCase):
                                        proc_cpuinfo='test_proc_cpuinfo')
 
     def test_read_inventory_devices(self):
-        with open('expected_devices.json') as f:
-           devicelist = json.loads(f.read())
+        f = open('expected_devices.json')
+        devicelist = json.loads(f.read())
         for device in devicelist:
             self.assertTrue(device in self.out['Devices'], "Device missing, "
                             "or incorrectly reported: %s" % device['description'])
+        f.close()
 
     def test_read_inventory_cpu(self):
         # Most cpu details are taken straight from proc, not the lshw xml

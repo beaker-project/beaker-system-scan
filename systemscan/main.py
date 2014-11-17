@@ -416,10 +416,11 @@ def read_inventory(input_xml=None, proc_cpuinfo='/proc/cpuinfo'):
     elif arch == 'aarch64':
         def get_processor_info():
             n_procs = 0
-            with open('/proc/cpuinfo') as f:
-                for line in f:
-                    if line.startswith('processor'):
-                        n_procs += 1
+            f = open('/proc/cpuinfo')
+            for line in f:
+                if line.startswith('processor'):
+                    n_procs += 1
+            f.close()
             return n_procs
 
         cpu = dict(vendor     = 'ARM',
