@@ -309,12 +309,11 @@ def legacy_inventory(inv):
         data['NETBOOT_METHOD'] = open('/root/NETBOOT_METHOD.TXT', 'r').readline()[:-1]
     return data
 
-def read_inventory(input_xml=None, proc_cpuinfo='/proc/cpuinfo'):
+def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
     data = {}
     flags = []
     data['Devices'] = []
-    arch = None
     cpu = None
 
     if input_xml is not None:
@@ -396,10 +395,10 @@ def read_inventory(input_xml=None, proc_cpuinfo='/proc/cpuinfo'):
        )
     elif arch == "ia64":
        vendor = cpuinfo.find('vendor')
-       if vendor:
+       if vendor is not None:
           vendor = vendor.text
-          product = cpuinfo.find('product')
-       if product:
+       product = cpuinfo.find('product')
+       if product is not None:
           product = product.text
        cpu = dict(vendor     = vendor,
                   model      = int(procCpu.tags['model']),
@@ -409,7 +408,7 @@ def read_inventory(input_xml=None, proc_cpuinfo='/proc/cpuinfo'):
                   cores      = int(procCpu.nr_cores),
                   sockets    = int(procCpu.nr_sockets),
                    CpuFlags   = flags,
-                  family     = int(procCpu.tags['cpu_family']),
+                  family     = int(procCpu.tags['family'].split()[1]),
                   stepping   = None,
                )
 

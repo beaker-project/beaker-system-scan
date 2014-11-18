@@ -1,0 +1,72 @@
+processor  : 0
+vendor     : GenuineIntel
+arch       : IA-64
+family     : Itanium 2
+model      : 1
+revision   : 1
+archrev    : 0
+features   : branchlong, 16-byte atomic ops
+cpu number : 0
+cpu regs   : 4
+cpu MHz    : 1668.000672
+itc MHz    : 416.667500
+BogoMIPS   : 3325.95
+siblings   : 2
+physical id: 0
+core id    : 0
+thread id  : 0
+
+processor  : 1
+vendor     : GenuineIntel
+arch       : IA-64
+family     : Itanium 2
+model      : 1
+revision   : 1
+archrev    : 0
+features   : branchlong, 16-byte atomic ops
+cpu number : 0
+cpu regs   : 4
+cpu MHz    : 1668.000672
+itc MHz    : 416.667500
+BogoMIPS   : 3325.95
+siblings   : 2
+physical id: 196611
+core id    : 0
+thread id  : 0
+
+processor  : 2
+vendor     : GenuineIntel
+arch       : IA-64
+family     : Itanium 2
+model      : 1
+revision   : 1
+archrev    : 0
+features   : branchlong, 16-byte atomic ops
+cpu number : 0
+cpu regs   : 4
+cpu MHz    : 1668.000672
+itc MHz    : 416.667500
+BogoMIPS   : 3325.95
+siblings   : 2
+physical id: 0
+core id    : 1
+thread id  : 0
+
+processor  : 3
+vendor     : GenuineIntel
+arch       : IA-64
+family     : Itanium 2
+model      : 1
+revision   : 1
+archrev    : 0
+features   : branchlong, 16-byte atomic ops
+cpu number : 0
+cpu regs   : 4
+cpu MHz    : 1668.000672
+itc MHz    : 416.667500
+BogoMIPS   : 3325.95
+siblings   : 2
+physical id: 196611
+core id    : 1
+thread id  : 0
+
