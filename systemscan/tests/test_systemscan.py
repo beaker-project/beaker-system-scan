@@ -16,7 +16,7 @@ class SystemScanTest(unittest.TestCase):
     def setUp(self):
         # Dumping 500 lines of xml directly into a unit test is not ok
         inputxml = open("./test_systemscan_xml").read()
-        self.out = main.read_inventory(input_xml=inputxml, 
+        self.out = main.read_inventory(input_xml=inputxml, arch='x86_64',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo'))
 
     def test_read_inventory_devices(self):
@@ -31,7 +31,7 @@ class SystemScanTest(unittest.TestCase):
         # Most cpu details are taken straight from proc, not the lshw xml
         # and so are not covered by this test
 
-        self.assertEquals('x86-64', self.out['Arch'][0])
+        self.assertEquals('x86_64', self.out['Arch'][0])
         self.assertEquals('Intel Corp.', self.out['Cpu']['vendor'])
         self.assertEquals('Xeon', self.out['Cpu']['modelName'])
 

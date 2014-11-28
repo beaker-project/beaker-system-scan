@@ -338,11 +338,7 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
     if capabilities is not None:
        for capability in capabilities.getchildren():
           flags.append(capability.get('id'))
-          if capability.get('id') in ['i386', 'i686', 'x86-64', 'ppc', 'ppc64', 's390', 's390x', 'ia64']:
-             arch = capability.get('id')
 
-    # if we still don't have the arch
-    # read it from uname (via os.uname())
     if not arch:
        arch = os.uname()[4]
 
