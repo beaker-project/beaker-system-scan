@@ -4,7 +4,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        1.5
+Version:        1.6
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -55,6 +55,11 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Wed Jan 28 2015 Amit Saha <asaha@redhat.com> 1.6-1
+- Make the code Python 2.4 compatible (asaha@redhat.com)
+- iasl => /usr/bin/iasl (asaha@redhat.com)
+- Add runtime dependencies on parted and python-setuptools (asaha@redhat.com)
+
 * Thu Oct 16 2014 Amit Saha <asaha@redhat.com> 1.5-1
 - Redirect stdout of "service multipathd restart" to /dev/null
   (asaha@redhat.com)
