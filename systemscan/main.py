@@ -361,7 +361,7 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                   family     = int(procCpu.tags['cpu family']),
                   stepping   = int(procCpu.tags['stepping']),
        )
-    elif arch in ["ppc", "ppc64"]:
+    elif arch in ["ppc", "ppc64", "ppc64le"]:
        cpu = dict(vendor     = "IBM",
                   model      = int(''.join(re.split('^.*([0-9a-f]{4})\s([0-9a-f]{4}).*$',
                                                     procCpu.tags['revision'])), 16),
