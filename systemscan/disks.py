@@ -81,7 +81,8 @@ class Disks(object):
         try:
             while True:
                 disk = parted.ped_device_get_next(disk)
-                if disk[0].type in [1, 2, 6, 9, 15] and "/dev/sr" not in disk[0].path:
+                # http://www.gnu.org/software/parted/api/device_8h-source.html
+                if disk[0].type in [1, 2, 4, 6, 9, 15] and "/dev/sr" not in disk[0].path:
                     self.disks.append(Disk(disk[0]))
         except ValueError:
             pass
