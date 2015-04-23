@@ -350,6 +350,13 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
        if modelName is not None:
           modelName = modelName.text
 
+       #https://bugzilla.redhat.com/show_bug.cgi?id=1212281
+       try:
+           idx = flags.index('x86-64')
+       except ValueError:
+           pass
+       else:
+           flags[idx] = 'lm'
        cpu = dict(vendor     = vendor,
                   model      = int(procCpu.tags['model']),
                   modelName  = modelName,
