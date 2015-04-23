@@ -72,7 +72,10 @@ class Disks(object):
                 try:
                     parted = CDLL("libparted.so.0")
                 except:
-                    parted = CDLL("libparted.so.2.0.0")
+                    try:
+                        parted = CDLL("libparted.so.2.0.0")
+                    except:
+                        return None
 
         parted.ped_device_get_next.restype = POINTER(PedDevice)
         parted.ped_device_probe_all(None)
