@@ -442,9 +442,9 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                    stepping   = None,
                )
 
-
-    vendor = inventory.get('vendor')
-    product = inventory.get('product')
+    sysinfo = inventory.xpath(".//node[@class='system']")[0]
+    vendor = sysinfo.find('vendor')
+    product = sysinfo.find('product')
     memsize = memoryinfo.find('size')
     if vendor is not None:
        vendor = vendor.text
