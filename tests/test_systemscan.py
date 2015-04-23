@@ -7,8 +7,7 @@ except ImportError:
     import simplejson as json
 
 import sys
-sys.path.append('../')
-import main
+from systemscan import main
 import os
 
 class SystemScanTest(unittest.TestCase):

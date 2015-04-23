@@ -4,3 +4,8 @@ expected_cpu_flags
 In addition to the the flags found in /proc/cpuinfo, this file also
 contains those which are returned by lshw in it's capabilities
 list: x86-64, fpu_exception, wp and cpufreq.
+
+Run the tests
+=============
+
+./run-tests.sh
