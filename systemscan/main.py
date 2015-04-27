@@ -346,6 +346,11 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
        vendor = cpuinfo.find('vendor')
        if vendor is not None:
           vendor = vendor.text
+       #rhbz: 1212284
+       if vendor == 'Intel Corp.':
+           vendor = 'GenuineIntel'
+       if vendor == 'Advanced Micro Devices [AMD]':
+           vendor = 'AuthenticAMD'
        modelName = cpuinfo.find('product')
        if modelName is not None:
           modelName = modelName.text

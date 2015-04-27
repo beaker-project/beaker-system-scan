@@ -28,7 +28,7 @@ class SystemScanTest(unittest.TestCase):
 
     def test_read_inventory_cpu(self):
         self.assertEquals('x86_64', self.out['Arch'][0])
-        self.assertEquals('Intel Corp.', self.out['Cpu']['vendor'])
+        self.assertEquals('GenuineIntel', self.out['Cpu']['vendor'])
         self.assertEquals('Xeon', self.out['Cpu']['modelName'])
 
         expected_flags = open('expected_cpu_flags').read().split()
