@@ -530,7 +530,8 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                 subsysDeviceID = subsysDeviceID.zfill(4)
 
         if len(device.xpath(".//setting[@id='driver']")) > 0:
-            driver = device.xpath(".//setting[@id='driver']")[0].text
+            # An example xml is <setting id="driver" value="hub"/>
+            driver = device.xpath(".//setting[@id='driver']")[0].get('value')
 
         # We report these separately
         if device_class in ['memory', 'processor', 'disk']:
