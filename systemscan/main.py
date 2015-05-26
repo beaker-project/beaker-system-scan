@@ -396,7 +396,7 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                   processors = int(procCpu.tags['# processors']),
                   cores      = 0,
                   sockets    = 0,
-                  CpuFlags   = flags,
+                  CpuFlags   = list(set(flags)),
                   family     = 0,
                   speed      = 0,
                   stepping   = 0,
@@ -415,7 +415,7 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                   processors = int(procCpu.nr_cpus),
                   cores      = int(procCpu.nr_cores),
                   sockets    = int(procCpu.nr_sockets),
-                   CpuFlags   = flags,
+                  CpuFlags   = flags,
                   family     = int(procCpu.tags['family'].split()[1]),
                   stepping   = None,
                )

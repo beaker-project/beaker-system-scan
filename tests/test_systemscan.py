@@ -48,5 +48,16 @@ class SystemScanTest(unittest.TestCase):
         # tests the current state.
         self.assertFalse(out['Cpu']['CpuFlags'])
 
+    # https://bugzilla.redhat.com/show_bug.cgi?id=1212310
+    def test_read_inventory_s390x(self):
+        inputxml = open("./test_lshw_s390x_xml").read()
+        out = main.read_inventory(input_xml=inputxml, arch='s390x',
+                                       proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo_s390x'))
+        self.assertEquals('s390x', out['Arch'][0])
+        self.assertEquals('IBM/S390', out['Cpu']['vendor'])
+        expected_flags = [u'esan3', u'highgprs', u'dfp', u'stfle', u'ldisp', u'eimm', u'zarch', u'etf3eh', u'msa']
+        self.assertEquals(expected_flags, out['Cpu']['CpuFlags'])
+
+
 if __name__ == "__main__":
     unittest.main()
