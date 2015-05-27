@@ -8,4 +8,6 @@ list: x86-64, fpu_exception, wp and cpufreq.
 Run the tests
 =============
 
+NOTE: Please run make if you are on arch x86_64 systems.
+
 ./run-tests.sh
