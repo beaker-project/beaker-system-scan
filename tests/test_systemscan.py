@@ -36,17 +36,19 @@ class SystemScanTest(unittest.TestCase):
         for flag in expected_flags:
             self.assertTrue(flag in self.out['Cpu']['CpuFlags'])
 
+    # https://bugzilla.redhat.com/show_bug.cgi?id=1212307
     def test_read_inventory_ia64(self):
         inputxml = open("./test_lshw_ia64_xml").read()
         out = main.read_inventory(input_xml=inputxml, arch='ia64',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo_ia64'))
         self.assertEquals('ia64', out['Arch'][0])
-        self.assertEquals('Intel Corp.', out['Cpu']['vendor'])
+        self.assertEquals('GenuineIntel', out['Cpu']['vendor'])
         self.assertEquals('Itanium 2', out['Cpu']['modelName'])
-        self.assertEquals(2, out['Cpu']['family'])
-        # This is a bug that needs to be fixed, the test just
-        # tests the current state.
-        self.assertFalse(out['Cpu']['CpuFlags'])
+        self.assertEquals(1, out['Cpu']['family'])
+        expected_flags = ['branchlong', '16-byte atomic ops']
+        self.assertTrue(len(expected_flags), len(self.out['Cpu']['CpuFlags']))
+        self.assertEquals(expected_flags, out['Cpu']['CpuFlags'])
+        self.assertEquals(0, out['Cpu']['stepping'])
 
     # https://bugzilla.redhat.com/show_bug.cgi?id=1212310
     def test_read_inventory_s390x(self):

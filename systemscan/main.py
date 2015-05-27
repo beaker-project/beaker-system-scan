@@ -402,9 +402,13 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                   stepping   = 0,
        )
     elif arch == "ia64":
+       for cpuflag in procCpu.tags['features'].split(","):
+          flags.append(cpuflag.strip())
        vendor = cpuinfo.find('vendor')
        if vendor is not None:
           vendor = vendor.text
+          if vendor == 'Intel Corp.':
+            vendor = 'GenuineIntel'
        product = cpuinfo.find('product')
        if product is not None:
           product = product.text
@@ -415,9 +419,12 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                   processors = int(procCpu.nr_cpus),
                   cores      = int(procCpu.nr_cores),
                   sockets    = int(procCpu.nr_sockets),
-                  CpuFlags   = flags,
-                  family     = int(procCpu.tags['family'].split()[1]),
-                  stepping   = None,
+                  # As the cpu flags are retrieved from /proc/cpuinfo and lshw,
+                  # we need to remove duplicate flags if they are exist.
+                  CpuFlags   = list(set(flags)),
+                  # bz1212307: smolt is using revision for family
+                  family     = int(procCpu.tags['revision']),
+                  stepping   = 0,
                )
 
     elif arch == 'aarch64':
