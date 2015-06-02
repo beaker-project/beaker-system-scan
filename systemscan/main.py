@@ -554,6 +554,9 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
            deviceID == '0000' and subsysDeviceID == '0000' and subsysVendorID == '0000':
             continue
 
+        if device_class == 'storage':
+            if device.xpath("./hints/hint[@name='storage_subclass']"):
+                device_class = device.xpath("./hints/hint[@name='storage_subclass']")[0].get('value')
         data['Devices'].append(dict( vendorID = vendorID,
                                      deviceID = deviceID,
                                      subsysVendorID = subsysVendorID,
