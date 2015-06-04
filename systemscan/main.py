@@ -554,16 +554,22 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
            deviceID == '0000' and subsysDeviceID == '0000' and subsysVendorID == '0000':
             continue
 
+        device_type = None
         if device_class == 'storage':
             if device.xpath("./hints/hint[@name='storage_subclass']"):
-                device_class = device.xpath("./hints/hint[@name='storage_subclass']")[0].get('value')
+                device_type = device.xpath("./hints/hint[@name='storage_subclass']")[0].get('value')
+        else:
+            if device.xpath("./hints/hint[@name='icon']"):
+                device_type = device.xpath("./hints/hint[@name='icon']")[0].get('value')
+        if device_type is None:
+            device_type = device_class
         data['Devices'].append(dict( vendorID = vendorID,
                                      deviceID = deviceID,
                                      subsysVendorID = subsysVendorID,
                                      subsysDeviceID = subsysDeviceID,
                                      bus = bus,
                                      driver = driver,
-                                     type = device_class,
+                                     type = device_type,
                                      description = description))
 
     return data
