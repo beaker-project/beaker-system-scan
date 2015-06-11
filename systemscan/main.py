@@ -563,6 +563,9 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                 device_type = device.xpath("./hints/hint[@name='icon']")[0].get('value')
         if device_type is None:
             device_type = device_class
+        #BZ 1212295
+        if device_type == 'display':
+            device_type = 'video'
         data['Devices'].append(dict( vendorID = vendorID,
                                      deviceID = deviceID,
                                      subsysVendorID = subsysVendorID,
