@@ -572,7 +572,7 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                                      subsysDeviceID = subsysDeviceID,
                                      bus = bus,
                                      driver = driver,
-                                     type = device_type,
+                                     type = device_type.upper(),
                                      description = description))
 
     return data
