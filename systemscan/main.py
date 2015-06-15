@@ -64,8 +64,8 @@ def check_for_virt_iommu():
     arch = read_inventory()['Arch'][0]
     virt_iommu = 0
 
-    if re.search('x86', arch) is not None:
-        #only x86 boxes support virt iommu
+    if arch != 'x86_64':
+        #only x86_64 boxes support virt iommu
         return 0
 
     #test what type of system we are on
