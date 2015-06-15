@@ -479,12 +479,14 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         disklist.append(disk.to_dict())
     diskdata['Disks'] = disklist
     data['Disk'] = diskdata
-    # TODO: Patch form factor support into lshw. 
-    data['formfactor'] = 'Unknown'
     data['Numa'] = {
         'nodes': len(glob.glob('/sys/devices/system/node/node*')), #: number of NUMA nodes in the system, or 0 if not supported
     }
-
+    # default
+    data['formfactor'] = ''
+    chassis = sysinfo.xpath('//configuration/setting[@id="chassis"]')
+    if len(chassis) > 0:
+        data['formfactor'] = chassis[0].get('value')
     try:
         hypervisor = get_helper_program_output('hvm_detect')
     except OSError, e:
