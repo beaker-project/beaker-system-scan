@@ -570,6 +570,9 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         #BZ 1212295
         if device_type == 'display':
             device_type = 'video'
+        #BZ 1213683
+        if device_type == 'multimedia':
+            device_type = 'audio'
         data['Devices'].append(dict( vendorID = vendorID,
                                      deviceID = deviceID,
                                      subsysVendorID = subsysVendorID,
