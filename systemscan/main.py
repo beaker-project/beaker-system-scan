@@ -342,7 +342,11 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
     if not arch:
        arch = os.uname()[4]
 
-    if arch in ['i386', 'i686', 'x86-64', "x86_64"]:
+    # BZ 1213685
+    if arch in ['i486', 'i586', 'i686']:
+        arch = 'i386'
+
+    if arch in ['i386', 'x86-64', "x86_64"]:
        vendor = cpuinfo.find('vendor')
        if vendor is not None:
           vendor = vendor.text

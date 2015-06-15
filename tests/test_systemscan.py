@@ -17,6 +17,8 @@ class SystemScanTest(unittest.TestCase):
         inputxml = open("./test_systemscan_xml").read()
         self.out = main.read_inventory(input_xml=inputxml, arch='x86_64',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo'))
+        self.i686 = main.read_inventory(input_xml=inputxml, arch='i686',
+                                       proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo'))
 
     def test_read_inventory_devices(self):
         f = open('expected_devices.json')
@@ -60,6 +62,8 @@ class SystemScanTest(unittest.TestCase):
         expected_flags = [u'esan3', u'highgprs', u'dfp', u'stfle', u'ldisp', u'eimm', u'zarch', u'etf3eh', u'msa']
         self.assertEquals(expected_flags, out['Cpu']['CpuFlags'])
 
+    def test_map_32bit_archs(self):
+        self.assertEquals('i386', self.i686['Arch'][0])
 
 if __name__ == "__main__":
     unittest.main()
