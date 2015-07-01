@@ -23,9 +23,7 @@ class SystemScanTest(unittest.TestCase):
     def test_read_inventory_devices(self):
         f = open('expected_devices.json')
         devicelist = json.loads(f.read())
-        for device in devicelist:
-            self.assertTrue(device in self.out['Devices'], "Device missing, "
-                            "or incorrectly reported: %s" % device['description'])
+        self.assertEquals(self.out['Devices'], devicelist)
         f.close()
 
     def test_read_inventory_cpu(self):

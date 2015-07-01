@@ -560,28 +560,40 @@ def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
            deviceID == '0000' and subsysDeviceID == '0000' and subsysVendorID == '0000':
             continue
 
-        device_type = None
+        # Map lshw device classes to smolt-compatible device types
+        # https://git.fedorahosted.org/cgit/smolt.git/tree/client/smolt.py#n1015
+        device_type = device_class.upper()
         if device_class == 'storage':
-            if device.xpath("./hints/hint[@name='storage_subclass']"):
-                device_type = device.xpath("./hints/hint[@name='storage_subclass']")[0].get('value')
-        else:
-            if device.xpath("./hints/hint[@name='icon']"):
-                device_type = device.xpath("./hints/hint[@name='icon']")[0].get('value')
-        if device_type is None:
-            device_type = device_class
-        #BZ 1212295
-        if device_type == 'display':
-            device_type = 'video'
-        #BZ 1213683
-        if device_type == 'multimedia':
-            device_type = 'audio'
+            if device.xpath('./capabilities/capability[@id="scsi"]'):
+                device_type = 'SCSI'
+            if device.xpath('./capabilities/capability[@id="ide"]'):
+                device_type = 'IDE'
+            if device.xpath('./capabilities/capability[@id="raid"]'):
+                device_type = 'RAID'
+            if device.xpath('./capabilities/capability[@id="sata"]'):
+                device_type = 'SATA'
+            if device.xpath('./capabilities/capability[@id="sas"]'):
+                device_type = 'SAS'
+        elif device_class == 'serial':
+            if device.xpath('./hints/hint[@name="icon" and @value="usb"]'):
+                device_type = 'USB'
+            if device.xpath('./hints/hint[@name="icon" and @value="firewire"]'):
+                device_type = 'FIREWIRE'
+        elif device_class == 'communication':
+            if device.xpath('./hints/hint[@name="icon" and @value="modem"]'):
+                device_type = 'MODEM'
+        elif device_class == 'display':
+            device_type = 'VIDEO'
+        elif device_class == 'multimedia':
+            device_type = 'AUDIO'
+
         data['Devices'].append(dict( vendorID = vendorID,
                                      deviceID = deviceID,
                                      subsysVendorID = subsysVendorID,
                                      subsysDeviceID = subsysDeviceID,
                                      bus = bus,
                                      driver = driver,
-                                     type = device_type.upper(),
+                                     type = device_type,
                                      description = description))
 
     return data

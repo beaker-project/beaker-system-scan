@@ -123,7 +123,7 @@
     "driver": "ata_generic",
     "deviceID": "1D3C",
     "subsysDeviceID": "1589",
-    "type": "STORAGE"
+    "type": "IDE"
 }, {
     "vendorID": "8086",
     "description": "C600/X79 series chipset KT Controller",
