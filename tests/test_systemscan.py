@@ -6,6 +6,7 @@ try:
 except ImportError:
     import simplejson as json
 
+import lxml.etree
 import sys
 from systemscan import main
 import os
@@ -13,11 +14,10 @@ import os
 class SystemScanTest(unittest.TestCase):
 
     def setUp(self):
-        # Dumping 500 lines of xml directly into a unit test is not ok
-        inputxml = open("./test_systemscan_xml").read()
-        self.out = main.read_inventory(input_xml=inputxml, arch='x86_64',
+        inputxml = lxml.etree.parse('./test_systemscan_xml')
+        self.out = main.read_inventory(inputxml, arch='x86_64',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo'))
-        self.i686 = main.read_inventory(input_xml=inputxml, arch='i686',
+        self.i686 = main.read_inventory(inputxml, arch='i686',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo'))
 
     def test_read_inventory_devices(self):
@@ -38,8 +38,8 @@ class SystemScanTest(unittest.TestCase):
 
     # https://bugzilla.redhat.com/show_bug.cgi?id=1212307
     def test_read_inventory_ia64(self):
-        inputxml = open("./test_lshw_ia64_xml").read()
-        out = main.read_inventory(input_xml=inputxml, arch='ia64',
+        inputxml = lxml.etree.parse('./test_lshw_ia64_xml')
+        out = main.read_inventory(inputxml, arch='ia64',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo_ia64'))
         self.assertEquals('ia64', out['Arch'][0])
         self.assertEquals('GenuineIntel', out['Cpu']['vendor'])
@@ -52,8 +52,8 @@ class SystemScanTest(unittest.TestCase):
 
     # https://bugzilla.redhat.com/show_bug.cgi?id=1212310
     def test_read_inventory_s390x(self):
-        inputxml = open("./test_lshw_s390x_xml").read()
-        out = main.read_inventory(input_xml=inputxml, arch='s390x',
+        inputxml = lxml.etree.parse('./test_lshw_s390x_xml')
+        out = main.read_inventory(inputxml, arch='s390x',
                                        proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo_s390x'))
         self.assertEquals('s390x', out['Arch'][0])
         self.assertEquals('IBM/S390', out['Cpu']['vendor'])

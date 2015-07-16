@@ -18,6 +18,7 @@
 import sys, getopt
 import xmlrpclib
 import os
+import platform
 import commands
 import pprint
 import math
@@ -61,7 +62,7 @@ def push_inventory(method, hostname, inventory):
 
 def check_for_virt_iommu():
 
-    arch = read_inventory()['Arch'][0]
+    arch = platform.machine()
     virt_iommu = 0
 
     if arch != 'x86_64':
@@ -111,7 +112,7 @@ def check_for_virt_iommu():
 
     return virt_iommu
 
-def kernel_inventory():
+def kernel_inventory(lshw_tree):
     data = {}
     data['VIRT_IOMMU'] = False
 
@@ -123,52 +124,13 @@ def kernel_inventory():
         data['VIRT_IOMMU'] = True
 
     ##########################################
-    # determine which stroage controller has a disk behind it
-    path = "/sys/block"
-    virt_pat = re.compile('virtual')
-    floppy_pat = re.compile('fd[0-9]')
-    sr_pat = re.compile('sr[0-9]')
-    for block in glob.glob( os.path.join(path, '*')):
-        #skip read only/floppy devices
-        if sr_pat.search(block) or floppy_pat.search(block):
-            continue
-
-        #skip block devices that don't point to a device
-        if not os.path.islink(block + "/device"):
-            continue
-        sysfs_link = os.readlink(block + "/device")
-
-        #skip virtual devices
-        if virt_pat.search(sysfs_link):
-            continue
-
-        #cheap way to create an absolute path, there is probably a better way
-        sysfs_path = sysfs_link.replace('../..','/sys')
-
-        #start abusing hal to give us the info we want
-        cmd = 'hal-find-by-property --key linux.sysfs_path --string %s' % sysfs_path
-        status,udi =  commands.getstatusoutput(cmd)
-        if status:
-            print >> sys.stderr, "DISK_CONTROLLER: hal-find-by-property failed: %d" % status
-            continue
-
-        while udi:
-            cmd = 'hal-get-property --udi %s --key info.linux.driver 2>/dev/null' % udi
-            status, driver = commands.getstatusoutput(cmd)
-            if status == 0 and driver != "sd" and driver != "sr":
-                #success
-                data['DISK_CONTROLLER'] = driver
-                break
-
-            #get the parent and try again
-            cmd = 'hal-get-property --udi %s  --key info.parent' % udi
-            status,udi =  commands.getstatusoutput(cmd)
-            if status:
-                print >> sys.stderr, "DISK_CONTROLLER: hal-get-property failed: %d" % status
-                break
-
-        if not udi:
-            print >> sys.stderr, "DISK_CONTROLLER: can not determine driver for %s" %block
+    # DISK_CONTROLLER is the kernel driver of the device (e.g. PCI SCSI 
+    # controller card) to which the first hard disk is attached.
+    disk_controller = lshw_tree.xpath(
+            '//node[node/@id="disk" or node/@id="disk:0"]'
+            '/configuration/setting[@id="driver"]/@value')
+    if disk_controller:
+        data['DISK_CONTROLLER'] = disk_controller[0]
 
     ##########################################
     # determine if machine is using multipath or not
@@ -309,18 +271,12 @@ def legacy_inventory(inv):
         data['NETBOOT_METHOD'] = open('/root/NETBOOT_METHOD.TXT', 'r').readline()[:-1]
     return data
 
-def read_inventory(input_xml=None, arch = None, proc_cpuinfo='/proc/cpuinfo'):
+def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
     data = {}
     flags = []
     data['Devices'] = []
     cpu = None
-
-    if input_xml is not None:
-       inventory = etree.XML(input_xml)
-    else:
-       inventory = Popen(['lshw', '-xml', '-numeric'], stdout=PIPE).communicate()[0]
-       inventory = etree.XML(inventory)
 
     procCpu  = procfs.cpuinfo(filename=proc_cpuinfo)
 
@@ -630,9 +586,11 @@ def main():
         if opt in ('-S', '--server'):
             lab_server = val
 
-    inventory = read_inventory()
+    lshw_xml = Popen(['lshw', '-xml', '-numeric'], stdout=PIPE).communicate()[0]
+    lshw_tree = etree.XML(lshw_xml)
+    inventory = read_inventory(lshw_tree)
     legacy_inv = legacy_inventory(inventory)
-    legacy_inv.update(kernel_inventory())
+    legacy_inv.update(kernel_inventory(lshw_tree))
     del inventory['formfactor']
     if debug:
        if json_output:
