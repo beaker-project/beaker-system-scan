@@ -388,24 +388,36 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                )
 
     elif arch == 'aarch64':
-        def get_processor_info():
-            n_procs = 0
-            f = open('/proc/cpuinfo')
-            for line in f:
-                if line.startswith('processor'):
-                    n_procs += 1
-            f.close()
-            return n_procs
+        # count logical CPUs
+        n_procs = 0
+        f = open('/proc/cpuinfo')
+        for line in f:
+            if line.startswith('processor'):
+                n_procs += 1
+        f.close()
+        # count CPU cores
+        n_cores = 0
+        for cpu in inventory.findall('.//node[@class="processor"]'):
+            cores_setting = cpu.find('configuration/setting[@id="cores"]')
+            if cores_setting is not None:
+                n_cores += int(cores_setting.get('value'))
+            else:
+                n_cores += 1
+        # count physical CPUs
+        n_sockets = len(inventory.findall('.//node[@class="processor"]'))
 
-        cpu = dict(vendor     = 'ARM',
-                   model      = procCpu.tags['cpu revision'],
-                   modelName  = procCpu.tags['hardware'], # closest equivalent to model name
-                   speed      = 0,  # XXX: find a way to get this
-                   processors = get_processor_info(), #XXX: python-linux-procfs returns wrong value
-                   cores      = int(procCpu.nr_cores), #XXX: wrong value returned
-                   sockets    = int(procCpu.nr_sockets), #XXX: wrong value returned
+        cpu = dict(vendor     = cpuinfo.findtext('vendor'),
+                   modelName  = cpuinfo.findtext('product'),
+                   speed      = float(cpuinfo.findtext('capacity') or 0) / 1000000,
+                   processors = n_procs,
+                   cores      = n_cores,
+                   sockets    = n_sockets,
                    CpuFlags   = flags,
-                   family     = 0,
+                   # Beaker's data model assumes model/family/stepping are 
+                   # integers, as in the x86 world, so we can't store anything 
+                   # useful in them here.
+                   model      = None,
+                   family     = None,
                    stepping   = None,
                )
 

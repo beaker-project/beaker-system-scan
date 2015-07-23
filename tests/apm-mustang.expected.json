@@ -1,0 +1,92 @@
+{
+  "formfactor": "rackmount", 
+  "vendor": "AppliedMicro", 
+  "Hypervisor": null, 
+  "Devices": [
+    {
+      "vendorID": "0000", 
+      "description": "Mustang", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "pcieport", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "10E8", 
+      "description": "X-Gene PCIe bridge", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "pcieport", 
+      "deviceID": "E004", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "1D6B", 
+      "description": "xHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0003", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1D6B", 
+      "description": "xHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0002", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1D6B", 
+      "description": "xHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0003", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1D6B", 
+      "description": "xHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0002", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }
+  ], 
+  "Numa": {
+    "nodes": 1
+  }, 
+  "memory": 14278, 
+  "model": "Mustang (System SKU#)", 
+  "Disk": {
+    "Disks": []
+  }, 
+  "Arch": [
+    "aarch64"
+  ], 
+  "Cpu": {
+    "modelName": "ARM (APM88XXXX)", 
+    "vendor": "AppliedMicro", 
+    "processors": 8, 
+    "family": null, 
+    "CpuFlags": [
+      "lm"
+    ], 
+    "stepping": null, 
+    "cores": 8, 
+    "model": null, 
+    "speed": 2400.0, 
+    "sockets": 1
+  }
+}

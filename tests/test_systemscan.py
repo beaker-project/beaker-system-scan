@@ -63,5 +63,11 @@ class SystemScanTest(unittest.TestCase):
     def test_map_32bit_archs(self):
         self.assertEquals('i386', self.i686['Arch'][0])
 
+    def test_read_inventory_aarch64(self):
+        inputxml = lxml.etree.parse('apm-mustang.xml')
+        expected = json.load(open('apm-mustang.expected.json'))
+        out = main.read_inventory(inputxml, arch='aarch64')
+        self.assertEquals(expected, out)
+
 if __name__ == "__main__":
     unittest.main()
