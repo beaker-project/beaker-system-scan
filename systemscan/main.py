@@ -33,7 +33,6 @@ import shutil
 import glob
 from subprocess import Popen, PIPE
 from lxml import etree
-from systemscan.disks import Disks
 from procfs import procfs
 
 USAGE_TEXT = """
@@ -241,12 +240,9 @@ def legacy_inventory(inv):
             data['NETWORK'] = drivers[1:][0]
 
     # disk sizes are converted to GiB in key-values for backwards compatibility
-    disks = Disks()
-    data['DISK'] = []
-    for disk in disks:
-        data['DISK'].append(disk.size / 1024**2)
-    data['DISKSPACE'] = disks.disk_space / 1024**2
-    data['NR_DISKS'] = disks.nr_disks
+    data['DISK'] = [int(d['size']) // 1024**2 for d in inv['Disk']['Disks']]
+    data['DISKSPACE'] = sum(data['DISK'])
+    data['NR_DISKS'] = len(data['DISK'])
 
     # finding out eth and ib interfaces...
     eth_pat = re.compile ('^ *eth\d+:')
@@ -441,12 +437,22 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
 
     disklist = []
-    diskdata = {}
-    disks = Disks()
-    for disk in Disks():
-        disklist.append(disk.to_dict())
-    diskdata['Disks'] = disklist
-    data['Disk'] = diskdata
+    for disk in inventory.xpath('.//node[@class="disk"]'):
+        diskinfo = {}
+        if disk.find('size') is None:
+            continue # probably an optical drive
+        # need to send size as an XML-RPC string as it is likely to overflow 
+        # the 32-bit size limit for XML-RPC ints
+        diskinfo['size'] = disk.findtext('size')
+        diskinfo['model'] = disk.findtext('product')
+        logicalsectorsize = disk.find('configuration/setting[@id="logicalsectorsize"]')
+        if logicalsectorsize is not None:
+            diskinfo['sector_size'] = logicalsectorsize.get('value')
+        sectorsize = disk.find('configuration/setting[@id="sectorsize"]')
+        if sectorsize is not None:
+            diskinfo['phys_sector_size'] = sectorsize.get('value')
+        disklist.append(diskinfo)
+    data['Disk'] = {'Disks': disklist}
     data['Numa'] = {
         'nodes': len(glob.glob('/sys/devices/system/node/node*')), #: number of NUMA nodes in the system, or 0 if not supported
     }

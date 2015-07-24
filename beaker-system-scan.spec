@@ -27,10 +27,8 @@ Requires:       kmod-kvm
 Requires:       /usr/bin/iasl
 %endif
 Requires:       device-mapper-multipath
-Requires:       python-ctypes
 Requires:       python-linux-procfs
 Requires:       python-setuptools
-Requires:       parted
 Requires:       python-lxml
 
 %description
