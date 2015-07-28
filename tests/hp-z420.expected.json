@@ -16,11 +16,11 @@
     {
       "vendorID": "8086",
       "description": "Xeon E5/Core i7 DMI2",
-      "subsysVendorID": "0000",
+      "subsysVendorID": "103C",
       "bus": "pci",
       "driver": "Unknown",
       "deviceID": "3C00",
-      "subsysDeviceID": "0000",
+      "subsysDeviceID": "1589",
       "type": "BRIDGE"
     },
     {
@@ -121,7 +121,7 @@
       "driver": "isci",
       "deviceID": "1D6B",
       "subsysDeviceID": "1589",
-      "type": "STORAGE"
+      "type": "SAS"
     },
     {
       "vendorID": "8086",
@@ -195,11 +195,11 @@
     },
     {
       "vendorID": "046D",
-      "description": "USB Keyboard",
+      "description": "USB Optical Mouse",
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "usbhid",
-      "deviceID": "C31D",
+      "deviceID": "C05A",
       "subsysDeviceID": "0000",
       "type": "INPUT"
     },
@@ -285,6 +285,16 @@
     },
     {
       "vendorID": "046D",
+      "description": "USB Keyboard",
+      "subsysVendorID": "0000",
+      "bus": "usb",
+      "driver": "usbhid",
+      "deviceID": "C31D",
+      "subsysDeviceID": "0000",
+      "type": "INPUT"
+    },
+    {
+      "vendorID": "046D",
       "description": "USB Receiver",
       "subsysVendorID": "0000",
       "bus": "usb",
@@ -361,7 +371,7 @@
       "driver": "ahci",
       "deviceID": "2826",
       "subsysDeviceID": "1589",
-      "type": "STORAGE"
+      "type": "RAID"
     },
     {
       "vendorID": "8086",
@@ -568,7 +578,7 @@
       "description": "Xeon E5/Core i7 Processor Home Agent",
       "subsysVendorID": "0000",
       "bus": "pci",
-      "driver": "Unknown",
+      "driver": "sbridge_edac",
       "deviceID": "3CA0",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -588,7 +598,7 @@
       "description": "Xeon E5/Core i7 Integrated Memory Controller Registers",
       "subsysVendorID": "8086",
       "bus": "pci",
-      "driver": "sbridge_edac",
+      "driver": "Unknown",
       "deviceID": "3CA8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -795,13 +805,33 @@
     },
     {
       "vendorID": "0000",
-      "description": "Standard Efficiency",
+      "description": "IBM Enhanced keyboard controller (101/2-key)",
       "subsysVendorID": "0000",
       "bus": "Unknown",
-      "driver": "Unknown",
+      "driver": "i8042 kbd",
       "deviceID": "0000",
       "subsysDeviceID": "0000",
-      "type": "POWER"
+      "type": "INPUT"
+    },
+    {
+      "vendorID": "0000",
+      "description": "Microsoft PS/2-style Mouse",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "i8042 aux",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "INPUT"
+    },
+    {
+      "vendorID": "0000",
+      "description": "PnP device INT3f0d",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "system",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "GENERIC"
     },
     {
       "vendorID": "0000",
@@ -815,43 +845,13 @@
     },
     {
       "vendorID": "0000",
-      "description": "Ethernet interface",
+      "description": "Standard Efficiency",
       "subsysVendorID": "0000",
       "bus": "Unknown",
-      "driver": "veth",
+      "driver": "Unknown",
       "deviceID": "0000",
       "subsysDeviceID": "0000",
-      "type": "NETWORK"
-    },
-    {
-      "vendorID": "0000",
-      "description": "Ethernet interface",
-      "subsysVendorID": "0000",
-      "bus": "Unknown",
-      "driver": "tun",
-      "deviceID": "0000",
-      "subsysDeviceID": "0000",
-      "type": "NETWORK"
-    },
-    {
-      "vendorID": "0000",
-      "description": "Ethernet interface",
-      "subsysVendorID": "0000",
-      "bus": "Unknown",
-      "driver": "tun",
-      "deviceID": "0000",
-      "subsysDeviceID": "0000",
-      "type": "NETWORK"
-    },
-    {
-      "vendorID": "0000",
-      "description": "Ethernet interface",
-      "subsysVendorID": "0000",
-      "bus": "Unknown",
-      "driver": "tun",
-      "deviceID": "0000",
-      "subsysDeviceID": "0000",
-      "type": "NETWORK"
+      "type": "POWER"
     }
   ],
   "Numa": {
@@ -873,7 +873,7 @@
     "x86_64"
   ],
   "Cpu": {
-    "modelName": "Xeon",
+    "modelName": "Intel(R) Xeon(R) CPU E5-1620 0 @ 3.60GHz",
     "vendor": "GenuineIntel",
     "processors": 8,
     "family": 6,
@@ -913,6 +913,7 @@
       "nx",
       "pdpe1gb",
       "rdtscp",
+      "lm",
       "constant_tsc",
       "arch_perfmon",
       "pebs",
@@ -950,7 +951,6 @@
       "ida",
       "arat",
       "epb",
-      "xsaveopt",
       "pln",
       "pts",
       "dtherm",
@@ -959,6 +959,7 @@
       "flexpriority",
       "ept",
       "vpid",
+      "xsaveopt",
       "cpufreq"
     ],
     "stepping": 7,
