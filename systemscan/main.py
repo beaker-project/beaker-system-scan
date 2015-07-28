@@ -489,22 +489,22 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
         usbvendornode = device.find('hints/hint[@name="usb.idVendor"]')
         if usbvendornode is not None:
-            vendorID = '%04X' % int(usbvendornode.get('value'), 16)
+            vendorID = '%04x' % int(usbvendornode.get('value'), 16)
         usbproductnode = device.find('hints/hint[@name="usb.idProduct"]')
         if usbproductnode is not None:
-            deviceID = '%04X' % int(usbproductnode.get('value'), 16)
+            deviceID = '%04x' % int(usbproductnode.get('value'), 16)
         pcivendornode = device.find('hints/hint[@name="pci.vendor"]')
         if pcivendornode is not None:
-            vendorID = '%04X' % int(pcivendornode.get('value'), 16)
+            vendorID = '%04x' % int(pcivendornode.get('value'), 16)
         pcidevicenode = device.find('hints/hint[@name="pci.device"]')
         if pcidevicenode is not None:
-            deviceID = '%04X' % int(pcidevicenode.get('value'), 16)
+            deviceID = '%04x' % int(pcidevicenode.get('value'), 16)
         pcisubvendornode = device.find('hints/hint[@name="pci.subvendor"]')
         if pcisubvendornode is not None:
-            subsysVendorID = '%04X' % int(pcisubvendornode.get('value'), 16)
+            subsysVendorID = '%04x' % int(pcisubvendornode.get('value'), 16)
         pcisubdevicenode = device.find('hints/hint[@name="pci.subdevice"]')
         if pcisubdevicenode is not None:
-            subsysDeviceID = '%04X' % int(pcisubdevicenode.get('value'), 16)
+            subsysDeviceID = '%04x' % int(pcisubdevicenode.get('value'), 16)
 
         if device.find('businfo') is not None:
             bus = device.find('businfo').text.split('@')[0]

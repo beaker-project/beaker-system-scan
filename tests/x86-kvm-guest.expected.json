@@ -16,7 +16,7 @@
     {
       "vendorID": "8086",
       "description": "440FX - 82441FX PMC [Natoma]",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "Unknown",
       "deviceID": "1237",
@@ -26,7 +26,7 @@
     {
       "vendorID": "8086",
       "description": "82371SB PIIX3 ISA [Natoma/Triton II]",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "Unknown",
       "deviceID": "7000",
@@ -36,7 +36,7 @@
     {
       "vendorID": "8086",
       "description": "82371SB PIIX3 IDE [Natoma/Triton II]",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "ata_piix",
       "deviceID": "7010",
@@ -46,7 +46,7 @@
     {
       "vendorID": "8086",
       "description": "82371SB PIIX3 USB [Natoma/Triton II]",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "uhci_hcd",
       "deviceID": "7020",
@@ -54,7 +54,7 @@
       "type": "USB"
     },
     {
-      "vendorID": "1D6B",
+      "vendorID": "1d6b",
       "description": "UHCI Host Controller",
       "subsysVendorID": "0000",
       "bus": "usb",
@@ -66,7 +66,7 @@
     {
       "vendorID": "8086",
       "description": "82371AB/EB/MB PIIX4 ACPI",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "piix4_smbus",
       "deviceID": "7113",
@@ -76,7 +76,7 @@
     {
       "vendorID": "1234",
       "description": "VGA compatible controller",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "Unknown",
       "deviceID": "1111",
@@ -94,9 +94,9 @@
       "type": "GENERIC"
     },
     {
-      "vendorID": "1AF4",
+      "vendorID": "1af4",
       "description": "Virtio network device",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "virtio-pci",
       "deviceID": "1000",
@@ -114,9 +114,9 @@
       "type": "NETWORK"
     },
     {
-      "vendorID": "1AF4",
+      "vendorID": "1af4",
       "description": "Virtio block device",
-      "subsysVendorID": "1AF4",
+      "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "virtio-pci",
       "deviceID": "1001",

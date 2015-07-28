@@ -14,17 +14,17 @@
       "type": "BUS"
     }, 
     {
-      "vendorID": "10E8", 
+      "vendorID": "10e8", 
       "description": "X-Gene PCIe bridge", 
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "pcieport", 
-      "deviceID": "E004", 
+      "deviceID": "e004", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
     }, 
     {
-      "vendorID": "1D6B", 
+      "vendorID": "1d6b", 
       "description": "xHCI Host Controller", 
       "subsysVendorID": "0000", 
       "bus": "usb", 
@@ -34,7 +34,7 @@
       "type": "BUS"
     }, 
     {
-      "vendorID": "1D6B", 
+      "vendorID": "1d6b", 
       "description": "xHCI Host Controller", 
       "subsysVendorID": "0000", 
       "bus": "usb", 
@@ -44,7 +44,7 @@
       "type": "BUS"
     }, 
     {
-      "vendorID": "1D6B", 
+      "vendorID": "1d6b", 
       "description": "xHCI Host Controller", 
       "subsysVendorID": "0000", 
       "bus": "usb", 
@@ -54,7 +54,7 @@
       "type": "BUS"
     }, 
     {
-      "vendorID": "1D6B", 
+      "vendorID": "1d6b", 
       "description": "xHCI Host Controller", 
       "subsysVendorID": "0000", 
       "bus": "usb", 
