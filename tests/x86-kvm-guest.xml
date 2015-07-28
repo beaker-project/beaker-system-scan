@@ -153,11 +153,11 @@
     </node>
     <node id="pci" claimed="true" class="bridge" handle="PCIBUS:0000:00">
      <description>Host bridge</description>
-     <product>440FX - 82441FX PMC [Natoma] [8086:1237]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>440FX - 82441FX PMC [Natoma]</product>
+     <vendor>Intel Corporation</vendor>
      <physid>100</physid>
-     <subsysproduct>Red Hat, Inc [1AF4:1100]</subsysproduct>
-     <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+     <subsysproduct>Red Hat, Inc</subsysproduct>
+     <subsysvendor>Red Hat, Inc</subsysvendor>
      <businfo>pci@0000:00:00.0</businfo>
      <version>02</version>
      <width units="bits">32</width>
@@ -171,11 +171,11 @@
      </hints>
       <node id="isa" claimed="true" class="bridge" handle="PCI:0000:00:01.0">
        <description>ISA bridge</description>
-       <product>82371SB PIIX3 ISA [Natoma/Triton II] [8086:7000]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82371SB PIIX3 ISA [Natoma/Triton II]</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:1100]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:01.0</businfo>
        <version>00</version>
        <width units="bits">32</width>
@@ -197,11 +197,11 @@
       </node>
       <node id="ide" claimed="true" class="storage" handle="PCI:0000:00:01.1">
        <description>IDE interface</description>
-       <product>82371SB PIIX3 IDE [Natoma/Triton II] [8086:7010]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82371SB PIIX3 IDE [Natoma/Triton II]</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1.1</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:1100]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:01.1</businfo>
        <version>00</version>
        <width units="bits">32</width>
@@ -233,11 +233,11 @@
       </node>
       <node id="usb" claimed="true" class="bus" handle="PCI:0000:00:01.2">
        <description>USB controller</description>
-       <product>82371SB PIIX3 USB [Natoma/Triton II] [8086:7020]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82371SB PIIX3 USB [Natoma/Triton II]</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1.2</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:1100]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:01.2</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -263,8 +263,8 @@
         <hint name="pci.vendor" value="0x8086" />
        </hints>
         <node id="usbhost" claimed="true" class="bus" handle="USB:1:1">
-         <product>UHCI Host Controller [1D6B:1]</product>
-         <vendor>Linux 2.6.32-573.el6.x86_64 uhci_hcd [1D6B]</vendor>
+         <product>UHCI Host Controller</product>
+         <vendor>Linux 2.6.32-573.el6.x86_64 uhci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@1</businfo>
          <logicalname>usb1</logicalname>
@@ -289,11 +289,11 @@
       </node>
       <node id="bridge" claimed="true" class="bridge" handle="PCI:0000:00:01.3">
        <description>Bridge</description>
-       <product>82371AB/EB/MB PIIX4 ACPI [8086:7113]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82371AB/EB/MB PIIX4 ACPI</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1.3</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:1100]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:01.3</businfo>
        <version>03</version>
        <width units="bits">32</width>
@@ -318,11 +318,9 @@
       </node>
       <node id="display" class="display" handle="PCI:0000:00:02.0">
        <description>VGA compatible controller</description>
-       <product>[1234:1111]</product>
-       <vendor>[1234]</vendor>
        <physid>2</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:1100]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:02.0</businfo>
        <version>00</version>
        <width units="bits">32</width>
@@ -347,11 +345,11 @@
       </node>
       <node id="memory" claimed="true" class="memory" handle="PCI:0000:00:03.0">
        <description>RAM memory</description>
-       <product>Virtio memory balloon [1AF4:1002]</product>
-       <vendor>Red Hat, Inc [1AF4]</vendor>
+       <product>Virtio memory balloon</product>
+       <vendor>Red Hat, Inc</vendor>
        <physid>3</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:5]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:03.0</businfo>
        <version>00</version>
        <width units="bits">32</width>
@@ -386,11 +384,11 @@
       </node>
       <node id="network" claimed="true" class="network" handle="PCI:0000:00:04.0">
        <description>Ethernet controller</description>
-       <product>Virtio network device [1AF4:1000]</product>
-       <vendor>Red Hat, Inc [1AF4]</vendor>
+       <product>Virtio network device</product>
+       <vendor>Red Hat, Inc</vendor>
        <physid>4</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:1]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:04.0</businfo>
        <version>00</version>
        <width units="bits">32</width>
@@ -444,11 +442,11 @@
       </node>
       <node id="scsi" claimed="true" class="storage" handle="PCI:0000:00:05.0">
        <description>SCSI storage controller</description>
-       <product>Virtio block device [1AF4:1001]</product>
-       <vendor>Red Hat, Inc [1AF4]</vendor>
+       <product>Virtio block device</product>
+       <vendor>Red Hat, Inc</vendor>
        <physid>5</physid>
-       <subsysproduct>Red Hat, Inc [1AF4:2]</subsysproduct>
-       <subsysvendor>Red Hat, Inc [1AF4]</subsysvendor>
+       <subsysproduct>Red Hat, Inc</subsysproduct>
+       <subsysvendor>Red Hat, Inc</subsysvendor>
        <businfo>pci@0000:00:05.0</businfo>
        <version>00</version>
        <width units="bits">32</width>

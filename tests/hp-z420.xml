@@ -345,11 +345,11 @@
     </node>
     <node id="pci" claimed="true" class="bridge" handle="PCIBUS:0000:00">
      <description>Host bridge</description>
-     <product>Xeon E5/Core i7 DMI2 [8086:3C00]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 DMI2</product>
+     <vendor>Intel Corporation</vendor>
      <physid>100</physid>
-     <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-     <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+     <subsysproduct>Hewlett-Packard Company</subsysproduct>
+     <subsysvendor>Hewlett-Packard Company</subsysvendor>
      <businfo>pci@0000:00:00.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -363,8 +363,8 @@
      </hints>
       <node id="pci:0" claimed="true" class="bridge" handle="PCIBUS:0000:03">
        <description>PCI bridge</description>
-       <product>Xeon E5/Core i7 IIO PCI Express Root Port 1a [8086:3C02]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>Xeon E5/Core i7 IIO PCI Express Root Port 1a</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1</physid>
        <businfo>pci@0000:00:01.0</businfo>
        <version>07</version>
@@ -393,8 +393,8 @@
       </node>
       <node id="pci:1" claimed="true" class="bridge" handle="PCIBUS:0000:05">
        <description>PCI bridge</description>
-       <product>Xeon E5/Core i7 IIO PCI Express Root Port 2a [8086:3C04]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>Xeon E5/Core i7 IIO PCI Express Root Port 2a</product>
+       <vendor>Intel Corporation</vendor>
        <physid>2</physid>
        <businfo>pci@0000:00:02.0</businfo>
        <version>07</version>
@@ -425,11 +425,11 @@
        </hints>
         <node id="display" claimed="true" class="display" handle="PCI:0000:05:00.0">
          <description>VGA compatible controller</description>
-         <product>GF106GL [Quadro 2000] [10DE:DD8]</product>
-         <vendor>NVIDIA Corporation [10DE]</vendor>
+         <product>GF106GL [Quadro 2000]</product>
+         <vendor>NVIDIA Corporation</vendor>
          <physid>0</physid>
-         <subsysproduct>Hewlett-Packard Company [103C:84A]</subsysproduct>
-         <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+         <subsysproduct>Hewlett-Packard Company</subsysproduct>
+         <subsysvendor>Hewlett-Packard Company</subsysvendor>
          <businfo>pci@0000:05:00.0</businfo>
          <version>a1</version>
          <width units="bits">64</width>
@@ -466,11 +466,11 @@
         </node>
         <node id="multimedia" claimed="true" class="multimedia" handle="PCI:0000:05:00.1">
          <description>Audio device</description>
-         <product>GF106 High Definition Audio Controller [10DE:BE9]</product>
-         <vendor>NVIDIA Corporation [10DE]</vendor>
+         <product>GF106 High Definition Audio Controller</product>
+         <vendor>NVIDIA Corporation</vendor>
          <physid>0.1</physid>
-         <subsysproduct>Hewlett-Packard Company [103C:84A]</subsysproduct>
-         <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+         <subsysproduct>Hewlett-Packard Company</subsysproduct>
+         <subsysvendor>Hewlett-Packard Company</subsysvendor>
          <businfo>pci@0000:05:00.1</businfo>
          <version>a1</version>
          <width units="bits">32</width>
@@ -501,8 +501,8 @@
       </node>
       <node id="pci:2" claimed="true" class="bridge" handle="PCIBUS:0000:04">
        <description>PCI bridge</description>
-       <product>Xeon E5/Core i7 IIO PCI Express Root Port 3a in PCI Express Mode [8086:3C08]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>Xeon E5/Core i7 IIO PCI Express Root Port 3a in PCI Express Mode</product>
+       <vendor>Intel Corporation</vendor>
        <physid>3</physid>
        <businfo>pci@0000:00:03.0</businfo>
        <version>07</version>
@@ -531,11 +531,11 @@
       </node>
       <node id="generic:0" class="generic" handle="PCI:0000:00:05.0">
        <description>System peripheral</description>
-       <product>Xeon E5/Core i7 Address Map, VTd_Misc, System Management [8086:3C28]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>Xeon E5/Core i7 Address Map, VTd_Misc, System Management</product>
+       <vendor>Intel Corporation</vendor>
        <physid>5</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:05.0</businfo>
        <version>07</version>
        <width units="bits">32</width>
@@ -557,11 +557,11 @@
       </node>
       <node id="generic:1" class="generic" handle="PCI:0000:00:05.2">
        <description>System peripheral</description>
-       <product>Xeon E5/Core i7 Control Status and Global Errors [8086:3C2A]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>Xeon E5/Core i7 Control Status and Global Errors</product>
+       <vendor>Intel Corporation</vendor>
        <physid>5.2</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:05.2</businfo>
        <version>07</version>
        <width units="bits">32</width>
@@ -583,11 +583,11 @@
       </node>
       <node id="generic:2" class="generic" handle="PCI:0000:00:05.4">
        <description>PIC</description>
-       <product>Xeon E5/Core i7 I/O APIC [8086:3C2C]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>Xeon E5/Core i7 I/O APIC</product>
+       <vendor>Intel Corporation</vendor>
        <physid>5.4</physid>
-       <subsysproduct>Xeon E5/Core i7 I/O APIC [8086:3C2C]</subsysproduct>
-       <subsysvendor>Intel Corporation [8086]</subsysvendor>
+       <subsysproduct>Xeon E5/Core i7 I/O APIC</subsysproduct>
+       <subsysvendor>Intel Corporation</subsysvendor>
        <businfo>pci@0000:00:05.4</businfo>
        <version>07</version>
        <width units="bits">32</width>
@@ -614,8 +614,8 @@
       </node>
       <node id="pci:3" claimed="true" class="bridge" handle="PCIBUS:0000:02">
        <description>PCI bridge</description>
-       <product>C600/X79 series chipset PCI Express Virtual Root Port [8086:1D3E]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset PCI Express Virtual Root Port</product>
+       <vendor>Intel Corporation</vendor>
        <physid>11</physid>
        <businfo>pci@0000:00:11.0</businfo>
        <version>05</version>
@@ -645,11 +645,11 @@
        </hints>
         <node id="sas" claimed="true" class="storage" handle="PCI:0000:02:00.0">
          <description>Serial Attached SCSI controller</description>
-         <product>C602 chipset 4-Port SATA Storage Control Unit [8086:1D6B]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>C602 chipset 4-Port SATA Storage Control Unit</product>
+         <vendor>Intel Corporation</vendor>
          <physid>0</physid>
-         <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-         <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+         <subsysproduct>Hewlett-Packard Company</subsysproduct>
+         <subsysvendor>Hewlett-Packard Company</subsysvendor>
          <businfo>pci@0000:02:00.0</businfo>
          <version>05</version>
          <width units="bits">64</width>
@@ -685,11 +685,11 @@
       </node>
       <node id="communication:0" claimed="true" class="communication" handle="PCI:0000:00:16.0">
        <description>Communication controller</description>
-       <product>C600/X79 series chipset MEI Controller #1 [8086:1D3A]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset MEI Controller #1</product>
+       <vendor>Intel Corporation</vendor>
        <physid>16</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:16.0</businfo>
        <version>05</version>
        <width units="bits">64</width>
@@ -718,11 +718,11 @@
       </node>
       <node id="ide" claimed="true" class="storage" handle="PCI:0000:00:16.2">
        <description>IDE interface</description>
-       <product>C600/X79 series chipset IDE-r Controller [8086:1D3C]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset IDE-r Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>16.2</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:16.2</businfo>
        <version>05</version>
        <width units="bits">32</width>
@@ -757,11 +757,11 @@
       </node>
       <node id="communication:1" claimed="true" class="communication" handle="PCI:0000:00:16.3">
        <description>Serial controller</description>
-       <product>C600/X79 series chipset KT Controller [8086:1D3D]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset KT Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>16.3</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:16.3</businfo>
        <version>05</version>
        <width units="bits">32</width>
@@ -793,11 +793,11 @@
       </node>
       <node id="network" claimed="true" class="network" handle="PCI:0000:00:19.0">
        <description>Ethernet interface</description>
-       <product>82579LM Gigabit Network Connection [8086:1502]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82579LM Gigabit Network Connection</product>
+       <vendor>Intel Corporation</vendor>
        <physid>19</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:19.0</businfo>
        <logicalname>eno1</logicalname>
        <version>05</version>
@@ -852,11 +852,11 @@
       </node>
       <node id="usb:0" claimed="true" class="bus" handle="PCI:0000:00:1a.0">
        <description>USB controller</description>
-       <product>C600/X79 series chipset USB2 Enhanced Host Controller #2 [8086:1D2D]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset USB2 Enhanced Host Controller #2</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1a</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:1a.0</businfo>
        <version>05</version>
        <width units="bits">32</width>
@@ -885,8 +885,8 @@
         <hint name="pci.vendor" value="0x8086" />
        </hints>
         <node id="usbhost" claimed="true" class="bus" handle="USB:3:1">
-         <product>EHCI Host Controller [1D6B:2]</product>
-         <vendor>Linux 4.0.8-200.fc21.x86_64 ehci_hcd [1D6B]</vendor>
+         <product>EHCI Host Controller</product>
+         <vendor>Linux 4.0.8-200.fc21.x86_64 ehci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@3</businfo>
          <logicalname>usb3</logicalname>
@@ -909,8 +909,8 @@
          </hints>
           <node id="usb" claimed="true" class="bus" handle="USB:3:2">
            <description>USB hub</description>
-           <product>Integrated Rate Matching Hub [8087:24]</product>
-           <vendor>Intel Corp. [8087]</vendor>
+           <product>Integrated Rate Matching Hub</product>
+           <vendor>Intel Corp.</vendor>
            <physid>1</physid>
            <businfo>usb@3:1</businfo>
            <version>0.00</version>
@@ -932,8 +932,8 @@
            </hints>
             <node id="usb" claimed="true" class="input" handle="USB:3:3">
              <description>Mouse</description>
-             <product>USB Optical Mouse [46D:C05A]</product>
-             <vendor>Logitech [46D]</vendor>
+             <product>USB Optical Mouse</product>
+             <vendor>Logitech</vendor>
              <physid>3</physid>
              <businfo>usb@3:1.3</businfo>
              <version>63.00</version>
@@ -959,11 +959,11 @@
       </node>
       <node id="multimedia" claimed="true" class="multimedia" handle="PCI:0000:00:1b.0">
        <description>Audio device</description>
-       <product>C600/X79 series chipset High Definition Audio Controller [8086:1D20]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset High Definition Audio Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1b</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:1b.0</businfo>
        <version>05</version>
        <width units="bits">64</width>
@@ -993,8 +993,8 @@
       </node>
       <node id="pci:4" claimed="true" class="bridge" handle="PCIBUS:0000:01">
        <description>PCI bridge</description>
-       <product>C600/X79 series chipset PCI Express Root Port 2 [8086:1D12]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset PCI Express Root Port 2</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1c</physid>
        <businfo>pci@0000:00:1c.0</businfo>
        <version>b5</version>
@@ -1023,8 +1023,8 @@
       </node>
       <node id="pci:5" claimed="true" class="bridge" handle="PCIBUS:0000:06">
        <description>PCI bridge</description>
-       <product>C600/X79 series chipset PCI Express Root Port 5 [8086:1D18]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset PCI Express Root Port 5</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1c.5</physid>
        <businfo>pci@0000:00:1c.5</businfo>
        <version>b5</version>
@@ -1053,8 +1053,8 @@
       </node>
       <node id="pci:6" claimed="true" class="bridge" handle="PCIBUS:0000:07">
        <description>PCI bridge</description>
-       <product>C600/X79 series chipset PCI Express Root Port 3 [8086:1D14]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset PCI Express Root Port 3</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1c.6</physid>
        <businfo>pci@0000:00:1c.6</businfo>
        <version>b5</version>
@@ -1083,8 +1083,8 @@
       </node>
       <node id="pci:7" claimed="true" class="bridge" handle="PCIBUS:0000:08">
        <description>PCI bridge</description>
-       <product>C600/X79 series chipset PCI Express Root Port 4 [8086:1D16]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset PCI Express Root Port 4</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1c.7</physid>
        <businfo>pci@0000:00:1c.7</businfo>
        <version>b5</version>
@@ -1113,11 +1113,11 @@
        </hints>
         <node id="usb" claimed="true" class="bus" handle="PCI:0000:08:00.0">
          <description>USB controller</description>
-         <product>TUSB73x0 SuperSpeed USB 3.0 xHCI Host Controller [104C:8241]</product>
-         <vendor>Texas Instruments [104C]</vendor>
+         <product>TUSB73x0 SuperSpeed USB 3.0 xHCI Host Controller</product>
+         <vendor>Texas Instruments</vendor>
          <physid>0</physid>
-         <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-         <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+         <subsysproduct>Hewlett-Packard Company</subsysproduct>
+         <subsysvendor>Hewlett-Packard Company</subsysvendor>
          <businfo>pci@0000:08:00.0</businfo>
          <version>02</version>
          <width units="bits">64</width>
@@ -1149,8 +1149,8 @@
           <hint name="pci.vendor" value="0x104C" />
          </hints>
           <node id="usbhost:0" claimed="true" class="bus" handle="USB:2:1">
-           <product>xHCI Host Controller [1D6B:3]</product>
-           <vendor>Linux 4.0.8-200.fc21.x86_64 xhci-hcd [1D6B]</vendor>
+           <product>xHCI Host Controller</product>
+           <vendor>Linux 4.0.8-200.fc21.x86_64 xhci-hcd</vendor>
            <physid>0</physid>
            <businfo>usb@2</businfo>
            <logicalname>usb2</logicalname>
@@ -1173,8 +1173,8 @@
            </hints>
           </node>
           <node id="usbhost:1" claimed="true" class="bus" handle="USB:1:1">
-           <product>xHCI Host Controller [1D6B:2]</product>
-           <vendor>Linux 4.0.8-200.fc21.x86_64 xhci-hcd [1D6B]</vendor>
+           <product>xHCI Host Controller</product>
+           <vendor>Linux 4.0.8-200.fc21.x86_64 xhci-hcd</vendor>
            <physid>1</physid>
            <businfo>usb@1</businfo>
            <logicalname>usb1</logicalname>
@@ -1197,8 +1197,8 @@
            </hints>
             <node id="usb:0" claimed="true" class="input" handle="USB:1:2">
              <description>Keyboard</description>
-             <product>USB Keyboard [46D:C31D]</product>
-             <vendor>Logitech [46D]</vendor>
+             <product>USB Keyboard</product>
+             <vendor>Logitech</vendor>
              <physid>2</physid>
              <businfo>usb@1:2</businfo>
              <version>66.00</version>
@@ -1221,8 +1221,8 @@
             </node>
             <node id="usb:1" claimed="true" class="input" handle="USB:1:3">
              <description>Keyboard</description>
-             <product>USB Receiver [46D:C52B]</product>
-             <vendor>Logitech [46D]</vendor>
+             <product>USB Receiver</product>
+             <vendor>Logitech</vendor>
              <physid>3</physid>
              <businfo>usb@1:3</businfo>
              <version>12.01</version>
@@ -1248,11 +1248,11 @@
       </node>
       <node id="usb:1" claimed="true" class="bus" handle="PCI:0000:00:1d.0">
        <description>USB controller</description>
-       <product>C600/X79 series chipset USB2 Enhanced Host Controller #1 [8086:1D26]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset USB2 Enhanced Host Controller #1</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1d</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:1d.0</businfo>
        <version>05</version>
        <width units="bits">32</width>
@@ -1281,8 +1281,8 @@
         <hint name="pci.vendor" value="0x8086" />
        </hints>
         <node id="usbhost" claimed="true" class="bus" handle="USB:4:1">
-         <product>EHCI Host Controller [1D6B:2]</product>
-         <vendor>Linux 4.0.8-200.fc21.x86_64 ehci_hcd [1D6B]</vendor>
+         <product>EHCI Host Controller</product>
+         <vendor>Linux 4.0.8-200.fc21.x86_64 ehci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@4</businfo>
          <logicalname>usb4</logicalname>
@@ -1305,8 +1305,8 @@
          </hints>
           <node id="usb" claimed="true" class="bus" handle="USB:4:2">
            <description>USB hub</description>
-           <product>Integrated Rate Matching Hub [8087:24]</product>
-           <vendor>Intel Corp. [8087]</vendor>
+           <product>Integrated Rate Matching Hub</product>
+           <vendor>Intel Corp.</vendor>
            <physid>1</physid>
            <businfo>usb@4:1</businfo>
            <version>0.00</version>
@@ -1331,8 +1331,8 @@
       </node>
       <node id="pci:8" claimed="true" class="bridge" handle="PCIBUS:0000:09">
        <description>PCI bridge</description>
-       <product>82801 PCI Bridge [8086:244E]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82801 PCI Bridge</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1e</physid>
        <businfo>pci@0000:00:1e.0</businfo>
        <version>a5</version>
@@ -1354,11 +1354,11 @@
        </hints>
         <node id="firewire" claimed="true" class="bus" handle="PCI:0000:09:05.0">
          <description>FireWire (IEEE 1394)</description>
-         <product>FW322/323 [TrueFire] 1394a Controller [11C1:5811]</product>
-         <vendor>LSI Corporation [11C1]</vendor>
+         <product>FW322/323 [TrueFire] 1394a Controller</product>
+         <vendor>LSI Corporation</vendor>
          <physid>5</physid>
-         <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-         <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+         <subsysproduct>Hewlett-Packard Company</subsysproduct>
+         <subsysvendor>Hewlett-Packard Company</subsysvendor>
          <businfo>pci@0000:09:05.0</businfo>
          <version>70</version>
          <width units="bits">32</width>
@@ -1391,11 +1391,11 @@
       </node>
       <node id="isa" claimed="true" class="bridge" handle="PCI:0000:00:1f.0">
        <description>ISA bridge</description>
-       <product>C600/X79 series chipset LPC Controller [8086:1D41]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset LPC Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1f</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:1f.0</businfo>
        <version>05</version>
        <width units="bits">32</width>
@@ -1422,11 +1422,11 @@
       </node>
       <node id="raid" claimed="true" class="storage" handle="PCI:0000:00:1f.2">
        <description>RAID bus controller</description>
-       <product>C600/X79 series chipset SATA RAID Controller [8086:2826]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset SATA RAID Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1f.2</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:1f.2</businfo>
        <logicalname>scsi0</logicalname>
        <logicalname>scsi2</logicalname>
@@ -1575,11 +1575,11 @@
       </node>
       <node id="serial" claimed="true" class="bus" handle="PCI:0000:00:1f.3">
        <description>SMBus</description>
-       <product>C600/X79 series chipset SMBus Host Controller [8086:1D22]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>C600/X79 series chipset SMBus Host Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1f.3</physid>
-       <subsysproduct>Hewlett-Packard Company [103C:1589]</subsysproduct>
-       <subsysvendor>Hewlett-Packard Company [103C]</subsysvendor>
+       <subsysproduct>Hewlett-Packard Company</subsysproduct>
+       <subsysvendor>Hewlett-Packard Company</subsysvendor>
        <businfo>pci@0000:00:1f.3</businfo>
        <version>05</version>
        <width units="bits">64</width>
@@ -1604,11 +1604,11 @@
     </node>
     <node id="generic:0" class="generic" handle="PCI:0000:ff:08.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 QPI Link 0 [8086:3C80]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QPI Link 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>8</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:08.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1626,11 +1626,11 @@
     </node>
     <node id="generic:1" class="generic" handle="PCI:0000:ff:08.3">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 QPI Link Reut 0 [8086:3C83]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QPI Link Reut 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>8.3</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:08.3</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1652,11 +1652,11 @@
     </node>
     <node id="generic:2" class="generic" handle="PCI:0000:ff:08.4">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 QPI Link Reut 0 [8086:3C84]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QPI Link Reut 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>8.4</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:08.4</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1678,11 +1678,11 @@
     </node>
     <node id="generic:3" class="generic" handle="PCI:0000:ff:09.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 QPI Link 1 [8086:3C90]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QPI Link 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>9</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:09.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1700,11 +1700,11 @@
     </node>
     <node id="generic:4" class="generic" handle="PCI:0000:ff:09.3">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 QPI Link Reut 1 [8086:3C93]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QPI Link Reut 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>9.3</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:09.3</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1726,11 +1726,11 @@
     </node>
     <node id="generic:5" class="generic" handle="PCI:0000:ff:09.4">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 QPI Link Reut 1 [8086:3C94]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QPI Link Reut 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>9.4</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:09.4</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1752,11 +1752,11 @@
     </node>
     <node id="generic:6" class="generic" handle="PCI:0000:ff:0a.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Power Control Unit 0 [8086:3CC0]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Power Control Unit 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>a</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0a.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1774,11 +1774,11 @@
     </node>
     <node id="generic:7" class="generic" handle="PCI:0000:ff:0a.1">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Power Control Unit 1 [8086:3CC1]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Power Control Unit 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>a.1</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0a.1</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1796,11 +1796,11 @@
     </node>
     <node id="generic:8" class="generic" handle="PCI:0000:ff:0a.2">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Power Control Unit 2 [8086:3CC2]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Power Control Unit 2</product>
+     <vendor>Intel Corporation</vendor>
      <physid>a.2</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0a.2</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1818,11 +1818,11 @@
     </node>
     <node id="generic:9" class="generic" handle="PCI:0000:ff:0a.3">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Power Control Unit 3 [8086:3CD0]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Power Control Unit 3</product>
+     <vendor>Intel Corporation</vendor>
      <physid>a.3</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0a.3</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1840,11 +1840,11 @@
     </node>
     <node id="generic:10" class="generic" handle="PCI:0000:ff:0b.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Interrupt Control Registers [8086:3CE0]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Interrupt Control Registers</product>
+     <vendor>Intel Corporation</vendor>
      <physid>b</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0b.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1862,11 +1862,11 @@
     </node>
     <node id="generic:11" class="generic" handle="PCI:0000:ff:0b.3">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Semaphore and Scratchpad Configuration Registers [8086:3CE3]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Semaphore and Scratchpad Configuration Registers</product>
+     <vendor>Intel Corporation</vendor>
      <physid>b.3</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0b.3</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1884,11 +1884,11 @@
     </node>
     <node id="generic:12" class="generic" handle="PCI:0000:ff:0c.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Unicast Register 0 [8086:3CE8]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Unicast Register 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>c</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0c.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1906,11 +1906,11 @@
     </node>
     <node id="generic:13" class="generic" handle="PCI:0000:ff:0c.1">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Unicast Register 0 [8086:3CE8]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Unicast Register 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>c.1</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0c.1</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1928,11 +1928,11 @@
     </node>
     <node id="generic:14" class="generic" handle="PCI:0000:ff:0c.6">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller System Address Decoder 0 [8086:3CF4]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller System Address Decoder 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>c.6</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0c.6</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1950,11 +1950,11 @@
     </node>
     <node id="generic:15" class="generic" handle="PCI:0000:ff:0c.7">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 System Address Decoder [8086:3CF6]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 System Address Decoder</product>
+     <vendor>Intel Corporation</vendor>
      <physid>c.7</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0c.7</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1972,11 +1972,11 @@
     </node>
     <node id="generic:16" class="generic" handle="PCI:0000:ff:0d.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Unicast Register 0 [8086:3CE8]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Unicast Register 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>d</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0d.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -1994,11 +1994,11 @@
     </node>
     <node id="generic:17" class="generic" handle="PCI:0000:ff:0d.1">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Unicast Register 0 [8086:3CE8]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Unicast Register 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>d.1</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0d.1</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2016,11 +2016,11 @@
     </node>
     <node id="generic:18" class="generic" handle="PCI:0000:ff:0d.6">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller System Address Decoder 1 [8086:3CF5]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller System Address Decoder 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>d.6</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0d.6</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2038,8 +2038,8 @@
     </node>
     <node id="generic:19" claimed="true" class="generic" handle="PCI:0000:ff:0e.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Processor Home Agent [8086:3CA0]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Processor Home Agent</product>
+     <vendor>Intel Corporation</vendor>
      <physid>e</physid>
      <businfo>pci@0000:ff:0e.0</businfo>
      <version>07</version>
@@ -2060,8 +2060,8 @@
     </node>
     <node id="generic:20" claimed="true" class="generic" handle="PCI:0000:ff:0e.1">
      <description>Performance counters</description>
-     <product>Xeon E5/Core i7 Processor Home Agent Performance Monitoring [8086:3C46]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Processor Home Agent Performance Monitoring</product>
+     <vendor>Intel Corporation</vendor>
      <physid>e.1</physid>
      <businfo>pci@0000:ff:0e.1</businfo>
      <version>07</version>
@@ -2082,11 +2082,11 @@
     </node>
     <node id="generic:21" class="generic" handle="PCI:0000:ff:0f.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Registers [8086:3CA8]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Registers</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2108,11 +2108,11 @@
     </node>
     <node id="generic:22" class="generic" handle="PCI:0000:ff:0f.1">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller RAS Registers [8086:3C71]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller RAS Registers</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f.1</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.1</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2134,11 +2134,11 @@
     </node>
     <node id="generic:23" class="generic" handle="PCI:0000:ff:0f.2">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 0 [8086:3CAA]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f.2</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.2</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2160,11 +2160,11 @@
     </node>
     <node id="generic:24" class="generic" handle="PCI:0000:ff:0f.3">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 1 [8086:3CAB]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f.3</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.3</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2186,11 +2186,11 @@
     </node>
     <node id="generic:25" class="generic" handle="PCI:0000:ff:0f.4">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 2 [8086:3CAC]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 2</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f.4</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.4</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2212,11 +2212,11 @@
     </node>
     <node id="generic:26" class="generic" handle="PCI:0000:ff:0f.5">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 3 [8086:3CAD]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 3</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f.5</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.5</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2238,11 +2238,11 @@
     </node>
     <node id="generic:27" class="generic" handle="PCI:0000:ff:0f.6">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 4 [8086:3CAE]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Target Address Decoder 4</product>
+     <vendor>Intel Corporation</vendor>
      <physid>f.6</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:0f.6</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2263,11 +2263,11 @@
     </node>
     <node id="generic:28" claimed="true" class="generic" handle="PCI:0000:ff:10.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 0 [8086:3CB0]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2293,11 +2293,11 @@
     </node>
     <node id="generic:29" claimed="true" class="generic" handle="PCI:0000:ff:10.1">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 1 [8086:3CB1]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.1</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.1</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2323,11 +2323,11 @@
     </node>
     <node id="generic:30" class="generic" handle="PCI:0000:ff:10.2">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 0 [8086:3CB2]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 0</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.2</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.2</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2349,11 +2349,11 @@
     </node>
     <node id="generic:31" class="generic" handle="PCI:0000:ff:10.3">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 1 [8086:3CB3]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 1</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.3</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.3</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2375,11 +2375,11 @@
     </node>
     <node id="generic:32" claimed="true" class="generic" handle="PCI:0000:ff:10.4">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 2 [8086:3CB4]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 2</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.4</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.4</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2405,11 +2405,11 @@
     </node>
     <node id="generic:33" claimed="true" class="generic" handle="PCI:0000:ff:10.5">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 3 [8086:3CB5]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller Channel 0-3 Thermal Control 3</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.5</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.5</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2435,11 +2435,11 @@
     </node>
     <node id="generic:34" class="generic" handle="PCI:0000:ff:10.6">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 2 [8086:3CB6]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 2</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.6</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.6</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2461,11 +2461,11 @@
     </node>
     <node id="generic:35" class="generic" handle="PCI:0000:ff:10.7">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 3 [8086:3CB7]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Integrated Memory Controller ERROR Registers 3</product>
+     <vendor>Intel Corporation</vendor>
      <physid>10.7</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:10.7</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2487,11 +2487,11 @@
     </node>
     <node id="generic:36" class="generic" handle="PCI:0000:ff:11.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 DDRIO [8086:3CB8]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 DDRIO</product>
+     <vendor>Intel Corporation</vendor>
      <physid>11</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:11.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2512,11 +2512,11 @@
     </node>
     <node id="generic:37" class="generic" handle="PCI:0000:ff:13.0">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 R2PCIe [8086:3CE4]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 R2PCIe</product>
+     <vendor>Intel Corporation</vendor>
      <physid>13</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:13.0</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2534,11 +2534,11 @@
     </node>
     <node id="generic:38" claimed="true" class="generic" handle="PCI:0000:ff:13.1">
      <description>Performance counters</description>
-     <product>Xeon E5/Core i7 Ring to PCI Express Performance Monitor [8086:3C43]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Ring to PCI Express Performance Monitor</product>
+     <vendor>Intel Corporation</vendor>
      <physid>13.1</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:13.1</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2560,11 +2560,11 @@
     </node>
     <node id="generic:39" class="generic" handle="PCI:0000:ff:13.4">
      <description>Performance counters</description>
-     <product>Xeon E5/Core i7 QuickPath Interconnect Agent Ring Registers [8086:3CE6]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 QuickPath Interconnect Agent Ring Registers</product>
+     <vendor>Intel Corporation</vendor>
      <physid>13.4</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:13.4</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2582,11 +2582,11 @@
     </node>
     <node id="generic:40" claimed="true" class="generic" handle="PCI:0000:ff:13.5">
      <description>Performance counters</description>
-     <product>Xeon E5/Core i7 Ring to QuickPath Interconnect Link 0 Performance Monitor [8086:3C44]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Ring to QuickPath Interconnect Link 0 Performance Monitor</product>
+     <vendor>Intel Corporation</vendor>
      <physid>13.5</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:13.5</businfo>
      <version>07</version>
      <width units="bits">32</width>
@@ -2608,11 +2608,11 @@
     </node>
     <node id="generic:41" claimed="true" class="generic" handle="PCI:0000:ff:13.6">
      <description>System peripheral</description>
-     <product>Xeon E5/Core i7 Ring to QuickPath Interconnect Link 1 Performance Monitor [8086:3C45]</product>
-     <vendor>Intel Corporation [8086]</vendor>
+     <product>Xeon E5/Core i7 Ring to QuickPath Interconnect Link 1 Performance Monitor</product>
+     <vendor>Intel Corporation</vendor>
      <physid>13.6</physid>
-     <subsysproduct>Intel Corporation [8086:0]</subsysproduct>
-     <subsysvendor>Intel Corporation [8086]</subsysvendor>
+     <subsysproduct>Intel Corporation</subsysproduct>
+     <subsysvendor>Intel Corporation</subsysvendor>
      <businfo>pci@0000:ff:13.6</businfo>
      <version>07</version>
      <width units="bits">32</width>

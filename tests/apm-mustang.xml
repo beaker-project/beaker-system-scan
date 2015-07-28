@@ -96,8 +96,8 @@
     </node>
     <node id="pci" claimed="true" class="bridge" handle="PCIBUS:0000:01">
      <description>PCI bridge</description>
-     <product>X-Gene PCIe bridge [10E8:E004]</product>
-     <vendor>Applied Micro Circuits Corp. [10E8]</vendor>
+     <product>X-Gene PCIe bridge</product>
+     <vendor>Applied Micro Circuits Corp.</vendor>
      <physid>100</physid>
      <businfo>pci@0000:00:00.0</businfo>
      <version>04</version>
@@ -125,8 +125,8 @@
     </node>
   </node>
   <node id="usbhost:0" claimed="true" class="bus" handle="USB:4:1">
-   <product>xHCI Host Controller [1D6B:3]</product>
-   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd [1D6B]</vendor>
+   <product>xHCI Host Controller</product>
+   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd</vendor>
    <physid>1</physid>
    <businfo>usb@4</businfo>
    <logicalname>usb4</logicalname>
@@ -149,8 +149,8 @@
    </hints>
   </node>
   <node id="usbhost:1" claimed="true" class="bus" handle="USB:3:1">
-   <product>xHCI Host Controller [1D6B:2]</product>
-   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd [1D6B]</vendor>
+   <product>xHCI Host Controller</product>
+   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd</vendor>
    <physid>2</physid>
    <businfo>usb@3</businfo>
    <logicalname>usb3</logicalname>
@@ -173,8 +173,8 @@
    </hints>
   </node>
   <node id="usbhost:2" claimed="true" class="bus" handle="USB:2:1">
-   <product>xHCI Host Controller [1D6B:3]</product>
-   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd [1D6B]</vendor>
+   <product>xHCI Host Controller</product>
+   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd</vendor>
    <physid>3</physid>
    <businfo>usb@2</businfo>
    <logicalname>usb2</logicalname>
@@ -197,8 +197,8 @@
    </hints>
   </node>
   <node id="usbhost:3" claimed="true" class="bus" handle="USB:1:1">
-   <product>xHCI Host Controller [1D6B:2]</product>
-   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd [1D6B]</vendor>
+   <product>xHCI Host Controller</product>
+   <vendor>Linux 3.19.0-0.79.aa7a.aarch64 xhci-hcd</vendor>
    <physid>4</physid>
    <businfo>usb@1</businfo>
    <logicalname>usb1</logicalname>

@@ -364,8 +364,8 @@
     </node>
     <node id="pci:0" claimed="true" class="bridge" handle="PCIBUS:0000:01">
      <description>PCI bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>1</physid>
      <subsysproduct>[0:0]</subsysproduct>
      <subsysvendor>[0]</subsysvendor>
@@ -393,8 +393,8 @@
      </resources>
       <node id="pci:0" claimed="true" class="bridge" handle="PCIBUS:0000:02">
        <description>PCI bridge</description>
-       <product>6311ESB/6321ESB PCI Express Upstream Port [8086:3500]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>6311ESB/6321ESB PCI Express Upstream Port</product>
+       <vendor>Intel Corporation</vendor>
        <physid>0</physid>
        <subsysproduct>[0:0]</subsysproduct>
        <subsysvendor>[0]</subsysvendor>
@@ -421,8 +421,8 @@
        </resources>
         <node id="pci:0" claimed="true" class="bridge" handle="PCIBUS:0000:03">
          <description>PCI bridge</description>
-         <product>6311ESB/6321ESB PCI Express Downstream Port E1 [8086:3510]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>6311ESB/6321ESB PCI Express Downstream Port E1</product>
+         <vendor>Intel Corporation</vendor>
          <physid>0</physid>
          <subsysproduct>[0:0]</subsysproduct>
          <subsysvendor>[0]</subsysvendor>
@@ -451,8 +451,8 @@
         </node>
         <node id="pci:1" claimed="true" class="bridge" handle="PCIBUS:0000:05">
          <description>PCI bridge</description>
-         <product>6311ESB/6321ESB PCI Express Downstream Port E3 [8086:3518]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>6311ESB/6321ESB PCI Express Downstream Port E3</product>
+         <vendor>Intel Corporation</vendor>
          <physid>2</physid>
          <subsysproduct>[0:0]</subsysproduct>
          <subsysvendor>[0]</subsysvendor>
@@ -479,11 +479,11 @@
          </resources>
           <node id="network:0" disabled="true" claimed="true" class="network" handle="PCI:0000:05:00.0">
            <description>Ethernet interface</description>
-           <product>80003ES2LAN Gigabit Ethernet Controller (Copper) [8086:1096]</product>
-           <vendor>Intel Corporation [8086]</vendor>
+           <product>80003ES2LAN Gigabit Ethernet Controller (Copper)</product>
+           <vendor>Intel Corporation</vendor>
            <physid>0</physid>
            <subsysproduct>[1054:3018]</subsysproduct>
-           <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+           <subsysvendor>Hitachi, Ltd</subsysvendor>
            <businfo>pci@0000:05:00.0</businfo>
            <logicalname>eth1</logicalname>
            <version>ff</version>
@@ -529,11 +529,11 @@
           </node>
           <node id="network:1" disabled="true" claimed="true" class="network" handle="PCI:0000:05:00.1">
            <description>Ethernet interface</description>
-           <product>80003ES2LAN Gigabit Ethernet Controller (Copper) [8086:1096]</product>
-           <vendor>Intel Corporation [8086]</vendor>
+           <product>80003ES2LAN Gigabit Ethernet Controller (Copper)</product>
+           <vendor>Intel Corporation</vendor>
            <physid>0.1</physid>
            <subsysproduct>[1054:3018]</subsysproduct>
-           <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+           <subsysvendor>Hitachi, Ltd</subsysvendor>
            <businfo>pci@0000:05:00.1</businfo>
            <logicalname>eth2</logicalname>
            <version>ff</version>
@@ -578,8 +578,8 @@
       </node>
       <node id="pci:1" claimed="true" class="bridge" handle="PCIBUS:0000:06">
        <description>PCI bridge</description>
-       <product>6311ESB/6321ESB PCI Express to PCI-X Bridge [8086:350C]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>6311ESB/6321ESB PCI Express to PCI-X Bridge</product>
+       <vendor>Intel Corporation</vendor>
        <physid>0.3</physid>
        <subsysproduct>[0:0]</subsysproduct>
        <subsysvendor>[0]</subsysvendor>
@@ -602,11 +602,11 @@
        </resources>
         <node id="scsi" claimed="true" class="storage" handle="SCSI:00">
          <description>SCSI storage controller</description>
-         <product>SAS1068 PCI-X Fusion-MPT SAS [1000:54]</product>
-         <vendor>LSI Logic / Symbios Logic [1000]</vendor>
+         <product>SAS1068 PCI-X Fusion-MPT SAS</product>
+         <vendor>LSI Logic / Symbios Logic</vendor>
          <physid>1</physid>
          <subsysproduct>[1054:3054]</subsysproduct>
-         <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+         <subsysvendor>Hitachi, Ltd</subsysvendor>
          <businfo>pci@0000:06:01.0</businfo>
          <logicalname>scsi0</logicalname>
          <version>01</version>
@@ -705,8 +705,8 @@
     </node>
     <node id="pci:1" claimed="true" class="bridge" handle="PCIBUS:0000:07">
      <description>PCI bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>2</physid>
      <subsysproduct>[0:0]</subsysproduct>
      <subsysvendor>[0]</subsysvendor>
@@ -735,8 +735,8 @@
     </node>
     <node id="pci:2" claimed="true" class="bridge" handle="PCIBUS:0000:00">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>100</physid>
      <businfo>pci@0000:00:10.0</businfo>
      <version>02</version>
@@ -744,8 +744,8 @@
      <clock units="Hz">33000000</clock>
       <node id="pci:0" claimed="true" class="bridge" handle="PCIBUS:0000:09">
        <description>PCI bridge</description>
-       <product>631xESB/632xESB/3100 Chipset PCI Express Root Port 1 [8086:2690]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset PCI Express Root Port 1</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1c</physid>
        <subsysproduct>[0:0]</subsysproduct>
        <subsysvendor>[0]</subsysvendor>
@@ -773,8 +773,8 @@
        </resources>
         <node id="pci:0" claimed="true" class="bridge" handle="PCIBUS:0000:0a">
          <description>PCI bridge</description>
-         <product>6700PXH PCI Express-to-PCI Bridge A [8086:329]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>6700PXH PCI Express-to-PCI Bridge A</product>
+         <vendor>Intel Corporation</vendor>
          <physid>0</physid>
          <subsysproduct>[0:0]</subsysproduct>
          <subsysvendor>[0]</subsysvendor>
@@ -805,8 +805,8 @@
         </node>
         <node id="generic:0" class="generic" handle="PCI:0000:09:00.1">
          <description>PIC</description>
-         <product>6700/6702PXH I/OxAPIC Interrupt Controller A [8086:326]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>6700/6702PXH I/OxAPIC Interrupt Controller A</product>
+         <vendor>Intel Corporation</vendor>
          <physid>0.1</physid>
          <subsysproduct>[0:0]</subsysproduct>
          <subsysvendor>[0]</subsysvendor>
@@ -830,8 +830,8 @@
         </node>
         <node id="pci:1" claimed="true" class="bridge" handle="PCIBUS:0000:0c">
          <description>PCI bridge</description>
-         <product>6700PXH PCI Express-to-PCI Bridge B [8086:32A]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>6700PXH PCI Express-to-PCI Bridge B</product>
+         <vendor>Intel Corporation</vendor>
          <physid>0.2</physid>
          <subsysproduct>[0:0]</subsysproduct>
          <subsysvendor>[0]</subsysvendor>
@@ -862,8 +862,8 @@
         </node>
         <node id="generic:1" class="generic" handle="PCI:0000:09:00.3">
          <description>PIC</description>
-         <product>6700PXH I/OxAPIC Interrupt Controller B [8086:327]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>6700PXH I/OxAPIC Interrupt Controller B</product>
+         <vendor>Intel Corporation</vendor>
          <physid>0.3</physid>
          <subsysproduct>[0:0]</subsysproduct>
          <subsysvendor>[0]</subsysvendor>
@@ -888,11 +888,11 @@
       </node>
       <node id="usb:0" claimed="true" class="bus" handle="PCI:0000:00:1d.0">
        <description>USB controller</description>
-       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #1 [8086:2688]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #1</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1d</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1d.0</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -910,8 +910,8 @@
         <resource type="ioport" value="2000(size=32)" />
        </resources>
         <node id="usbhost" claimed="true" class="bus" handle="USB:2:1">
-         <product>UHCI Host Controller [0:0]</product>
-         <vendor>Linux 2.6.18-398.el5 uhci_hcd [0]</vendor>
+         <product>UHCI Host Controller</product>
+         <vendor>Linux 2.6.18-398.el5 uhci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@2</businfo>
          <logicalname>usb2</logicalname>
@@ -926,8 +926,8 @@
          </capabilities>
           <node id="usb" claimed="true" class="bus" handle="USB:2:2">
            <description>USB hub</description>
-           <product>TUSB2046 Hub [451:2046]</product>
-           <vendor>Texas Instruments, Inc. [451]</vendor>
+           <product>TUSB2046 Hub</product>
+           <vendor>Texas Instruments, Inc.</vendor>
            <physid>1</physid>
            <businfo>usb@2:1</businfo>
            <version>1.25</version>
@@ -944,11 +944,11 @@
       </node>
       <node id="usb:1" claimed="true" class="bus" handle="PCI:0000:00:1d.1">
        <description>USB controller</description>
-       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #2 [8086:2689]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #2</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1d.1</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1d.1</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -966,8 +966,8 @@
         <resource type="ioport" value="2020(size=32)" />
        </resources>
         <node id="usbhost" claimed="true" class="bus" handle="USB:3:1">
-         <product>UHCI Host Controller [0:0]</product>
-         <vendor>Linux 2.6.18-398.el5 uhci_hcd [0]</vendor>
+         <product>UHCI Host Controller</product>
+         <vendor>Linux 2.6.18-398.el5 uhci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@3</businfo>
          <logicalname>usb3</logicalname>
@@ -984,11 +984,11 @@
       </node>
       <node id="usb:2" claimed="true" class="bus" handle="PCI:0000:00:1d.2">
        <description>USB controller</description>
-       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #3 [8086:268A]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #3</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1d.2</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1d.2</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -1006,8 +1006,8 @@
         <resource type="ioport" value="2040(size=32)" />
        </resources>
         <node id="usbhost" claimed="true" class="bus" handle="USB:4:1">
-         <product>UHCI Host Controller [0:0]</product>
-         <vendor>Linux 2.6.18-398.el5 uhci_hcd [0]</vendor>
+         <product>UHCI Host Controller</product>
+         <vendor>Linux 2.6.18-398.el5 uhci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@4</businfo>
          <logicalname>usb4</logicalname>
@@ -1022,8 +1022,8 @@
          </capabilities>
           <node id="usb" claimed="true" class="input" handle="USB:4:2">
            <description>Keyboard</description>
-           <product>USB Compliant Keyboard [5A4:9841]</product>
-           <vendor>Ortek Technology, Inc. [5A4]</vendor>
+           <product>USB Compliant Keyboard</product>
+           <vendor>Ortek Technology, Inc.</vendor>
            <physid>1</physid>
            <businfo>usb@4:1</businfo>
            <version>1.10</version>
@@ -1040,11 +1040,11 @@
       </node>
       <node id="usb:3" claimed="true" class="bus" handle="PCI:0000:00:1d.3">
        <description>USB controller</description>
-       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #4 [8086:268B]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset UHCI USB Controller #4</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1d.3</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1d.3</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -1062,8 +1062,8 @@
         <resource type="ioport" value="2060(size=32)" />
        </resources>
         <node id="usbhost" claimed="true" class="bus" handle="USB:5:1">
-         <product>UHCI Host Controller [0:0]</product>
-         <vendor>Linux 2.6.18-398.el5 uhci_hcd [0]</vendor>
+         <product>UHCI Host Controller</product>
+         <vendor>Linux 2.6.18-398.el5 uhci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@5</businfo>
          <logicalname>usb5</logicalname>
@@ -1080,11 +1080,11 @@
       </node>
       <node id="usb:4" claimed="true" class="bus" handle="PCI:0000:00:1d.7">
        <description>USB controller</description>
-       <product>631xESB/632xESB/3100 Chipset EHCI USB2 Controller [8086:268C]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset EHCI USB2 Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1d.7</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1d.7</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -1105,8 +1105,8 @@
         <resource type="memory" value="fbfff000-fbfff3ff" />
        </resources>
         <node id="usbhost" claimed="true" class="bus" handle="USB:1:1">
-         <product>EHCI Host Controller [0:0]</product>
-         <vendor>Linux 2.6.18-398.el5 ehci_hcd [0]</vendor>
+         <product>EHCI Host Controller</product>
+         <vendor>Linux 2.6.18-398.el5 ehci_hcd</vendor>
          <physid>1</physid>
          <businfo>usb@1</businfo>
          <logicalname>usb1</logicalname>
@@ -1123,8 +1123,8 @@
       </node>
       <node id="pci:1" claimed="true" class="bridge" handle="PCIBUS:0000:0e">
        <description>PCI bridge</description>
-       <product>82801 PCI Bridge [8086:244E]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>82801 PCI Bridge</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1e</physid>
        <subsysproduct>[0:0]</subsysproduct>
        <subsysvendor>[0]</subsysvendor>
@@ -1145,11 +1145,11 @@
        </resources>
         <node id="display" class="display" handle="PCI:0000:0e:01.0">
          <description>VGA compatible controller</description>
-         <product>ES1000 [1002:515E]</product>
-         <vendor>Advanced Micro Devices, Inc. [AMD/ATI] [1002]</vendor>
+         <product>ES1000</product>
+         <vendor>Advanced Micro Devices, Inc. [AMD/ATI]</vendor>
          <physid>1</physid>
          <subsysproduct>[1002:515E]</subsysproduct>
-         <subsysvendor>Advanced Micro Devices, Inc. [AMD/ATI] [1002]</subsysvendor>
+         <subsysvendor>Advanced Micro Devices, Inc. [AMD/ATI]</subsysvendor>
          <businfo>pci@0000:0e:01.0</businfo>
          <version>02</version>
          <width units="bits">32</width>
@@ -1173,11 +1173,11 @@
         </node>
         <node id="network" claimed="true" class="network" handle="PCI:0000:0e:02.0">
          <description>Ethernet interface</description>
-         <product>82557/8/9/0/1 Ethernet Pro 100 [8086:1229]</product>
-         <vendor>Intel Corporation [8086]</vendor>
+         <product>82557/8/9/0/1 Ethernet Pro 100</product>
+         <vendor>Intel Corporation</vendor>
          <physid>2</physid>
-         <subsysproduct>Accelgraphics Inc. [1054:1040]</subsysproduct>
-         <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+         <subsysproduct>Accelgraphics Inc.</subsysproduct>
+         <subsysvendor>Hitachi, Ltd</subsysvendor>
          <businfo>pci@0000:0e:02.0</businfo>
          <logicalname>eth0</logicalname>
          <version>10</version>
@@ -1228,11 +1228,11 @@
       </node>
       <node id="isa" claimed="true" class="bridge" handle="PCI:0000:00:1f.0">
        <description>ISA bridge</description>
-       <product>631xESB/632xESB/3100 Chipset LPC Interface Controller [8086:2670]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB/3100 Chipset LPC Interface Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1f</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1f.0</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -1247,11 +1247,11 @@
       </node>
       <node id="ide" claimed="true" class="storage" handle="PCI:0000:00:1f.1">
        <description>IDE interface</description>
-       <product>631xESB/632xESB IDE Controller [8086:269E]</product>
-       <vendor>Intel Corporation [8086]</vendor>
+       <product>631xESB/632xESB IDE Controller</product>
+       <vendor>Intel Corporation</vendor>
        <physid>1f.1</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:00:1f.1</businfo>
        <version>09</version>
        <width units="bits">32</width>
@@ -1304,8 +1304,8 @@
     </node>
     <node id="pci:3" claimed="true" class="bridge" handle="PCIBUS:0000:00">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>101</physid>
      <businfo>pci@0000:00:11.0</businfo>
      <version>02</version>
@@ -1314,8 +1314,8 @@
     </node>
     <node id="pci:4" claimed="true" class="bridge" handle="PCIBUS:0000:00">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>102</physid>
      <businfo>pci@0000:00:12.0</businfo>
      <version>02</version>
@@ -1324,8 +1324,8 @@
     </node>
     <node id="pci:5" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>103</physid>
      <businfo>pci@0000:0f:00.0</businfo>
      <version>02</version>
@@ -1333,11 +1333,11 @@
      <clock units="Hz">33000000</clock>
       <node id="memory:0" class="memory" handle="PCI:0000:0f:05.0">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.0</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1348,11 +1348,11 @@
       </node>
       <node id="memory:1" class="memory" handle="PCI:0000:0f:05.1">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.1</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.1</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1363,11 +1363,11 @@
       </node>
       <node id="memory:2" class="memory" handle="PCI:0000:0f:05.2">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.2</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.2</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1378,11 +1378,11 @@
       </node>
       <node id="memory:3" class="memory" handle="PCI:0000:0f:05.3">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.3</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.3</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1393,11 +1393,11 @@
       </node>
       <node id="memory:4" class="memory" handle="PCI:0000:0f:05.4">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.4</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.4</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1408,11 +1408,11 @@
       </node>
       <node id="memory:5" class="memory" handle="PCI:0000:0f:05.5">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.5</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.5</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1423,11 +1423,11 @@
       </node>
       <node id="memory:6" class="memory" handle="PCI:0000:0f:05.6">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.6</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.6</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1438,11 +1438,11 @@
       </node>
       <node id="memory:7" class="memory" handle="PCI:0000:0f:05.7">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>5.7</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:05.7</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1453,11 +1453,11 @@
       </node>
       <node id="memory:8" class="memory" handle="PCI:0000:0f:07.0">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.0</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1468,11 +1468,11 @@
       </node>
       <node id="memory:9" class="memory" handle="PCI:0000:0f:07.1">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.1</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.1</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1483,11 +1483,11 @@
       </node>
       <node id="memory:10" class="memory" handle="PCI:0000:0f:07.2">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.2</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.2</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1498,11 +1498,11 @@
       </node>
       <node id="memory:11" class="memory" handle="PCI:0000:0f:07.3">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.3</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.3</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1513,11 +1513,11 @@
       </node>
       <node id="memory:12" class="memory" handle="PCI:0000:0f:07.4">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.4</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.4</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1528,11 +1528,11 @@
       </node>
       <node id="memory:13" class="memory" handle="PCI:0000:0f:07.5">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.5</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.5</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1543,11 +1543,11 @@
       </node>
       <node id="memory:14" class="memory" handle="PCI:0000:0f:07.6">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.6</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.6</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1558,11 +1558,11 @@
       </node>
       <node id="memory:15" class="memory" handle="PCI:0000:0f:07.7">
        <description>RAM memory</description>
-       <product>ColdFusion 3e Chipset Memory Controller Hub [1054:3012]</product>
-       <vendor>Hitachi, Ltd [1054]</vendor>
+       <product>ColdFusion 3e Chipset Memory Controller Hub</product>
+       <vendor>Hitachi, Ltd</vendor>
        <physid>7.7</physid>
        <subsysproduct>[1054:300F]</subsysproduct>
-       <subsysvendor>Hitachi, Ltd [1054]</subsysvendor>
+       <subsysvendor>Hitachi, Ltd</subsysvendor>
        <businfo>pci@0000:0f:07.7</businfo>
        <version>01</version>
        <width units="bits">32</width>
@@ -1574,8 +1574,8 @@
     </node>
     <node id="pci:6" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>104</physid>
      <businfo>pci@0000:0f:00.1</businfo>
      <version>02</version>
@@ -1584,8 +1584,8 @@
     </node>
     <node id="pci:7" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>105</physid>
      <businfo>pci@0000:0f:00.2</businfo>
      <version>02</version>
@@ -1594,8 +1594,8 @@
     </node>
     <node id="pci:8" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>106</physid>
      <businfo>pci@0000:0f:00.3</businfo>
      <version>02</version>
@@ -1604,8 +1604,8 @@
     </node>
     <node id="pci:9" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>107</physid>
      <businfo>pci@0000:0f:00.4</businfo>
      <version>02</version>
@@ -1614,8 +1614,8 @@
     </node>
     <node id="pci:10" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>108</physid>
      <businfo>pci@0000:0f:00.5</businfo>
      <version>02</version>
@@ -1624,8 +1624,8 @@
     </node>
     <node id="pci:11" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>109</physid>
      <businfo>pci@0000:0f:00.6</businfo>
      <version>02</version>
@@ -1634,8 +1634,8 @@
     </node>
     <node id="pci:12" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>10a</physid>
      <businfo>pci@0000:0f:00.7</businfo>
      <version>02</version>
@@ -1644,8 +1644,8 @@
     </node>
     <node id="pci:13" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>10b</physid>
      <businfo>pci@0000:0f:01.0</businfo>
      <version>02</version>
@@ -1654,8 +1654,8 @@
     </node>
     <node id="pci:14" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>10c</physid>
      <businfo>pci@0000:0f:01.1</businfo>
      <version>02</version>
@@ -1664,8 +1664,8 @@
     </node>
     <node id="pci:15" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>10d</physid>
      <businfo>pci@0000:0f:01.2</businfo>
      <version>02</version>
@@ -1674,8 +1674,8 @@
     </node>
     <node id="pci:16" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>10e</physid>
      <businfo>pci@0000:0f:01.3</businfo>
      <version>02</version>
@@ -1684,8 +1684,8 @@
     </node>
     <node id="pci:17" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>10f</physid>
      <businfo>pci@0000:0f:01.4</businfo>
      <version>02</version>
@@ -1694,8 +1694,8 @@
     </node>
     <node id="pci:18" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>110</physid>
      <businfo>pci@0000:0f:01.5</businfo>
      <version>02</version>
@@ -1704,8 +1704,8 @@
     </node>
     <node id="pci:19" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>111</physid>
      <businfo>pci@0000:0f:01.6</businfo>
      <version>02</version>
@@ -1714,8 +1714,8 @@
     </node>
     <node id="pci:20" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>112</physid>
      <businfo>pci@0000:0f:01.7</businfo>
      <version>02</version>
@@ -1724,8 +1724,8 @@
     </node>
     <node id="pci:21" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>113</physid>
      <businfo>pci@0000:0f:02.0</businfo>
      <version>02</version>
@@ -1734,8 +1734,8 @@
     </node>
     <node id="pci:22" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>114</physid>
      <businfo>pci@0000:0f:02.1</businfo>
      <version>02</version>
@@ -1744,8 +1744,8 @@
     </node>
     <node id="pci:23" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>115</physid>
      <businfo>pci@0000:0f:02.2</businfo>
      <version>02</version>
@@ -1754,8 +1754,8 @@
     </node>
     <node id="pci:24" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>116</physid>
      <businfo>pci@0000:0f:02.3</businfo>
      <version>02</version>
@@ -1764,8 +1764,8 @@
     </node>
     <node id="pci:25" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>117</physid>
      <businfo>pci@0000:0f:02.4</businfo>
      <version>02</version>
@@ -1774,8 +1774,8 @@
     </node>
     <node id="pci:26" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>118</physid>
      <businfo>pci@0000:0f:02.5</businfo>
      <version>02</version>
@@ -1784,8 +1784,8 @@
     </node>
     <node id="pci:27" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>119</physid>
      <businfo>pci@0000:0f:02.6</businfo>
      <version>02</version>
@@ -1794,8 +1794,8 @@
     </node>
     <node id="pci:28" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>11a</physid>
      <businfo>pci@0000:0f:02.7</businfo>
      <version>02</version>
@@ -1804,8 +1804,8 @@
     </node>
     <node id="pci:29" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>11b</physid>
      <businfo>pci@0000:0f:03.0</businfo>
      <version>02</version>
@@ -1814,8 +1814,8 @@
     </node>
     <node id="pci:30" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>11c</physid>
      <businfo>pci@0000:0f:03.1</businfo>
      <version>02</version>
@@ -1824,8 +1824,8 @@
     </node>
     <node id="pci:31" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>11d</physid>
      <businfo>pci@0000:0f:03.2</businfo>
      <version>02</version>
@@ -1834,8 +1834,8 @@
     </node>
     <node id="pci:32" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>11e</physid>
      <businfo>pci@0000:0f:04.0</businfo>
      <version>02</version>
@@ -1844,8 +1844,8 @@
     </node>
     <node id="pci:33" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>11f</physid>
      <businfo>pci@0000:0f:04.1</businfo>
      <version>02</version>
@@ -1854,8 +1854,8 @@
     </node>
     <node id="pci:34" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>120</physid>
      <businfo>pci@0000:0f:04.2</businfo>
      <version>02</version>
@@ -1864,8 +1864,8 @@
     </node>
     <node id="pci:35" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>121</physid>
      <businfo>pci@0000:0f:04.3</businfo>
      <version>02</version>
@@ -1874,8 +1874,8 @@
     </node>
     <node id="pci:36" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>122</physid>
      <businfo>pci@0000:0f:04.4</businfo>
      <version>02</version>
@@ -1884,8 +1884,8 @@
     </node>
     <node id="pci:37" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>123</physid>
      <businfo>pci@0000:0f:04.5</businfo>
      <version>02</version>
@@ -1894,8 +1894,8 @@
     </node>
     <node id="pci:38" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>124</physid>
      <businfo>pci@0000:0f:04.6</businfo>
      <version>02</version>
@@ -1904,8 +1904,8 @@
     </node>
     <node id="pci:39" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>125</physid>
      <businfo>pci@0000:0f:10.0</businfo>
      <version>02</version>
@@ -1914,8 +1914,8 @@
     </node>
     <node id="pci:40" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>126</physid>
      <businfo>pci@0000:0f:10.1</businfo>
      <version>02</version>
@@ -1924,8 +1924,8 @@
     </node>
     <node id="pci:41" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>127</physid>
      <businfo>pci@0000:0f:10.2</businfo>
      <version>02</version>
@@ -1934,8 +1934,8 @@
     </node>
     <node id="pci:42" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>128</physid>
      <businfo>pci@0000:0f:11.0</businfo>
      <version>02</version>
@@ -1944,8 +1944,8 @@
     </node>
     <node id="pci:43" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>129</physid>
      <businfo>pci@0000:0f:11.1</businfo>
      <version>02</version>
@@ -1954,8 +1954,8 @@
     </node>
     <node id="pci:44" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>12a</physid>
      <businfo>pci@0000:0f:11.2</businfo>
      <version>02</version>
@@ -1964,8 +1964,8 @@
     </node>
     <node id="pci:45" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>12b</physid>
      <businfo>pci@0000:0f:12.0</businfo>
      <version>02</version>
@@ -1974,8 +1974,8 @@
     </node>
     <node id="pci:46" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>12c</physid>
      <businfo>pci@0000:0f:12.1</businfo>
      <version>02</version>
@@ -1984,8 +1984,8 @@
     </node>
     <node id="pci:47" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>12d</physid>
      <businfo>pci@0000:0f:12.2</businfo>
      <version>02</version>
@@ -1994,8 +1994,8 @@
     </node>
     <node id="pci:48" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>12e</physid>
      <businfo>pci@0000:0f:13.0</businfo>
      <version>02</version>
@@ -2004,8 +2004,8 @@
     </node>
     <node id="pci:49" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>12f</physid>
      <businfo>pci@0000:0f:13.1</businfo>
      <version>02</version>
@@ -2014,8 +2014,8 @@
     </node>
     <node id="pci:50" claimed="true" class="bridge" handle="PCIBUS:0000:0f">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>130</physid>
      <businfo>pci@0000:0f:13.2</businfo>
      <version>02</version>
@@ -2024,8 +2024,8 @@
     </node>
     <node id="pci:51" claimed="true" class="bridge" handle="PCIBUS:0000:e0">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>131</physid>
      <businfo>pci@0000:e0:00.0</businfo>
      <version>00</version>
@@ -2034,8 +2034,8 @@
     </node>
     <node id="pci:52" claimed="true" class="bridge" handle="PCIBUS:0000:e0">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>132</physid>
      <businfo>pci@0000:e0:00.1</businfo>
      <version>00</version>
@@ -2044,8 +2044,8 @@
     </node>
     <node id="pci:53" claimed="true" class="bridge" handle="PCIBUS:0000:e0">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>133</physid>
      <businfo>pci@0000:e0:03.0</businfo>
      <version>02</version>
@@ -2054,8 +2054,8 @@
     </node>
     <node id="pci:54" claimed="true" class="bridge" handle="PCIBUS:0000:e0">
      <description>Host bridge</description>
-     <product>ColdFusion 3e Chipset Processor to I/O Controller [1054:3011]</product>
-     <vendor>Hitachi, Ltd [1054]</vendor>
+     <product>ColdFusion 3e Chipset Processor to I/O Controller</product>
+     <vendor>Hitachi, Ltd</vendor>
      <physid>134</physid>
      <businfo>pci@0000:e0:04.0</businfo>
      <version>02</version>

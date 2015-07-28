@@ -479,42 +479,37 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
     for device in devices:
         # Defaults for nonexistent values
-        driver = bus = device_class = "Unknown"
+        description = driver = bus = device_class = "Unknown"
         vendorID = deviceID = subsysVendorID = subsysDeviceID = "0000"
 
-        # Navigate the maze of XML and string parsing
-        product = device.find('product')
-        description = device.find('description')
-        if product is not None:
-            product = device.find('product').text
-            match = re.search(r'(.*?)(?: \[(\w+):(\w+)\])?$', product)
-            if match is not None:
-               matched_items = match.groups()
-               product = matched_items[0]
-               if matched_items[1]:
-                  vendorID = matched_items[1].zfill(4)
-               if matched_items[2]:
-                  deviceID = matched_items[2].zfill(4)
+        if device.findtext('product'):
+            description = device.findtext('product')
+        elif device.findtext('description'):
+            description = device.findtext('description')
 
-            description = product
-        elif description is not None:
-            description = description.text
-        else:
-            description = "Unknown"
+        usbvendornode = device.find('hints/hint[@name="usb.idVendor"]')
+        if usbvendornode is not None:
+            vendorID = '%04X' % int(usbvendornode.get('value'), 16)
+        usbproductnode = device.find('hints/hint[@name="usb.idProduct"]')
+        if usbproductnode is not None:
+            deviceID = '%04X' % int(usbproductnode.get('value'), 16)
+        pcivendornode = device.find('hints/hint[@name="pci.vendor"]')
+        if pcivendornode is not None:
+            vendorID = '%04X' % int(pcivendornode.get('value'), 16)
+        pcidevicenode = device.find('hints/hint[@name="pci.device"]')
+        if pcidevicenode is not None:
+            deviceID = '%04X' % int(pcidevicenode.get('value'), 16)
+        pcisubvendornode = device.find('hints/hint[@name="pci.subvendor"]')
+        if pcisubvendornode is not None:
+            subsysVendorID = '%04X' % int(pcisubvendornode.get('value'), 16)
+        pcisubdevicenode = device.find('hints/hint[@name="pci.subdevice"]')
+        if pcisubdevicenode is not None:
+            subsysDeviceID = '%04X' % int(pcisubdevicenode.get('value'), 16)
 
         if device.find('businfo') is not None:
             bus = device.find('businfo').text.split('@')[0]
         if device.get('class') is not None:
             device_class = device.get('class')
-
-        subsys = device.find('subsysproduct')
-        if subsys is not None:
-            subsys = subsys.text
-            match = re.search("\[[0-9a-fA-F:]*]$", subsys)
-            if match is not None:
-                subsysVendorID, subsysDeviceID = match.group().strip("[]").split(':')
-                subsysVendorID = subsysVendorID.zfill(4)
-                subsysDeviceID = subsysDeviceID.zfill(4)
 
         drivernode = device.find('configuration/setting[@id="driver"]')
         if drivernode is not None:
@@ -604,7 +599,7 @@ def main():
         if opt in ('-S', '--server'):
             lab_server = val
 
-    lshw_xml = Popen(['lshw', '-xml', '-numeric'], stdout=PIPE).communicate()[0]
+    lshw_xml = Popen(['lshw', '-xml'], stdout=PIPE).communicate()[0]
     lshw_tree = etree.XML(lshw_xml)
     inventory = read_inventory(lshw_tree)
     legacy_inv = legacy_inventory(inventory)

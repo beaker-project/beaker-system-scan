@@ -74,12 +74,12 @@
       "type": "BRIDGE"
     },
     {
-      "vendorID": "0000",
-      "description": "[1234:1111]",
+      "vendorID": "1234",
+      "description": "VGA compatible controller",
       "subsysVendorID": "1AF4",
       "bus": "pci",
       "driver": "Unknown",
-      "deviceID": "0000",
+      "deviceID": "1111",
       "subsysDeviceID": "1100",
       "type": "VIDEO"
     },
