@@ -521,6 +521,9 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         # The system itself is not a device
         if device_class == 'system':
             continue
+        # The motherboard is not a device in the sense that we care about
+        if device.get('id') == 'core':
+            continue
         # Volumes/partitions are transient
         if device_class == 'volume':
             continue

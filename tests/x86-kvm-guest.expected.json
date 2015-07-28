@@ -4,16 +4,6 @@
   "Hypervisor": null,
   "Devices": [
     {
-      "vendorID": "0000",
-      "description": "Motherboard",
-      "subsysVendorID": "0000",
-      "bus": "Unknown",
-      "driver": "Unknown",
-      "deviceID": "0000",
-      "subsysDeviceID": "0000",
-      "type": "BUS"
-    },
-    {
       "vendorID": "8086",
       "description": "440FX - 82441FX PMC [Natoma]",
       "subsysVendorID": "1af4",

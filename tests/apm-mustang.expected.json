@@ -4,16 +4,6 @@
   "Hypervisor": null, 
   "Devices": [
     {
-      "vendorID": "0000", 
-      "description": "Mustang", 
-      "subsysVendorID": "0000", 
-      "bus": "Unknown", 
-      "driver": "Unknown",
-      "deviceID": "0000", 
-      "subsysDeviceID": "0000", 
-      "type": "BUS"
-    }, 
-    {
       "vendorID": "10e8", 
       "description": "X-Gene PCIe bridge", 
       "subsysVendorID": "0000", 
