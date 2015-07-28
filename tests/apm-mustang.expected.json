@@ -8,7 +8,7 @@
       "description": "Mustang", 
       "subsysVendorID": "0000", 
       "bus": "Unknown", 
-      "driver": "pcieport", 
+      "driver": "Unknown",
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BUS"

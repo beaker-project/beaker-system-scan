@@ -8,7 +8,7 @@
       "description": "1589",
       "subsysVendorID": "0000",
       "bus": "Unknown",
-      "driver": "pcieport",
+      "driver": "Unknown",
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -18,7 +18,7 @@
       "description": "Xeon E5/Core i7 DMI2",
       "subsysVendorID": "0000",
       "bus": "pci",
-      "driver": "pcieport",
+      "driver": "Unknown",
       "deviceID": "3C00",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -328,7 +328,7 @@
       "description": "82801 PCI Bridge",
       "subsysVendorID": "0000",
       "bus": "pci",
-      "driver": "firewire_ohci",
+      "driver": "Unknown",
       "deviceID": "244E",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
