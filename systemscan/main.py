@@ -548,7 +548,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                 device_type = 'SATA'
             if device.xpath('./capabilities/capability[@id="sas"]'):
                 device_type = 'SAS'
-        elif device_class == 'serial':
+        elif device_class == 'bus':
             if device.xpath('./hints/hint[@name="icon" and @value="usb"]'):
                 device_type = 'USB'
             if device.xpath('./hints/hint[@name="icon" and @value="firewire"]'):

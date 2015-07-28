@@ -171,7 +171,7 @@
       "driver": "ehci-pci",
       "deviceID": "1D2D",
       "subsysDeviceID": "1589",
-      "type": "BUS"
+      "type": "USB"
     },
     {
       "vendorID": "1D6B",
@@ -261,7 +261,7 @@
       "driver": "xhci_hcd",
       "deviceID": "8241",
       "subsysDeviceID": "1589",
-      "type": "BUS"
+      "type": "USB"
     },
     {
       "vendorID": "1D6B",
@@ -311,7 +311,7 @@
       "driver": "ehci-pci",
       "deviceID": "1D26",
       "subsysDeviceID": "1589",
-      "type": "BUS"
+      "type": "USB"
     },
     {
       "vendorID": "1D6B",
@@ -351,7 +351,7 @@
       "driver": "firewire_ohci",
       "deviceID": "5811",
       "subsysDeviceID": "1589",
-      "type": "BUS"
+      "type": "FIREWIRE"
     },
     {
       "vendorID": "8086",
