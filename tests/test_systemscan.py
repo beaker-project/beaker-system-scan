@@ -55,5 +55,12 @@ class SystemScanTest(unittest.TestCase):
         out = main.read_inventory(inputxml, arch='aarch64')
         self.assertEquals(expected, out)
 
+    def test_read_inventory_x86_kvm_guest(self):
+        inputxml = lxml.etree.parse('x86-kvm-guest.xml')
+        expected = json.load(open('x86-kvm-guest.expected.json'))
+        out = main.read_inventory(inputxml, arch='x86_64',
+                proc_cpuinfo=os.path.abspath('x86-kvm-guest.cpuinfo.txt'))
+        self.assertEquals(expected, out)
+
 if __name__ == "__main__":
     unittest.main()

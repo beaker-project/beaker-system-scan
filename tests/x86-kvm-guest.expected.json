@@ -1,0 +1,237 @@
+{
+  "formfactor": "",
+  "vendor": "Red Hat",
+  "Hypervisor": null,
+  "Devices": [
+    {
+      "vendorID": "0000",
+      "description": "Motherboard",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "Unknown",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "BUS"
+    },
+    {
+      "vendorID": "8086",
+      "description": "440FX - 82441FX PMC [Natoma]",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "Unknown",
+      "deviceID": "1237",
+      "subsysDeviceID": "1100",
+      "type": "BRIDGE"
+    },
+    {
+      "vendorID": "8086",
+      "description": "82371SB PIIX3 ISA [Natoma/Triton II]",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "Unknown",
+      "deviceID": "7000",
+      "subsysDeviceID": "1100",
+      "type": "BRIDGE"
+    },
+    {
+      "vendorID": "8086",
+      "description": "82371SB PIIX3 IDE [Natoma/Triton II]",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "ata_piix",
+      "deviceID": "7010",
+      "subsysDeviceID": "1100",
+      "type": "IDE"
+    },
+    {
+      "vendorID": "8086",
+      "description": "82371SB PIIX3 USB [Natoma/Triton II]",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "uhci_hcd",
+      "deviceID": "7020",
+      "subsysDeviceID": "1100",
+      "type": "USB"
+    },
+    {
+      "vendorID": "1D6B",
+      "description": "UHCI Host Controller",
+      "subsysVendorID": "0000",
+      "bus": "usb",
+      "driver": "hub",
+      "deviceID": "0001",
+      "subsysDeviceID": "0000",
+      "type": "BUS"
+    },
+    {
+      "vendorID": "8086",
+      "description": "82371AB/EB/MB PIIX4 ACPI",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "piix4_smbus",
+      "deviceID": "7113",
+      "subsysDeviceID": "1100",
+      "type": "BRIDGE"
+    },
+    {
+      "vendorID": "0000",
+      "description": "[1234:1111]",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "Unknown",
+      "deviceID": "0000",
+      "subsysDeviceID": "1100",
+      "type": "VIDEO"
+    },
+    {
+      "vendorID": "0000",
+      "description": "Virtual I/O device",
+      "subsysVendorID": "0000",
+      "bus": "virtio",
+      "driver": "virtio_balloon",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "GENERIC"
+    },
+    {
+      "vendorID": "1AF4",
+      "description": "Virtio network device",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "virtio-pci",
+      "deviceID": "1000",
+      "subsysDeviceID": "0001",
+      "type": "NETWORK"
+    },
+    {
+      "vendorID": "0000",
+      "description": "Ethernet interface",
+      "subsysVendorID": "0000",
+      "bus": "virtio",
+      "driver": "virtio_net",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "NETWORK"
+    },
+    {
+      "vendorID": "1AF4",
+      "description": "Virtio block device",
+      "subsysVendorID": "1AF4",
+      "bus": "pci",
+      "driver": "virtio-pci",
+      "deviceID": "1001",
+      "subsysDeviceID": "0002",
+      "type": "SCSI"
+    },
+    {
+      "vendorID": "0000",
+      "description": "PCI Bus",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "Unknown",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "BRIDGE"
+    },
+    {
+      "vendorID": "0000",
+      "description": "IBM Enhanced keyboard controller (101/2-key)",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "i8042 kbd",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "INPUT"
+    },
+    {
+      "vendorID": "0000",
+      "description": "PS/2 Port for PS/2-style Mice",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "i8042 aux",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "INPUT"
+    },
+    {
+      "vendorID": "0000",
+      "description": "PC standard floppy disk controller",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "Unknown",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "STORAGE"
+    },
+    {
+      "vendorID": "0000",
+      "description": "16550A-compatible COM port",
+      "subsysVendorID": "0000",
+      "bus": "Unknown",
+      "driver": "serial",
+      "deviceID": "0000",
+      "subsysDeviceID": "0000",
+      "type": "COMMUNICATION"
+    }
+  ],
+  "Numa": {
+    "nodes": 1
+  },
+  "memory": 1024,
+  "model": "KVM",
+  "Disk": {
+    "Disks": [
+      {
+        "sector_size": "512",
+        "model": null,
+        "phys_sector_size": "512",
+        "size": "21474836480"
+      }
+    ]
+  },
+  "Arch": [
+    "x86_64"
+  ],
+  "Cpu": {
+    "modelName": "QEMU Virtual CPU version (cpu64-rhel6)",
+    "vendor": "GenuineIntel",
+    "processors": 2,
+    "family": 6,
+    "CpuFlags": [
+      "fpu",
+      "fpu_exception",
+      "wp",
+      "de",
+      "pse",
+      "tsc",
+      "msr",
+      "pae",
+      "mce",
+      "cx8",
+      "apic",
+      "mtrr",
+      "pge",
+      "mca",
+      "cmov",
+      "pse36",
+      "clflush",
+      "mmx",
+      "fxsr",
+      "sse",
+      "sse2",
+      "syscall",
+      "nx",
+      "lm",
+      "unfair_spinlock",
+      "pni",
+      "cx16",
+      "hypervisor",
+      "lahf_lm"
+    ],
+    "stepping": 3,
+    "cores": 2,
+    "model": 13,
+    "speed": 2666.76,
+    "sockets": 2
+  }
+}
