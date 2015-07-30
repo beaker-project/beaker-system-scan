@@ -3,6 +3,12 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 %endif
 
+# x86_64 is the only arch with compiled code (hvm_detect), all other arches are 
+# pure Python and hence debuginfo is empty.
+%ifnarch x86_64
+%global debug_package %{nil}
+%endif
+
 Name:           beaker-system-scan
 Version:        1.6
 Release:        1%{?dist}
