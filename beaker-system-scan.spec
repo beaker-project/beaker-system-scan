@@ -10,7 +10,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        1.6
+Version:        2.0
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -59,6 +59,10 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Fri Aug 07 2015 Dan Callaghan <dcallagh@redhat.com> 2.0-1
+- use 'lshw' instead of 'smolt'
+- new regression test suite
+
 * Wed Jan 28 2015 Amit Saha <asaha@redhat.com> 1.6-1
 - Make the code Python 2.4 compatible (asaha@redhat.com)
 - iasl => /usr/bin/iasl (asaha@redhat.com)
