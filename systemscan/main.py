@@ -129,7 +129,7 @@ def kernel_inventory(lshw_tree):
             '//node[node/@id="disk" or node/@id="disk:0"]'
             '/configuration/setting[@id="driver"]/@value')
     if disk_controller:
-        data['DISK_CONTROLLER'] = disk_controller[0]
+        data['DISK_CONTROLLER'] = unicode(disk_controller[0])
 
     ##########################################
     # determine if machine is using multipath or not
