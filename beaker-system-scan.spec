@@ -11,7 +11,7 @@
 
 Name:           beaker-system-scan
 Version:        2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -59,6 +59,9 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Tue Aug 11 2015 Dan Callaghan <dcallagh@redhat.com> 2.0-2
+- convert DISK_CONTROLLER value to a real unicode object (dcallagh@redhat.com)
+
 * Fri Aug 07 2015 Dan Callaghan <dcallagh@redhat.com> 2.0-1
 - use 'lshw' instead of 'smolt'
 - new regression test suite
