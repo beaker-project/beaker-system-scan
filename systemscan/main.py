@@ -188,10 +188,12 @@ def legacy_inventory(inv):
     data['NR_IB'] = 0
 
     data['ARCH'] = inv['Arch'][0]
-    data['CPUFAMILY'] = "%s" % inv['Cpu']['family']
+    if inv['Cpu']['family']:
+        data['CPUFAMILY'] = inv['Cpu']['family']
     data['CPUVENDOR'] = inv['Cpu']['vendor']
     data['CPUMODEL'] = inv['Cpu']['modelName']
-    data['CPUMODELNUMBER'] = "%s" % inv['Cpu']['model']
+    if inv['Cpu']['model']:
+        data['CPUMODELNUMBER'] = inv['Cpu']['model']
     data['PROCESSORS'] = inv['Cpu']['processors']
     data['VENDOR'] = inv['vendor']
     data['MODEL'] = inv['model']
