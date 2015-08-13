@@ -449,10 +449,14 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         diskinfo['model'] = disk.findtext('product')
         logicalsectorsize = disk.find('configuration/setting[@id="logicalsectorsize"]')
         if logicalsectorsize is not None:
-            diskinfo['sector_size'] = logicalsectorsize.get('value')
+            diskinfo['sector_size'] = int(logicalsectorsize.get('value'))
+        else:
+            diskinfo['sector_size'] = 512
         sectorsize = disk.find('configuration/setting[@id="sectorsize"]')
         if sectorsize is not None:
-            diskinfo['phys_sector_size'] = sectorsize.get('value')
+            diskinfo['phys_sector_size'] = int(sectorsize.get('value'))
+        else:
+            diskinfo['phys_sector_size'] = diskinfo['sector_size']
         disklist.append(diskinfo)
     data['Disk'] = {'Disks': disklist}
     data['Numa'] = {
