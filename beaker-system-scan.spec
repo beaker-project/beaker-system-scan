@@ -11,7 +11,7 @@
 
 Name:           beaker-system-scan
 Version:        2.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -59,6 +59,9 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Thu Aug 13 2015 Dan Callaghan <dcallagh@redhat.com> 2.0-4
+- ensure disk sector sizes are always populated (dcallagh@redhat.com)
+
 * Wed Aug 12 2015 Dan Callaghan <dcallagh@redhat.com> 2.0-3
 - CPUFAMILY and CPUMODELNUMBER are numeric (dcallagh@redhat.com)
 
