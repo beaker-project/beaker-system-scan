@@ -5,19 +5,139 @@
   "Devices": [
     {
       "vendorID": "0000", 
-      "description": "Ethernet interface", 
+      "description": "3215 terminal", 
       "subsysVendorID": "0000", 
-      "bus": "Unknown", 
+      "bus": "ccw", 
+      "driver": "3215", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "COMMUNICATION"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "Card reader/punch", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "vmur", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "Card reader/punch", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "vmur", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "Line printer", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "vmur", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "PRINTER"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "Channel-to-Channel device", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "ctcm", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "Channel-to-Channel device", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "ctcm", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "1732/01", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
       "driver": "qeth_l2", 
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "1732/01", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "qeth", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "1732/01", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "qeth", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "1732/01", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "qeth", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "1732/01", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "qeth", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "1732/01", 
+      "subsysVendorID": "0000", 
+      "bus": "ccw", 
+      "driver": "qeth", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "z/VM IUCV hypervisor console", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "hvc_iucv", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
     }
   ], 
   "Numa": {
     "nodes": 1
   }, 
-  "memory": 2001, 
+  "memory": 2048, 
   "model": null, 
   "Disk": {
     "Disks": [
