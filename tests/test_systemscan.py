@@ -27,6 +27,15 @@ class SystemScanTest(unittest.TestCase):
                 proc_cpuinfo=os.path.abspath('hp-rx1620.cpuinfo.txt'))
         self.assertEquals(expected, out)
 
+    # https://bugzilla.redhat.com/show_bug.cgi?id=1249460
+    def test_zero_values_are_excluded_from_USBID_key(self):
+        inputxml = lxml.etree.parse('hp-rx1620.xml')
+        expected = json.load(open('hp-rx1620.expected.json'))
+        inv = main.read_inventory(inputxml, arch='ia64',
+                proc_cpuinfo=os.path.abspath('hp-rx1620.cpuinfo.txt'))
+        legacy = main.legacy_inventory(inv)
+        self.assertEquals(legacy['USBID'], [])
+
     def test_read_inventory_s390x(self):
         inputxml = lxml.etree.parse('s390-guest.xml')
         expected = json.load(open('s390-guest.expected.json'))

@@ -199,8 +199,12 @@ def legacy_inventory(inv):
     data['MODEL'] = inv['model']
     data['FORMFACTOR'] = inv['formfactor']
     data['CPUFLAGS'] = inv['Cpu']['CpuFlags']
-    data['PCIID'] = ["%s:%s" % (d['vendorID'], d['deviceID']) for d in inv['Devices'] if d['bus'] == 'pci']
-    data['USBID'] = ["%s:%s" % (d['vendorID'], d['deviceID']) for d in inv['Devices'] if d['bus'] == 'usb']
+    data['PCIID'] = ["%s:%s" % (d['vendorID'], d['deviceID'])
+            for d in inv['Devices'] if d['bus'] == 'pci' and
+                (d['vendorID'] != '0000' or d['deviceID'] != '0000')]
+    data['USBID'] = ["%s:%s" % (d['vendorID'], d['deviceID'])
+            for d in inv['Devices'] if d['bus'] == 'usb' and
+                (d['vendorID'] != '0000' or d['deviceID'] != '0000')]
 
     # The below data (and kernel_inventory()) has not (yet) made it to the new schema
     # (and formfactor above)
