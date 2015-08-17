@@ -518,6 +518,9 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
         if device.find('businfo') is not None:
             bus = device.find('businfo').text.split('@')[0]
+        elif device.find('capabilities/capability[@id="pnp"]') is not None:
+            bus = 'pnp'
+
         if device.get('class') is not None:
             device_class = device.get('class')
         # Virtio mem balloon is not memory (RHBZ#1249462)
