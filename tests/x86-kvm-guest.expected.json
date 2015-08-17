@@ -172,9 +172,9 @@
   "Disk": {
     "Disks": [
       {
-        "sector_size": "512",
+        "sector_size": 512,
         "model": null,
-        "phys_sector_size": "512",
+        "phys_sector_size": 512,
         "size": "21474836480"
       }
     ]

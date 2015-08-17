@@ -852,9 +852,9 @@
   "Disk": {
     "Disks": [
       {
-        "sector_size": "512",
+        "sector_size": 512,
         "model": "Hitachi HDS72101",
-        "phys_sector_size": "512",
+        "phys_sector_size": 512,
         "size": "1000204886016"
       }
     ]
