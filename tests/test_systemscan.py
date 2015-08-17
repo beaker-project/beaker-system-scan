@@ -43,6 +43,21 @@ class SystemScanTest(unittest.TestCase):
                 proc_cpuinfo=os.path.abspath('s390-guest.cpuinfo.txt'))
         self.assertEquals(expected, out)
 
+    # https://bugzilla.redhat.com/show_bug.cgi?id=1249466
+    def test_diskspace_key_value(self):
+        inputxml = lxml.etree.parse('dell-pe2550.xml')
+        inv = main.read_inventory(inputxml, arch='x86_64',
+                proc_cpuinfo=os.path.abspath('dell-pe2550.cpuinfo.txt'))
+        # The bug is only reproduced when a system has multiple disks whose 
+        # size is slightly less than a whole number of megabytes:
+        self.assertEquals(len(inv['Disk']['Disks']), 4)
+        self.assertEquals(inv['Disk']['Disks'][0]['size'], '36420075008')
+        self.assertEquals(inv['Disk']['Disks'][1]['size'], '36420075008')
+        self.assertEquals(inv['Disk']['Disks'][2]['size'], '36420075008')
+        self.assertEquals(inv['Disk']['Disks'][3]['size'], '36420075008')
+        legacy = main.legacy_inventory(inv)
+        self.assertEquals(legacy['DISKSPACE'], 138931)
+
     def test_map_32bit_archs(self):
         inputxml = lxml.etree.parse('hp-z420.xml')
         i686 = main.read_inventory(inputxml, arch='i686',

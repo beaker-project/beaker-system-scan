@@ -245,9 +245,9 @@ def legacy_inventory(inv):
         else:
             data['NETWORK'] = drivers[1:][0]
 
-    # disk sizes are converted to GiB in key-values for backwards compatibility
+    # disk sizes are converted to MiB in key-values for backwards compatibility
     data['DISK'] = [int(d['size']) // 1024**2 for d in inv['Disk']['Disks']]
-    data['DISKSPACE'] = sum(data['DISK'])
+    data['DISKSPACE'] = sum(int(d['size']) for d in inv['Disk']['Disks']) // 1024**2
     data['NR_DISKS'] = len(data['DISK'])
 
     # finding out eth and ib interfaces...
