@@ -1,0 +1,75 @@
+{
+  "formfactor": "", 
+  "vendor": null, 
+  "Hypervisor": null, 
+  "Devices": [
+    {
+      "vendorID": "0000", 
+      "description": "Ethernet interface", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "qeth_l2", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "NETWORK"
+    }
+  ], 
+  "Numa": {
+    "nodes": 1
+  }, 
+  "memory": 2001, 
+  "model": null, 
+  "Disk": {
+    "Disks": [
+      {
+        "sector_size": 4096, 
+        "model": "3390/0c", 
+        "phys_sector_size": 4096, 
+        "size": "7385333760"
+      }, 
+      {
+        "sector_size": 4096, 
+        "model": "3390/0c", 
+        "phys_sector_size": 4096, 
+        "size": "7385333760"
+      }, 
+      {
+        "sector_size": 4096, 
+        "model": "3390/0c", 
+        "phys_sector_size": 4096, 
+        "size": "7385333760"
+      }, 
+      {
+        "sector_size": 4096, 
+        "model": "3390/0c", 
+        "phys_sector_size": 4096, 
+        "size": "7385333760"
+      }
+    ]
+  }, 
+  "Arch": [
+    "s390x"
+  ], 
+  "Cpu": {
+    "modelName": "2827", 
+    "vendor": "IBM/S390", 
+    "processors": 2, 
+    "family": 0, 
+    "CpuFlags": [
+      "esan3", 
+      "highgprs", 
+      "dfp", 
+      "stfle", 
+      "ldisp", 
+      "eimm", 
+      "zarch", 
+      "etf3eh", 
+      "msa"
+    ], 
+    "stepping": 0, 
+    "cores": 0, 
+    "model": 3326023, 
+    "speed": 0, 
+    "sockets": 0
+  }
+}
