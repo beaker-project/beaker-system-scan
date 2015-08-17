@@ -20,18 +20,12 @@ class SystemScanTest(unittest.TestCase):
                 proc_cpuinfo=os.path.abspath('hp-z420.cpuinfo.txt'))
         self.assertEquals(expected, out)
 
-    # https://bugzilla.redhat.com/show_bug.cgi?id=1212307
     def test_read_inventory_ia64(self):
-        inputxml = lxml.etree.parse('./test_lshw_ia64_xml')
+        inputxml = lxml.etree.parse('hp-rx1620.xml')
+        expected = json.load(open('hp-rx1620.expected.json'))
         out = main.read_inventory(inputxml, arch='ia64',
-                                       proc_cpuinfo=os.path.abspath('./test_proc_cpuinfo_ia64'))
-        self.assertEquals('ia64', out['Arch'][0])
-        self.assertEquals('GenuineIntel', out['Cpu']['vendor'])
-        self.assertEquals('Itanium 2', out['Cpu']['modelName'])
-        self.assertEquals(1, out['Cpu']['family'])
-        expected_flags = ['branchlong', '16-byte atomic ops']
-        self.assertEquals(expected_flags, out['Cpu']['CpuFlags'])
-        self.assertEquals(0, out['Cpu']['stepping'])
+                proc_cpuinfo=os.path.abspath('hp-rx1620.cpuinfo.txt'))
+        self.assertEquals(expected, out)
 
     def test_read_inventory_s390x(self):
         inputxml = lxml.etree.parse('s390-guest.xml')

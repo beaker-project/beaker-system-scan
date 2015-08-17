@@ -1,0 +1,235 @@
+{
+  "formfactor": "", 
+  "vendor": "hp", 
+  "Hypervisor": null, 
+  "Devices": [
+    {
+      "vendorID": "1033", 
+      "description": "OHCI USB Controller", 
+      "subsysVendorID": "1033", 
+      "bus": "pci", 
+      "driver": "ohci_hcd", 
+      "deviceID": "0035", 
+      "subsysDeviceID": "0035", 
+      "type": "USB"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "OHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1033", 
+      "description": "OHCI USB Controller", 
+      "subsysVendorID": "1033", 
+      "bus": "pci", 
+      "driver": "ohci_hcd", 
+      "deviceID": "0035", 
+      "subsysDeviceID": "0035", 
+      "type": "USB"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "OHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1033", 
+      "description": "uPD72010x USB 2.0 Controller", 
+      "subsysVendorID": "1033", 
+      "bus": "pci", 
+      "driver": "ehci_hcd", 
+      "deviceID": "00e0", 
+      "subsysDeviceID": "00e0", 
+      "type": "USB"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "EHCI Host Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1095", 
+      "description": "SiI 0649 Ultra ATA/100 PCI to ATA Host Controller", 
+      "subsysVendorID": "1095", 
+      "bus": "pci", 
+      "driver": "CMD64x_IDE", 
+      "deviceID": "0649", 
+      "subsysDeviceID": "0649", 
+      "type": "IDE"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "IDE Channel 0", 
+      "subsysVendorID": "0000", 
+      "bus": "ide", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1000", 
+      "description": "53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI", 
+      "subsysVendorID": "103c", 
+      "bus": "pci", 
+      "driver": "mptspi", 
+      "deviceID": "0030", 
+      "subsysDeviceID": "1326", 
+      "type": "SCSI"
+    }, 
+    {
+      "vendorID": "1000", 
+      "description": "53c1030 PCI-X Fusion-MPT Dual Ultra320 SCSI", 
+      "subsysVendorID": "103c", 
+      "bus": "pci", 
+      "driver": "mptspi", 
+      "deviceID": "0030", 
+      "subsysDeviceID": "1326", 
+      "type": "SCSI"
+    }, 
+    {
+      "vendorID": "8086", 
+      "description": "82546GB Gigabit Ethernet Controller", 
+      "subsysVendorID": "103c", 
+      "bus": "pci", 
+      "driver": "e1000", 
+      "deviceID": "1079", 
+      "subsysDeviceID": "12c6", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "8086", 
+      "description": "82546GB Gigabit Ethernet Controller", 
+      "subsysVendorID": "103c", 
+      "bus": "pci", 
+      "driver": "e1000", 
+      "deviceID": "1079", 
+      "subsysDeviceID": "12c6", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PnP device HWP0001", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "IPMI Controller", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PnP device HWP0002", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PnP device HWP0002", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "16550A-compatible COM port", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "serial", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "COMMUNICATION"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PnP device HWP0002", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PnP device HWP0002", 
+      "subsysVendorID": "0000", 
+      "bus": "Unknown", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "GENERIC"
+    }
+  ], 
+  "Numa": {
+    "nodes": 1
+  }, 
+  "memory": 6144, 
+  "model": "server rx1620", 
+  "Disk": {
+    "Disks": [
+      {
+        "sector_size": 512, 
+        "model": "ST373453LC", 
+        "phys_sector_size": 512, 
+        "size": "73407865856"
+      }, 
+      {
+        "sector_size": 512, 
+        "model": "ST373453LC", 
+        "phys_sector_size": 512, 
+        "size": "73407865856"
+      }
+    ]
+  }, 
+  "Arch": [
+    "ia64"
+  ], 
+  "Cpu": {
+    "modelName": "Itanium 2", 
+    "vendor": "GenuineIntel", 
+    "processors": 2, 
+    "family": 1, 
+    "CpuFlags": [
+      "branchlong"
+    ], 
+    "stepping": 0, 
+    "cores": 2, 
+    "model": 2, 
+    "speed": 1299.000989, 
+    "sockets": 2
+  }
+}
