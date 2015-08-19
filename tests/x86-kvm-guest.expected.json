@@ -74,6 +74,16 @@
       "type": "VIDEO"
     },
     {
+      "vendorID": "1af4",
+      "description": "Virtio memory balloon",
+      "subsysVendorID": "1af4",
+      "bus": "pci",
+      "driver": "virtio-pci",
+      "deviceID": "1002",
+      "subsysDeviceID": "0005",
+      "type": "GENERIC"
+    },
+    {
       "vendorID": "0000",
       "description": "Virtual I/O device",
       "subsysVendorID": "0000",

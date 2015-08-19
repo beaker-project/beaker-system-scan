@@ -516,6 +516,9 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
             bus = device.find('businfo').text.split('@')[0]
         if device.get('class') is not None:
             device_class = device.get('class')
+        # Virtio mem balloon is not memory (RHBZ#1249462)
+        if description == 'Virtio memory balloon':
+            device_class = 'generic'
 
         drivernode = device.find('configuration/setting[@id="driver"]')
         if drivernode is not None:
