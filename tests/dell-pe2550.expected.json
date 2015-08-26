@@ -1,0 +1,307 @@
+{
+  "formfactor": "rackmount", 
+  "vendor": "Dell Computer Corporation", 
+  "Hypervisor": null, 
+  "Devices": [
+    {
+      "vendorID": "1166", 
+      "description": "CNB20HE Host Bridge [1166:8]", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "Unknown", 
+      "deviceID": "0008", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "1002", 
+      "description": "Rage XL PCI [1002:4752]", 
+      "subsysVendorID": "1028", 
+      "bus": "pci", 
+      "driver": "Unknown", 
+      "deviceID": "4752", 
+      "subsysDeviceID": "00d1", 
+      "type": "VIDEO"
+    }, 
+    {
+      "vendorID": "1166", 
+      "description": "OSB4 South Bridge [1166:200]", 
+      "subsysVendorID": "1166", 
+      "bus": "pci", 
+      "driver": "piix4_smbus", 
+      "deviceID": "0200", 
+      "subsysDeviceID": "0200", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "1166", 
+      "description": "OSB4 IDE Controller [1166:211]", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "pata_serverworks", 
+      "deviceID": "0211", 
+      "subsysDeviceID": "0000", 
+      "type": "IDE"
+    }, 
+    {
+      "vendorID": "1166", 
+      "description": "OSB4/CSB5 OHCI USB Controller [1166:220]", 
+      "subsysVendorID": "1166", 
+      "bus": "pci", 
+      "driver": "ohci_hcd", 
+      "deviceID": "0220", 
+      "subsysDeviceID": "0220", 
+      "type": "USB"
+    }, 
+    {
+      "vendorID": "1d6b", 
+      "description": "OHCI Host Controller [1D6B:1]", 
+      "subsysVendorID": "0000", 
+      "bus": "usb", 
+      "driver": "hub", 
+      "deviceID": "0001", 
+      "subsysDeviceID": "0000", 
+      "type": "BUS"
+    }, 
+    {
+      "vendorID": "1166", 
+      "description": "CNB20HE Host Bridge [1166:8]", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "Unknown", 
+      "deviceID": "0008", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "1166", 
+      "description": "CNB20HE Host Bridge [1166:6]", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "Unknown", 
+      "deviceID": "0006", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "1166", 
+      "description": "CNB20HE Host Bridge [1166:6]", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "Unknown", 
+      "deviceID": "0006", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "14e4", 
+      "description": "NetXtreme BCM5700 Gigabit Ethernet [14E4:1644]", 
+      "subsysVendorID": "1028", 
+      "bus": "pci", 
+      "driver": "tg3", 
+      "deviceID": "1644", 
+      "subsysDeviceID": "00d1", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "8086", 
+      "description": "80960RM (i960RM) Bridge [8086:962]", 
+      "subsysVendorID": "0000", 
+      "bus": "pci", 
+      "driver": "Unknown", 
+      "deviceID": "0962", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "9005", 
+      "description": "AIC-7899P U160/m [9005:CF]", 
+      "subsysVendorID": "1028", 
+      "bus": "pci", 
+      "driver": "aic7xxx", 
+      "deviceID": "00cf", 
+      "subsysDeviceID": "00d1", 
+      "type": "SCSI"
+    }, 
+    {
+      "vendorID": "9005", 
+      "description": "AIC-7899P U160/m [9005:CF]", 
+      "subsysVendorID": "1028", 
+      "bus": "pci", 
+      "driver": "aic7xxx", 
+      "deviceID": "00cf", 
+      "subsysDeviceID": "00d1", 
+      "type": "SCSI"
+    }, 
+    {
+      "vendorID": "8086", 
+      "description": "82557/8/9/0/1 Ethernet Pro 100 [8086:1229]", 
+      "subsysVendorID": "1028", 
+      "bus": "pci", 
+      "driver": "e100", 
+      "deviceID": "1229", 
+      "subsysDeviceID": "009b", 
+      "type": "NETWORK"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PCI Bus", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PC standard floppy disk controller", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "STORAGE"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "IBM Enhanced keyboard controller (101/2-key)", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "i8042 kbd", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "INPUT"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PS/2 Port for PS/2-style Mice", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "i8042 aux", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "INPUT"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "16550A-compatible COM port", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "serial", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "COMMUNICATION"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "16550A-compatible COM port", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "serial", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "COMMUNICATION"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "ECP printer port", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "parport_pc", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "PRINTER"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PCI Bus", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }, 
+    {
+      "vendorID": "0000", 
+      "description": "PCI Bus", 
+      "subsysVendorID": "0000", 
+      "bus": "pnp", 
+      "driver": "Unknown", 
+      "deviceID": "0000", 
+      "subsysDeviceID": "0000", 
+      "type": "BRIDGE"
+    }
+  ], 
+  "Numa": {
+    "nodes": 1
+  }, 
+  "memory": 4096, 
+  "model": "PowerEdge 2550", 
+  "Disk": {
+    "Disks": [
+      {
+        "sector_size": 512, 
+        "model": "MAJ3364MC", 
+        "phys_sector_size": 512, 
+        "size": "36420075008"
+      }, 
+      {
+        "sector_size": 512, 
+        "model": "MAJ3364MC", 
+        "phys_sector_size": 512, 
+        "size": "36420075008"
+      }, 
+      {
+        "sector_size": 512, 
+        "model": "MAJ3364MC", 
+        "phys_sector_size": 512, 
+        "size": "36420075008"
+      }, 
+      {
+        "sector_size": 512, 
+        "model": "MAJ3364MC", 
+        "phys_sector_size": 512, 
+        "size": "36420075008"
+      }
+    ]
+  }, 
+  "Arch": [
+    "x86_64"
+  ], 
+  "Cpu": {
+    "modelName": "Intel(R) Pentium(R) III CPU family      1133MHz", 
+    "vendor": "GenuineIntel", 
+    "processors": 2, 
+    "family": 6, 
+    "CpuFlags": [
+      "boot", 
+      "fpu", 
+      "fpu_exception", 
+      "wp", 
+      "vme", 
+      "de", 
+      "pse", 
+      "tsc", 
+      "msr", 
+      "pae", 
+      "mce", 
+      "cx8", 
+      "apic", 
+      "mtrr", 
+      "pge", 
+      "mca", 
+      "cmov", 
+      "pse36", 
+      "mmx", 
+      "fxsr", 
+      "sse"
+    ], 
+    "stepping": 1, 
+    "cores": 1, 
+    "model": 11, 
+    "speed": 1130.556, 
+    "sockets": 1
+  }
+}

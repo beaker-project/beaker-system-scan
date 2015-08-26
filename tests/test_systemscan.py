@@ -20,6 +20,13 @@ class SystemScanTest(unittest.TestCase):
                 proc_cpuinfo=os.path.abspath('hp-z420.cpuinfo.txt'))
         self.assertEquals(expected, out)
 
+    def test_read_inventory_dell_pe2550(self):
+        inputxml = lxml.etree.parse('dell-pe2550.xml')
+        expected = json.load(open('dell-pe2550.expected.json'))
+        out = main.read_inventory(inputxml, arch='x86_64',
+                proc_cpuinfo=os.path.abspath('dell-pe2550.cpuinfo.txt'))
+        self.assertEquals(expected, out)
+
     def test_read_inventory_ia64(self):
         inputxml = lxml.etree.parse('hp-rx1620.xml')
         expected = json.load(open('hp-rx1620.expected.json'))
