@@ -10,8 +10,8 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        2.0
-Release:        4%{?dist}
+Version:        2.1
+Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -59,6 +59,13 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Thu Aug 27 2015 Dan Callaghan <dcallagh@redhat.com> 2.1-1
+- fix DISKSPACE cumulative rounding error (dcallagh@redhat.com)
+- identify PnP devices by looking for <capability id="pnp">
+  (dcallagh@redhat.com)
+- omit 0000:0000 from USBID key-values (dcallagh@redhat.com)
+- work around wrong PCI class for virtio memory balloon (dcallagh@redhat.com)
+
 * Thu Aug 13 2015 Dan Callaghan <dcallagh@redhat.com> 2.0-4
 - ensure disk sector sizes are always populated (dcallagh@redhat.com)
 
