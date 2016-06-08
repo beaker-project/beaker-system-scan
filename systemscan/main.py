@@ -264,6 +264,8 @@ def legacy_inventory(inv):
     if os.path.exists("/sys/module/kvm_amd") or \
        os.path.exists("/sys/module/kvm_intel"):
            data['HVM'] = True
+    elif os.path.exists('/sys/module/kvm_hv'): # ppc64
+        data['HVM'] = True
     elif os.path.exists('/proc/pal/cpu0/processor_info'): # ia64
         for line in open('/proc/pal/cpu0/processor_info', 'r'):
             if re.match('Virtual machine features.*: On', line):
