@@ -10,7 +10,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        2.1
+Version:        2.2
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -59,6 +59,9 @@ make install DESTDIR=%{buildroot}
 %{_bindir}/%{name}
 
 %changelog
+* Wed Jun 15 2016 Dan Callaghan <dcallagh@redhat.com> 2.2-1
+- KVM module is called kvm_hv on POWER (dcallagh@redhat.com)
+
 * Thu Aug 27 2015 Dan Callaghan <dcallagh@redhat.com> 2.1-1
 - fix DISKSPACE cumulative rounding error (dcallagh@redhat.com)
 - identify PnP devices by looking for <capability id="pnp">
