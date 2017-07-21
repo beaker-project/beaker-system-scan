@@ -493,6 +493,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         # Defaults for nonexistent values
         description = driver = bus = device_class = "Unknown"
         vendorID = deviceID = subsysVendorID = subsysDeviceID = "0000"
+        firmware = None
 
         if device.findtext('product'):
             description = device.findtext('product')
@@ -539,9 +540,16 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         # The system itself is not a device
         if device_class == 'system':
             continue
-        # The motherboard is not a device in the sense that we care about
+        # Add firmware information to device table
+        firmwarenode = device.find('configuration/setting[@id="firmware"]')
+        if firmwarenode is not None:
+            firmware = firmwarenode.get('value')
+        # System firmware is a special case
         if device.get('id') == 'core':
-            continue
+            firmwarenode = device.find('.//node[@id="firmware"]')
+            if firmwarenode is not None:
+                description = firmwarenode.findtext('description')
+                firmware = firmwarenode.findtext('version')
         # Volumes/partitions are transient
         if device_class == 'volume':
             continue
@@ -584,7 +592,8 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                                      bus = bus,
                                      driver = driver,
                                      type = device_type,
-                                     description = description))
+                                     description = description,
+                                     fw_version = firmware))
 
     return data
 

@@ -4,11 +4,23 @@
   "Hypervisor": null,
   "Devices": [
     {
+      "bus": "Unknown",
+      "description": "BIOS",
+      "deviceID": "0000",
+      "driver": "Unknown",
+      "fw_version": "0.5.1",
+      "subsysDeviceID": "0000",
+      "subsysVendorID": "0000",
+      "type": "BUS",
+      "vendorID": "0000"
+    },
+    {
       "vendorID": "8086",
       "description": "440FX - 82441FX PMC [Natoma]",
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "1237",
       "subsysDeviceID": "1100",
       "type": "BRIDGE"
@@ -19,6 +31,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "7000",
       "subsysDeviceID": "1100",
       "type": "BRIDGE"
@@ -29,6 +42,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "ata_piix",
+      "fw_version": null,
       "deviceID": "7010",
       "subsysDeviceID": "1100",
       "type": "IDE"
@@ -39,6 +53,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "uhci_hcd",
+      "fw_version": null,
       "deviceID": "7020",
       "subsysDeviceID": "1100",
       "type": "USB"
@@ -49,6 +64,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0001",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -59,6 +75,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "piix4_smbus",
+      "fw_version": null,
       "deviceID": "7113",
       "subsysDeviceID": "1100",
       "type": "BRIDGE"
@@ -69,6 +86,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "1111",
       "subsysDeviceID": "1100",
       "type": "VIDEO"
@@ -79,6 +97,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "virtio-pci",
+      "fw_version": null,
       "deviceID": "1002",
       "subsysDeviceID": "0005",
       "type": "GENERIC"
@@ -89,6 +108,7 @@
       "subsysVendorID": "0000",
       "bus": "virtio",
       "driver": "virtio_balloon",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -99,6 +119,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "virtio-pci",
+      "fw_version": null,
       "deviceID": "1000",
       "subsysDeviceID": "0001",
       "type": "NETWORK"
@@ -109,6 +130,7 @@
       "subsysVendorID": "0000",
       "bus": "virtio",
       "driver": "virtio_net",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "NETWORK"
@@ -119,6 +141,7 @@
       "subsysVendorID": "1af4",
       "bus": "pci",
       "driver": "virtio-pci",
+      "fw_version": null,
       "deviceID": "1001",
       "subsysDeviceID": "0002",
       "type": "SCSI"
@@ -129,6 +152,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -139,6 +163,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "i8042 kbd",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -149,6 +174,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "i8042 aux",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -159,6 +185,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "STORAGE"
@@ -169,6 +196,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "serial",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "COMMUNICATION"

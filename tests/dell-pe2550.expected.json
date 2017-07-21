@@ -4,11 +4,23 @@
   "Hypervisor": null, 
   "Devices": [
     {
+      "bus": "Unknown",
+      "description": "BIOS",
+      "deviceID": "0000",
+      "driver": "Unknown",
+      "fw_version": "A09",
+      "subsysDeviceID": "0000",
+      "subsysVendorID": "0000",
+      "type": "BUS",
+      "vendorID": "0000"
+    },
+    {
       "vendorID": "1166", 
       "description": "CNB20HE Host Bridge [1166:8]", 
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0008", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -19,6 +31,7 @@
       "subsysVendorID": "1028", 
       "bus": "pci", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "4752", 
       "subsysDeviceID": "00d1", 
       "type": "VIDEO"
@@ -29,6 +42,7 @@
       "subsysVendorID": "1166", 
       "bus": "pci", 
       "driver": "piix4_smbus", 
+      "fw_version": null,
       "deviceID": "0200", 
       "subsysDeviceID": "0200", 
       "type": "BRIDGE"
@@ -39,6 +53,7 @@
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "pata_serverworks", 
+      "fw_version": null,
       "deviceID": "0211", 
       "subsysDeviceID": "0000", 
       "type": "IDE"
@@ -49,6 +64,7 @@
       "subsysVendorID": "1166", 
       "bus": "pci", 
       "driver": "ohci_hcd", 
+      "fw_version": null,
       "deviceID": "0220", 
       "subsysDeviceID": "0220", 
       "type": "USB"
@@ -59,6 +75,7 @@
       "subsysVendorID": "0000", 
       "bus": "usb", 
       "driver": "hub", 
+      "fw_version": null,
       "deviceID": "0001", 
       "subsysDeviceID": "0000", 
       "type": "BUS"
@@ -69,6 +86,7 @@
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0008", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -79,6 +97,7 @@
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0006", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -89,6 +108,7 @@
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0006", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -99,6 +119,7 @@
       "subsysVendorID": "1028", 
       "bus": "pci", 
       "driver": "tg3", 
+      "fw_version": "v1.03",
       "deviceID": "1644", 
       "subsysDeviceID": "00d1", 
       "type": "NETWORK"
@@ -109,6 +130,7 @@
       "subsysVendorID": "0000", 
       "bus": "pci", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0962", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -119,6 +141,7 @@
       "subsysVendorID": "1028", 
       "bus": "pci", 
       "driver": "aic7xxx", 
+      "fw_version": null,
       "deviceID": "00cf", 
       "subsysDeviceID": "00d1", 
       "type": "SCSI"
@@ -129,6 +152,7 @@
       "subsysVendorID": "1028", 
       "bus": "pci", 
       "driver": "aic7xxx", 
+      "fw_version": null,
       "deviceID": "00cf", 
       "subsysDeviceID": "00d1", 
       "type": "SCSI"
@@ -139,6 +163,7 @@
       "subsysVendorID": "1028", 
       "bus": "pci", 
       "driver": "e100", 
+      "fw_version": null,
       "deviceID": "1229", 
       "subsysDeviceID": "009b", 
       "type": "NETWORK"
@@ -149,6 +174,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -159,6 +185,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "STORAGE"
@@ -169,6 +196,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "i8042 kbd", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "INPUT"
@@ -179,6 +207,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "i8042 aux", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "INPUT"
@@ -189,6 +218,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "serial", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "COMMUNICATION"
@@ -199,6 +229,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "serial", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "COMMUNICATION"
@@ -209,6 +240,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "parport_pc", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "PRINTER"
@@ -219,6 +251,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"
@@ -229,6 +262,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BRIDGE"

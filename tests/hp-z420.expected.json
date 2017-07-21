@@ -4,11 +4,23 @@
   "Hypervisor": null,
   "Devices": [
     {
+      "bus": "Unknown",
+      "description": "BIOS",
+      "deviceID": "0000",
+      "driver": "Unknown",
+      "fw_version": "J61 v01.02",
+      "subsysDeviceID": "0000",
+      "subsysVendorID": "0000",
+      "type": "BUS",
+      "vendorID": "0000"
+    },
+    {
       "vendorID": "8086",
       "description": "Xeon E5/Core i7 DMI2",
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c00",
       "subsysDeviceID": "1589",
       "type": "BRIDGE"
@@ -19,6 +31,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "3c02",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -29,6 +42,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "3c04",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -39,6 +53,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "nouveau",
+      "fw_version": null,
       "deviceID": "0dd8",
       "subsysDeviceID": "084a",
       "type": "VIDEO"
@@ -49,6 +64,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "snd_hda_intel",
+      "fw_version": null,
       "deviceID": "0be9",
       "subsysDeviceID": "084a",
       "type": "AUDIO"
@@ -59,6 +75,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "3c08",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -69,6 +86,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c28",
       "subsysDeviceID": "1589",
       "type": "GENERIC"
@@ -79,6 +97,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c2a",
       "subsysDeviceID": "1589",
       "type": "GENERIC"
@@ -89,6 +108,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c2c",
       "subsysDeviceID": "3c2c",
       "type": "GENERIC"
@@ -99,6 +119,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "1d3e",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -109,6 +130,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "isci",
+      "fw_version": null,
       "deviceID": "1d6b",
       "subsysDeviceID": "1589",
       "type": "SAS"
@@ -119,6 +141,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "mei_me",
+      "fw_version": null,
       "deviceID": "1d3a",
       "subsysDeviceID": "1589",
       "type": "COMMUNICATION"
@@ -129,6 +152,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "ata_generic",
+      "fw_version": null,
       "deviceID": "1d3c",
       "subsysDeviceID": "1589",
       "type": "IDE"
@@ -139,6 +163,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "serial",
+      "fw_version": null,
       "deviceID": "1d3d",
       "subsysDeviceID": "1589",
       "type": "COMMUNICATION"
@@ -149,6 +174,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "e1000e",
+      "fw_version": "0.13-4",
       "deviceID": "1502",
       "subsysDeviceID": "1589",
       "type": "NETWORK"
@@ -159,6 +185,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "ehci-pci",
+      "fw_version": null,
       "deviceID": "1d2d",
       "subsysDeviceID": "1589",
       "type": "USB"
@@ -169,6 +196,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0002",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -179,6 +207,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0024",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -189,6 +218,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "usbhid",
+      "fw_version": null,
       "deviceID": "c05a",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -199,6 +229,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "snd_hda_intel",
+      "fw_version": null,
       "deviceID": "1d20",
       "subsysDeviceID": "1589",
       "type": "AUDIO"
@@ -209,6 +240,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "1d12",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -219,6 +251,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "1d18",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -229,6 +262,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "1d14",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -239,6 +273,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "pcieport",
+      "fw_version": null,
       "deviceID": "1d16",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -249,6 +284,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "xhci_hcd",
+      "fw_version": null,
       "deviceID": "8241",
       "subsysDeviceID": "1589",
       "type": "USB"
@@ -259,6 +295,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0003",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -269,6 +306,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0002",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -279,6 +317,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "usbhid",
+      "fw_version": null,
       "deviceID": "c31d",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -289,6 +328,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "usbhid",
+      "fw_version": null,
       "deviceID": "c52b",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -299,6 +339,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "ehci-pci",
+      "fw_version": null,
       "deviceID": "1d26",
       "subsysDeviceID": "1589",
       "type": "USB"
@@ -309,6 +350,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0002",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -319,6 +361,7 @@
       "subsysVendorID": "0000",
       "bus": "usb",
       "driver": "hub",
+      "fw_version": null,
       "deviceID": "0024",
       "subsysDeviceID": "0000",
       "type": "BUS"
@@ -329,6 +372,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "244e",
       "subsysDeviceID": "0000",
       "type": "BRIDGE"
@@ -339,6 +383,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "firewire_ohci",
+      "fw_version": null,
       "deviceID": "5811",
       "subsysDeviceID": "1589",
       "type": "FIREWIRE"
@@ -349,6 +394,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "lpc_ich",
+      "fw_version": null,
       "deviceID": "1d41",
       "subsysDeviceID": "1589",
       "type": "BRIDGE"
@@ -359,6 +405,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "ahci",
+      "fw_version": null,
       "deviceID": "2826",
       "subsysDeviceID": "1589",
       "type": "RAID"
@@ -369,6 +416,7 @@
       "subsysVendorID": "103c",
       "bus": "pci",
       "driver": "i801_smbus",
+      "fw_version": null,
       "deviceID": "1d22",
       "subsysDeviceID": "1589",
       "type": "BUS"
@@ -379,6 +427,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c80",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -389,6 +438,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c83",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -399,6 +449,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c84",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -409,6 +460,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c90",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -419,6 +471,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c93",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -429,6 +482,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c94",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -439,6 +493,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cc0",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -449,6 +504,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cc1",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -459,6 +515,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cc2",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -469,6 +526,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cd0",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -479,6 +537,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce0",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -489,6 +548,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce3",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -499,6 +559,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -509,6 +570,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -519,6 +581,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cf4",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -529,6 +592,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cf6",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -539,6 +603,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -549,6 +614,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -559,6 +625,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cf5",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -569,6 +636,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "sbridge_edac",
+      "fw_version": null,
       "deviceID": "3ca0",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -579,6 +647,7 @@
       "subsysVendorID": "0000",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3c46",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -589,6 +658,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ca8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -599,6 +669,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3c71",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -609,6 +680,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3caa",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -619,6 +691,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cab",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -629,6 +702,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cac",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -639,6 +713,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cad",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -649,6 +724,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cae",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -659,6 +735,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3cb0",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -669,6 +746,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3cb1",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -679,6 +757,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cb2",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -689,6 +768,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cb3",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -699,6 +779,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3cb4",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -709,6 +790,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3cb5",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -719,6 +801,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cb6",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -729,6 +812,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cb7",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -739,6 +823,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3cb8",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -749,6 +834,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce4",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -759,6 +845,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3c43",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -769,6 +856,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "3ce6",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -779,6 +867,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3c44",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -789,6 +878,7 @@
       "subsysVendorID": "8086",
       "bus": "pci",
       "driver": "snbep_uncore",
+      "fw_version": null,
       "deviceID": "3c45",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -799,6 +889,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "i8042 kbd",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -809,6 +900,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "i8042 aux",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "INPUT"
@@ -819,6 +911,7 @@
       "subsysVendorID": "0000",
       "bus": "pnp",
       "driver": "system",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "GENERIC"
@@ -829,6 +922,7 @@
       "subsysVendorID": "0000",
       "bus": "Unknown",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "POWER"
@@ -839,6 +933,7 @@
       "subsysVendorID": "0000",
       "bus": "Unknown",
       "driver": "Unknown",
+      "fw_version": null,
       "deviceID": "0000",
       "subsysDeviceID": "0000",
       "type": "POWER"

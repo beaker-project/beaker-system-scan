@@ -4,10 +4,22 @@
   "Hypervisor": null, 
   "Devices": [
     {
+      "bus": "Unknown",
+      "description": "BIOS",
+      "deviceID": "0000",
+      "driver": "Unknown",
+      "fw_version": "1.1.0",
+      "subsysDeviceID": "0000",
+      "subsysVendorID": "0000",
+      "type": "BUS",
+      "vendorID": "0000"
+    },
+    {
       "vendorID": "10e8", 
       "description": "X-Gene PCIe bridge", 
       "subsysVendorID": "0000", 
       "bus": "pci", 
+      "fw_version": null,
       "driver": "pcieport", 
       "deviceID": "e004", 
       "subsysDeviceID": "0000", 
@@ -18,6 +30,7 @@
       "description": "xHCI Host Controller", 
       "subsysVendorID": "0000", 
       "bus": "usb", 
+      "fw_version": null,
       "driver": "hub", 
       "deviceID": "0003", 
       "subsysDeviceID": "0000", 
@@ -27,6 +40,7 @@
       "vendorID": "1d6b", 
       "description": "xHCI Host Controller", 
       "subsysVendorID": "0000", 
+      "fw_version": null,
       "bus": "usb", 
       "driver": "hub", 
       "deviceID": "0002", 
@@ -41,6 +55,7 @@
       "driver": "hub", 
       "deviceID": "0003", 
       "subsysDeviceID": "0000", 
+      "fw_version": null,
       "type": "BUS"
     }, 
     {
@@ -49,6 +64,7 @@
       "subsysVendorID": "0000", 
       "bus": "usb", 
       "driver": "hub", 
+      "fw_version": null,
       "deviceID": "0002", 
       "subsysDeviceID": "0000", 
       "type": "BUS"

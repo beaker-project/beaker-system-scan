@@ -4,11 +4,22 @@
   "Hypervisor": null, 
   "Devices": [
     {
+      "bus": "Unknown",
+      "description": "BIOS",
+      "deviceID": "0000",
+      "driver": "Unknown",
+      "fw_version": "02.18",
+      "subsysDeviceID": "0000",
+      "subsysVendorID": "0000",
+      "type": "BUS",
+      "vendorID": "0000"},
+    {
       "vendorID": "1033", 
       "description": "OHCI USB Controller", 
       "subsysVendorID": "1033", 
       "bus": "pci", 
       "driver": "ohci_hcd", 
+      "fw_version": null,
       "deviceID": "0035", 
       "subsysDeviceID": "0035", 
       "type": "USB"
@@ -19,6 +30,7 @@
       "subsysVendorID": "0000", 
       "bus": "usb", 
       "driver": "hub", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BUS"
@@ -29,6 +41,7 @@
       "subsysVendorID": "1033", 
       "bus": "pci", 
       "driver": "ohci_hcd", 
+      "fw_version": null,
       "deviceID": "0035", 
       "subsysDeviceID": "0035", 
       "type": "USB"
@@ -39,6 +52,7 @@
       "subsysVendorID": "0000", 
       "bus": "usb", 
       "driver": "hub", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BUS"
@@ -49,6 +63,7 @@
       "subsysVendorID": "1033", 
       "bus": "pci", 
       "driver": "ehci_hcd", 
+      "fw_version": null,
       "deviceID": "00e0", 
       "subsysDeviceID": "00e0", 
       "type": "USB"
@@ -59,6 +74,7 @@
       "subsysVendorID": "0000", 
       "bus": "usb", 
       "driver": "hub", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BUS"
@@ -69,6 +85,7 @@
       "subsysVendorID": "1095", 
       "bus": "pci", 
       "driver": "CMD64x_IDE", 
+      "fw_version": null,
       "deviceID": "0649", 
       "subsysDeviceID": "0649", 
       "type": "IDE"
@@ -79,6 +96,7 @@
       "subsysVendorID": "0000", 
       "bus": "ide", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "BUS"
@@ -89,6 +107,7 @@
       "subsysVendorID": "103c", 
       "bus": "pci", 
       "driver": "mptspi", 
+      "fw_version": null,
       "deviceID": "0030", 
       "subsysDeviceID": "1326", 
       "type": "SCSI"
@@ -99,6 +118,7 @@
       "subsysVendorID": "103c", 
       "bus": "pci", 
       "driver": "mptspi", 
+      "fw_version": null,
       "deviceID": "0030", 
       "subsysDeviceID": "1326", 
       "type": "SCSI"
@@ -109,6 +129,7 @@
       "subsysVendorID": "103c", 
       "bus": "pci", 
       "driver": "e1000", 
+      "fw_version": "N/A",
       "deviceID": "1079", 
       "subsysDeviceID": "12c6", 
       "type": "NETWORK"
@@ -119,6 +140,7 @@
       "subsysVendorID": "103c", 
       "bus": "pci", 
       "driver": "e1000", 
+      "fw_version": "N/A",
       "deviceID": "1079", 
       "subsysDeviceID": "12c6", 
       "type": "NETWORK"
@@ -129,6 +151,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -139,6 +162,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -149,6 +173,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -159,6 +184,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -169,6 +195,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "serial", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "COMMUNICATION"
@@ -179,6 +206,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
@@ -189,6 +217,7 @@
       "subsysVendorID": "0000", 
       "bus": "pnp", 
       "driver": "Unknown", 
+      "fw_version": null,
       "deviceID": "0000", 
       "subsysDeviceID": "0000", 
       "type": "GENERIC"
