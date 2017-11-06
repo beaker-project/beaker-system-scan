@@ -394,7 +394,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
     elif arch == 'aarch64':
         # count logical CPUs
         n_procs = 0
-        f = open('/proc/cpuinfo')
+        f = open(proc_cpuinfo)
         for line in f:
             if line.startswith('processor'):
                 n_procs += 1

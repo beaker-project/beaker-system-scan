@@ -114,7 +114,8 @@ class SystemScanTest(unittest.TestCase):
     def test_read_inventory_aarch64(self):
         inputxml = lxml.etree.parse('apm-mustang.xml')
         expected = json.load(open('apm-mustang.expected.json'))
-        out = main.read_inventory(inputxml, arch='aarch64')
+        out = main.read_inventory(inputxml, arch='aarch64',
+                proc_cpuinfo=os.path.abspath('apm-mustang.cpuinfo.txt'))
         self.assert_inventory_matches(expected, out)
 
     def test_read_inventory_x86_kvm_guest(self):
