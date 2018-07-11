@@ -1,3 +1,4 @@
 /build/
 /hvm_detect
 systemscan/*.pyc
+/.pytest_cache/
