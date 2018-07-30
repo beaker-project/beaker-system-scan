@@ -16,10 +16,16 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import sys, getopt
-import xmlrpclib
+try:
+    import xmlrpc.client as xmlrpclib # PY3
+except ImportError:
+    import xmlrpclib # PY2
 import os
 import platform
-import commands
+try:
+    from subprocess import getstatusoutput # PY3
+except ImportError:
+    from commands import getstatusoutput # PY2
 import pprint
 import math
 import errno
@@ -48,14 +54,14 @@ def get_helper_program_output(program, *args):
     out, err = proc.communicate()
     if proc.returncode:
         raise RuntimeError('Error %s running %s: %s' % (proc.returncode, program, err))
-    return out
+    return out.decode('utf8')
 
 def push_inventory(method, hostname, inventory):
    session = xmlrpclib.Server(lab_server, allow_none=True)
    try:
       resp = getattr(session, method)(hostname, inventory)
       if(resp != 0) :
-         raise NameError, "ERROR: Pushing Inventory for host %s." % hostname
+         raise RuntimeError("ERROR: Pushing Inventory for host %s." % hostname)
    except:
       raise
 
@@ -92,17 +98,17 @@ def check_for_virt_iommu():
                     hwu = True
                 if ba_pat.search(line):
                     if ba_inv_pat.search(line):
-                        print >> sys.stderr, "VIRT_IOMMU: Invalid Base address: 0's or F's"
+                        sys.stderr.write("VIRT_IOMMU: Invalid Base address: 0's or F's\n")
                     else:
                         ba = True
             if not hwu:
-                print >> sys.stderr, "VIRT_IOMMU: No Hardware Unit"
+                sys.stderr.write("VIRT_IOMMU: No Hardware Unit\n")
             elif not ba:
-                print >> sys.stderr, "VIRT_IOMMU: No Base Address"
+                sys.stderr.write("VIRT_IOMMU: No Base Address\n")
             else:
                 virt_iommu = 1
         else:
-            print >> sys.stderr, "VIRT_IOMMU: Failed to create DMAR.dsl"
+            sys.stderr.write("VIRT_IOMMU: Failed to create DMAR.dsl\n")
 
     elif os.path.exists("/sys/firmware/acpi/tables/IVRS"):
         # alright we are on an AMD iommu box
@@ -129,7 +135,7 @@ def kernel_inventory(lshw_tree):
             '//node[node/@id="disk" or node/@id="disk:0"]'
             '/configuration/setting[@id="driver"]/@value')
     if disk_controller:
-        data['DISK_CONTROLLER'] = unicode(disk_controller[0])
+        data['DISK_CONTROLLER'] = str(disk_controller[0])
 
     ##########################################
     # determine if machine is using multipath or not
@@ -146,10 +152,10 @@ def kernel_inventory(lshw_tree):
         #the multipath commands will display the topology if it
         #exists otherwise nothing
         #filter out vbds and single device paths
-        status, mpaths = commands.getstatusoutput("multipath -ll")
+        status, mpaths = getstatusoutput("multipath -ll")
         mp = False
         if status:
-            print >> sys.stderr, "MULTIPATH: multipath -ll failed with %d" % status
+            sys.stderr.write("MULTIPATH: multipath -ll failed with %d\n")
         else:
             count = 0
             mpath_pat = re.compile(" dm-[0-9]* ")
@@ -209,14 +215,14 @@ def legacy_inventory(inv):
     # The below data (and kernel_inventory()) has not (yet) made it to the new schema
     # (and formfactor above)
 
-    modules =  commands.getstatusoutput('/sbin/lsmod')[1].split('\n')[1:]
+    modules = getstatusoutput('/sbin/lsmod')[1].split('\n')[1:]
     for module in modules:
         data['MODULE'].append(module.split()[0])
 
     # Find Active Storage Driver(s)
     bootdisk = None
     bootregex = re.compile(r'/dev/([^ ]+) on /boot')
-    disks = commands.getstatusoutput('/bin/mount')[1].split('\n')[1:]
+    disks = getstatusoutput('/bin/mount')[1].split('\n')[1:]
     for disk in disks:
         if bootregex.search(disk):
             # Replace / with !, needed for cciss
@@ -235,7 +241,7 @@ def legacy_inventory(inv):
                 data['BOOTDISK'].append(driver)
     # Find Active Network interface
     iface = None
-    for line in  commands.getstatusoutput('route -n')[1].split('\n'):
+    for line in getstatusoutput('route -n')[1].split('\n'):
         if line.find('0.0.0.0') == 0:
             iface = line.split()[-1:][0] #eth0, eth1, etc..
     if iface:
@@ -434,7 +440,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
     if product is not None:
        product = product.text
     if memsize is not None:
-       memsize = int(memsize.text) / 1024**2
+       memsize = int(memsize.text) // 1024**2
 
 
     data['Cpu'] = cpu
@@ -475,17 +481,17 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         data['formfactor'] = chassis[0].get('value')
     try:
         hypervisor = get_helper_program_output('hvm_detect')
-    except OSError, e:
+    except OSError as e:
         if e.errno == errno.ENOENT and arch != 'x86_64':
             pass
         else:
             raise
     else:
         hvm_map = {"No KVM or Xen HVM\n"    : None,
-                   "KVM guest.\n"           : u'KVM',
-                   "Xen HVM guest.\n"       : u'Xen',
-                   "Microsoft Hv guest.\n"  : u'HyperV',
-                   "VMWare guest.\n"        : u'VMWare',
+                   "KVM guest.\n"           : 'KVM',
+                   "Xen HVM guest.\n"       : 'Xen',
+                   "Microsoft Hv guest.\n"  : 'HyperV',
+                   "VMWare guest.\n"        : 'VMWare',
                 }
         data['Hypervisor'] = hvm_map[hypervisor]
 
@@ -598,7 +604,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
     return data
 
 def usage():
-    print USAGE_TEXT
+    print(USAGE_TEXT)
     sys.exit(-1)
 
 def main():
@@ -609,9 +615,9 @@ def main():
     debug = 0
     json_output = 0
 
-    if ('LAB_SERVER' in os.environ.keys()):
+    if 'LAB_SERVER' in os.environ:
         lab_server = os.environ['LAB_SERVER']
-    if ('HOSTNAME' in os.environ.keys()):
+    if 'HOSTNAME' in os.environ:
         hostname = os.environ['HOSTNAME']
 
     args = sys.argv[1:]
@@ -637,18 +643,18 @@ def main():
     del inventory['formfactor']
     if debug:
        if json_output:
-          print json.dumps({'legacy':legacy_inv,
-                            'Data':inventory})
+          print(json.dumps({'legacy':legacy_inv,
+                            'Data':inventory}))
        else:
-          print "Legacy inventory:\n%s\nData:\n%s" % (
-             pprint.pformat(legacy_inv), pprint.pformat(inventory))
+          print("Legacy inventory:\n%s\nData:\n%s" % (
+             pprint.pformat(legacy_inv), pprint.pformat(inventory)))
     else:
         if not hostname:
-            print "You must specify a hostname with the -h switch"
+            print("You must specify a hostname with the -h switch")
             sys.exit(1)
 
         if not lab_server:
-            print "You must specify a lab_server with the -S switch"
+            print("You must specify a lab_server with the -S switch")
             sys.exit(1)
 
         push_inventory("legacypush", hostname, legacy_inv)

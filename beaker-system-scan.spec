@@ -3,6 +3,13 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 %endif
 
+# Python 3 on Fedora 29+ / RHEL8+, Python 2 otherwise.
+%if 0%{?fedora} >= 29 || 0%{?rhel} >= 8
+%bcond_without python3
+%else
+%bcond_with python3
+%endif
+
 # x86_64 is the only arch with compiled code (hvm_detect), all other arches are 
 # pure Python and hence debuginfo is empty.
 %ifnarch x86_64
@@ -19,9 +26,19 @@ URL:            http://beaker-project.org/
 Source0:        http://beaker-project.org/releases/%{name}-%{version}.tar.gz
 BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
+%if %{with python3}
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
+Requires:       python3-linux-procfs
+Requires:       python3-setuptools
+Requires:       python3-lxml
+%else
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
-
+Requires:       python-linux-procfs
+Requires:       python-setuptools
+Requires:       python-lxml
+%endif
 Requires:       lshw
 %if 0%{?rhel} < 6  && !(0%{?fedora} > 0)
 Requires:       python-simplejson
@@ -33,9 +50,6 @@ Requires:       kmod-kvm
 Requires:       /usr/bin/iasl
 %endif
 Requires:       device-mapper-multipath
-Requires:       python-linux-procfs
-Requires:       python-setuptools
-Requires:       python-lxml
 
 %description
 beaker-system-scan is a small script to collect details about the hardware of 
@@ -43,18 +57,34 @@ the system it is run on, and upload those details to a Beaker server.
 
 %prep
 %setup -q
+%if 0%{?rhel} == 5
+sed -r -i -e 's/except (.*) as (.*):/except \1, \2:/' systemscan/*.py
+%endif
 
 %build
-make %{?_smp_mflags} CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing"
+%if %{with python3}
+make %{?_smp_mflags} PYTHON="%{__python3}" CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing"
+%else
+make %{?_smp_mflags} PYTHON="%{__python}" CFLAGS="$RPM_OPT_FLAGS -fno-strict-aliasing"
+%endif
 
 %install
 rm -rf %{buildroot}
-make install DESTDIR=%{buildroot}
+%if %{with python3}
+make install PYTHON="%{__python3}" DESTDIR=%{buildroot}
+%else
+make install PYTHON="%{__python}" DESTDIR=%{buildroot}
+%endif
 
 %files
 %doc COPYING
+%if %{with python3}
+%{python3_sitelib}/systemscan
+%{python3_sitelib}/bkr.systemscan*.egg-info
+%else
 %{python_sitelib}/systemscan
 %{python_sitelib}/bkr.systemscan*.egg-info
+%endif
 %{_libexecdir}/%{name}
 %{_bindir}/%{name}
 

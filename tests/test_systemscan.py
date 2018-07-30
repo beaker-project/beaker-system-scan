@@ -31,6 +31,10 @@ def assert_inventory_matches(expected, actual):
 
     expected_cpu = expected.pop('Cpu')
     actual_cpu = actual.pop('Cpu')
+    # CpuFlags is a list but the order is irrelevant
+    expected_cpuflags = expected_cpu.pop('CpuFlags')
+    actual_cpuflags = actual_cpu.pop('CpuFlags')
+    assert sorted(expected_cpuflags) == sorted(actual_cpuflags)
     assert expected_cpu == actual_cpu
 
     assert expected == actual
