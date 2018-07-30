@@ -10,6 +10,13 @@
 %bcond_with python3
 %endif
 
+# Can't run tests on older RHELs, we are missing pytest.
+%if 0%{?fedora} || 0%{?rhel} >= 7
+%bcond_without tests
+%else
+%bcond_with tests
+%endif
+
 # x86_64 is the only arch with compiled code (hvm_detect), all other arches are 
 # pure Python and hence debuginfo is empty.
 %ifnarch x86_64
@@ -32,12 +39,24 @@ BuildRequires:  python3-setuptools
 Requires:       python3-linux-procfs
 Requires:       python3-setuptools
 Requires:       python3-lxml
+%if %{with tests}
+BuildRequires:  python3-pytest
+# runtime requirements also needed for tests
+BuildRequires:  python3-linux-procfs
+BuildRequires:  python3-lxml
+%endif
 %else
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 Requires:       python-linux-procfs
 Requires:       python-setuptools
 Requires:       python-lxml
+%if %{with tests}
+BuildRequires:  pytest
+# runtime requirements also needed for tests
+BuildRequires:  python-linux-procfs
+BuildRequires:  python-lxml
+%endif
 %endif
 Requires:       lshw
 %if 0%{?rhel} < 6  && !(0%{?fedora} > 0)
@@ -74,6 +93,15 @@ rm -rf %{buildroot}
 make install PYTHON="%{__python3}" DESTDIR=%{buildroot}
 %else
 make install PYTHON="%{__python}" DESTDIR=%{buildroot}
+%endif
+
+%if %{with tests}
+%check
+%if %{with python3}
+PYTHONPATH=. py.test-3 -vv tests/
+%else
+PYTHONPATH=. py.test -vv tests/
+%endif
 %endif
 
 %files
