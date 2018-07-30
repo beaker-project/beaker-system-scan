@@ -33,6 +33,7 @@ URL:            http://beaker-project.org/
 Source0:        http://beaker-project.org/releases/%{name}-%{version}.tar.gz
 BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
+BuildRequires:  gcc
 %if %{with python3}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
