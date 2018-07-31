@@ -12,7 +12,13 @@
 
 # Can't run tests on older RHELs, we are missing pytest.
 %if 0%{?fedora} || 0%{?rhel} >= 7
+# Also can't run tests on non-x86 platforms because of
+# the mess with conditionally compiling hvm_detect.
+%ifarch x86_64
 %bcond_without tests
+%else
+%bcond_with tests
+%endif
 %else
 %bcond_with tests
 %endif
