@@ -31,7 +31,7 @@
 
 Name:           beaker-system-scan
 Version:        2.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -124,6 +124,9 @@ PYTHONPATH=. py.test -vv tests/
 %{_bindir}/%{name}
 
 %changelog
+* Tue Jul 31 2018 Dan Callaghan <dcallagh@redhat.com> 2.3-3
+- tests: can't check the value of 'Numa' (dcallagh@redhat.com)
+
 * Tue Jul 31 2018 Dan Callaghan <dcallagh@redhat.com> 2.3-2
 - disable tests on non-x86 platforms (dcallagh@redhat.com)
 
