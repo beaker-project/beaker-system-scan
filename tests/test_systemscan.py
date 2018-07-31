@@ -21,6 +21,11 @@ def assert_inventory_matches(expected, actual):
     del expected['Hypervisor']
     del actual['Hypervisor']
 
+    # Also cannot test 'Numa' for the same reason. It comes from /sys on the 
+    # build machine, and not from the lshw output.
+    del expected['Numa']
+    del actual['Numa']
+
     expected_devices = expected.pop('Devices')
     actual_devices = actual.pop('Devices')
     assert expected_devices == actual_devices
