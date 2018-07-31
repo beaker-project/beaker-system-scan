@@ -24,7 +24,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        2.2
+Version:        2.3
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -118,6 +118,14 @@ PYTHONPATH=. py.test -vv tests/
 %{_bindir}/%{name}
 
 %changelog
+* Tue Jul 31 2018 Dan Callaghan <dcallagh@redhat.com> 2.3-1
+- collect firmware information (sdoherty@redhat.com)
+- Python 3 support (dcallagh@redhat.com)
+- tests: refactor to make it easier to add new samples (dcallagh@redhat.com)
+- tests: add missing /proc/cpuinfo sample for APM Mustang (dcallagh@redhat.com)
+- tests: better assertion messages (dcallagh@redhat.com)
+- run tests in rpmbuild (dcallagh@redhat.com)
+
 * Wed Jun 15 2016 Dan Callaghan <dcallagh@redhat.com> 2.2-1
 - KVM module is called kvm_hv on POWER (dcallagh@redhat.com)
 
