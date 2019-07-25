@@ -451,7 +451,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
 
 
     disklist = []
-    for disk in inventory.xpath('.//node[@class="disk"]'):
+    for disk in inventory.xpath('.//node[@class="disk" and @id!="medium"]'):
         diskinfo = {}
         if disk.find('size') is None:
             continue # probably an optical drive
