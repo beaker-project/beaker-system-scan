@@ -30,8 +30,8 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        2.3
-Release:        3%{?dist}
+Version:        2.4
+Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
 License:        GPLv2+
@@ -124,6 +124,9 @@ PYTHONPATH=. py.test -vv tests/
 %{_bindir}/%{name}
 
 %changelog
+* Fri Jul 26 2019 Martin Styk <mastyk@redhat.com> 2.4-1
+- Ignore disk nodes with id="medium" from lshw XML (jbastian@redhat.com)
+
 * Tue Jul 31 2018 Dan Callaghan <dcallagh@redhat.com> 2.3-3
 - tests: can't check the value of 'Numa' (dcallagh@redhat.com)
 
