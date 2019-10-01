@@ -129,7 +129,7 @@ def kernel_inventory(lshw_tree):
         data['VIRT_IOMMU'] = True
 
     ##########################################
-    # DISK_CONTROLLER is the kernel driver of the device (e.g. PCI SCSI 
+    # DISK_CONTROLLER is the kernel driver of the device (e.g. PCI SCSI
     # controller card) to which the first hard disk is attached.
     disk_controller = lshw_tree.xpath(
             '//node[node/@id="disk" or node/@id="disk:0"]'
@@ -256,14 +256,24 @@ def legacy_inventory(inv):
     data['DISKSPACE'] = sum(int(d['size']) for d in inv['Disk']['Disks']) // 1024**2
     data['NR_DISKS'] = len(data['DISK'])
 
+    # constants from include/linux/if_arp.h
+    ETH_TYPE = 1
+    IB_TYPE = 32
     # finding out eth and ib interfaces...
-    eth_pat = re.compile ('^ *eth\d+:')
-    ib_pat  = re.compile ('^ *ib\d+:')
-    for line in open("/proc/net/dev", "r"):
-        if eth_pat.match(line):
-           data['NR_ETH'] += 1
-        elif ib_pat.match(line):
-           data['NR_IB'] += 1
+    interfaces = os.listdir('/sys/class/net')
+    for iface in interfaces:
+        iface_path = os.path.join('/sys/class/net', iface)
+
+        # don't count virtual devices (lo, bridge) or wifi devices
+        if ('virtual' in os.readlink(iface_path)) or os.path.exists(os.path.join(iface_path, 'phy80211')):
+            continue
+
+        with open(os.path.join(iface_path, 'type')) as type_file:
+            int_type = int(type_file.readline())
+            if int_type == ETH_TYPE:
+                data['NR_ETH'] += 1
+            if int_type == IB_TYPE:
+                data['NR_IB'] += 1
 
     # checking for whether or not the machine is hvm-enabled.
     caps = ""
@@ -423,8 +433,8 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
                    cores      = n_cores,
                    sockets    = n_sockets,
                    CpuFlags   = flags,
-                   # Beaker's data model assumes model/family/stepping are 
-                   # integers, as in the x86 world, so we can't store anything 
+                   # Beaker's data model assumes model/family/stepping are
+                   # integers, as in the x86 world, so we can't store anything
                    # useful in them here.
                    model      = None,
                    family     = None,
@@ -455,7 +465,7 @@ def read_inventory(inventory, arch = None, proc_cpuinfo='/proc/cpuinfo'):
         diskinfo = {}
         if disk.find('size') is None:
             continue # probably an optical drive
-        # need to send size as an XML-RPC string as it is likely to overflow 
+        # need to send size as an XML-RPC string as it is likely to overflow
         # the 32-bit size limit for XML-RPC ints
         diskinfo['size'] = disk.findtext('size')
         diskinfo['model'] = disk.findtext('product')
