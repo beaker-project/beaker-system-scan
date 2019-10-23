@@ -30,7 +30,7 @@
 %endif
 
 Name:           beaker-system-scan
-Version:        2.4
+Version:        2.5
 Release:        1%{?dist}
 Summary:        Collect and upload hardware information to Beaker
 Group:          Applications/System
@@ -124,6 +124,11 @@ PYTHONPATH=. py.test -vv tests/
 %{_bindir}/%{name}
 
 %changelog
+* Wed Oct 23 2019 Martin Styk <mastyk@redhat.com> 2.5-1
+- Threat all ethernet devices correctly, not only eth* (mdujava@redhat.com)
+- Update dist-git branches (mastyk@redhat.com)
+- Update tito.props (mastyk@redhat.com)
+
 * Fri Jul 26 2019 Martin Styk <mastyk@redhat.com> 2.4-1
 - Ignore disk nodes with id="medium" from lshw XML (jbastian@redhat.com)
 
