@@ -264,8 +264,16 @@ def legacy_inventory(inv):
     for iface in interfaces:
         iface_path = os.path.join('/sys/class/net', iface)
 
-        # don't count virtual devices (lo, bridge) or wifi devices
-        if ('virtual' in os.readlink(iface_path)) or os.path.exists(os.path.join(iface_path, 'phy80211')):
+        # skip if path is not a dir as later we rely on files inside it
+        if not os.path.isdir(iface_path):
+            continue
+
+        # don't count virtual devices (lo, bridge)
+        if (os.path.islink(iface_path) and 'virtual' in os.readlink(iface_path)):
+            continue
+
+        # don't count wifi devices
+        if os.path.exists(os.path.join(iface_path, 'phy80211')):
             continue
 
         with open(os.path.join(iface_path, 'type')) as type_file:
